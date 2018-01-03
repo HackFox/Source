@@ -1,0 +1,52 @@
+# use glob syntax.
+syntax: glob
+
+# VFP generated files
+*.err
+*.ERR
+*.mpr
+*.MPR
+
+# VFP compiled files
+*.fxp
+*.FXP
+*.mpx
+*.MPX
+*.qpx
+*.QPX
+
+# VFP backup files
+*.bak
+*.BAK
+*.tbk
+*.TBK
+
+# VFP binary files
+*.pj*
+*.PJ*
+*.vc*
+*.VC*
+*.dbf
+*.DBF
+*.cdx
+*.CDX
+*.fpt
+*.FPT
+
+# Misc backup files
+*.orig
+*.ORIG
+*.save
+*.SAVE
+*.zip
+*.ZIP
+
+# Folders to exclude
+HTMLDocs/*
+HTMLHelp/*
+WordDocs/*
+
+# Other files
+*.log
+LOG.TXT
+Thumbs.db
