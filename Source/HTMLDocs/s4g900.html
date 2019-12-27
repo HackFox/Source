@@ -1,0 +1,1489 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g900_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g900_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Database Events</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>5</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:32:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:32:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1719</o:Words>
+  <o:Characters>9800</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>50688</o:Bytes>
+  <o:Lines>81</o:Lines>
+  <o:Paragraphs>19</o:Paragraphs>
+  <o:CharactersWithSpaces>12035</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>Database Events<o:p></o:p></p>
+
+<p class=MsoNormal>Database events, added in VFP 7, are a cool enhancement to
+an already powerful data engine. Like a trigger, which automatically executes
+procedural code when a record is inserted, updated, or deleted, a database
+event automatically executes a specific routine when something is done to a
+member of the DBC (such as a table or view) or to the DBC itself. These events
+always fire, whether you do something visually (for example, selecting a view
+in the Database Designer and pressing the Delete key) or programmatically
+(executing the DROP VIEW command), in a runtime or development environment,
+through VFP code or through the OLE DB provider. Events are available for
+almost any action you can take on any object in a DBC, such as opening or
+closing a table or view, creating a connection, dropping a relation, validating
+the DBC, and so forth.<o:p></o:p></p>
+
+<p class=MsoNormal>By default, database events are turned off. There are two
+ways you can turn them on for a given DBC. You can do it programmatically for
+the current database by issuing something like:<o:p></o:p></p>
+
+<p class=Preformatted>DBSETPROP(&quot;MyDatabase&quot;, &quot;Database&quot;,
+&quot;DBCEvents&quot;, .T.)<o:p></o:p></p>
+
+<p class=MsoNormal>You can also do it visually using the Set Events On check
+box in the Database Properties dialog (choose Properties from the Database menu
+or right-click in the Database Designer and choose Properties from the shortcut
+menu to display this dialog).<o:p></o:p></p>
+
+<p class=MsoNormal>The Version property of a DBC returned by DBGETPROP(),
+normally 10, is 11 if database events are turned on.<o:p></o:p></p>
+
+<p class=MsoNormal>A DBC (and therefore anything in the database) with events
+turned on cannot be accessed by previous versions of VFP or through the VFP
+ODBC driver. Of course, you can always turn events back off again, but only
+from within VFP 7. If you want to maintain compatibility with older
+applications but use database events in your new versions, have your new
+applications explicitly turn database events on when they start. Just be aware
+that while the new applications are running, the older versions won't be able
+to access the database.<o:p></o:p></p>
+
+<p class=MsoNormal>Turning database events on doesn't mean anything will happen;
+you have to specify what events you want to handle by creating routines with
+the names VFP expects for these events. The procedure names all begin with
+&quot;DBC_&quot;, followed by the name of the event (for example,
+DBC_BeforeOpenTable is the name of the procedure VFP executes when a table is
+opened). You can use the ALANGUAGE() function to fill an array with the names
+of database events.<o:p></o:p></p>
+
+<p class=MsoNormal>Database event code can be placed in the stored procedures
+of a DBC or in a separate PRG file. There are two ways you can specify a
+separate PRG file. Programmatically, use something like the following (where
+lcPRGName contains the name of an existing PRG):<o:p></o:p></p>
+
+<p class=Preformatted>DBSETPROP(&quot;MyDatabase&quot;, &quot;Database&quot;,
+&quot;DBCEventFileName&quot;, &quot;MyProcs.PRG&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal>The other way is to use the Events File check box and
+associated Open File button in the Database Properties dialog. Doing it
+visually doesn't automatically create the PRG; you must select an existing
+file, even if it's empty.<o:p></o:p></p>
+
+<p class=MsoNormal>Although you can type the database event names and parameter
+lists yourself, VFP can generate &quot;template&quot; code for you. Bring up
+the Database Properties dialog and select the events you want to handle in the
+Events list box (any events that already have code will appear in bold) and
+then click the Edit Code button. An edit window for either the stored
+procedures of the DBC or the separate PRG file, depending on which you're
+using, appears with template code for each of the events you selected. All you
+have to do is fill in the code to execute for each event.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=114 height=66
+  id="_x0000_i1025" src="..\..\..\..\..\HackGIFs\cool.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal style='margin-right:-.75pt'>If you want to work on
+  existing code for a single event or generate the template for it,
+  double-clicking on the event will do the trick.<o:p></o:p></p>
+  <p class=MsoNormal style='margin-right:-.75pt'>Hold down the Ctrl and Shift
+  keys while clicking the Edit Code button to generate template code with a ?
+  statement to display the event name and parameters passed (although we would
+  have preferred a DEBUGOUT statement instead).<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Most actions have both &quot;Before&quot; and
+&quot;After&quot; events; in the case of actions that have only a single event,
+that event is implicitly a Before event. While the After events just receive
+notification that an action took place, the Before events can actually prevent
+the action from occurring by returning False. For example, if
+DBC_BeforeOpenTable returns .F. unconditionally, you won't be able to open any
+tables or views. Obviously, you want to be careful how you handle these events
+or you can make your database unusable!<o:p></o:p></p>
+
+<p class=MsoNormal>Database events are available for the DBC itself, as well as
+for tables, views, relations, and connections.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=83 height=82
+  id="_x0000_i1026" src="..\..\..\..\..\HackGIFs\Design.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal style='margin-right:-.75pt'>The stored procedures of a
+  database are like a PRG file in that if there are two or more procedures with
+  the same name, the last one is the one executed when the procedure is called.
+  While this can be handy for testing—no need to comment out a procedure to
+  insert test code when you can just create another procedure below the
+  &quot;real&quot; one, using the same name, containing the test code—it can
+  cause you to pull your hair out trying to figure out why the code you've
+  written isn't executed and some other code is run instead.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H3>Database Events for Databases<o:p></o:p></p>
+
+<p class=MsoNormal>Almost everything you can do with a database has a DBC event
+associated with it; the only one missing is a CompileDatabase event.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=840 style='width:7.0in;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Event<o:p></o:p></b></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Fired When<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Activate<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The database becomes the current one.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterAppendProc<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After procedures are appended.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterCopyProc<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After procedures are copied.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterDBGetProp<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After DBGETPROP() is called.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterDBSetProp<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After DBSETPROP() is called.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterModifyProc<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After stored procedures are modified.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterValidateData<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After VALIDATE DATABASE is called.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeAppendProc<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before stored procedures are appended.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeCopyProc<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before stored procedures are copied.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeDBGetProp<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before DBGETPROP() is called.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeDBSetProp<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before DBSETPROP() is called.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeModifyProc<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before stored procedures are modified.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeValidateData<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before VALIDATE DATABASE is called.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>CloseData<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The database is closed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Deactivate<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The database is no longer the current one.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ModifyData<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The Database Designer is displayed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>OpenData<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The database is opened.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>PackData<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The database is packed.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H3>Database Events for Tables<o:p></o:p></p>
+
+<p class=MsoNormal>There's a database event associated with everything you can
+do structurally with a table. One thing is a little goofy: The REMOVE TABLE and
+DROP TABLE commands, which do the same thing, have a different set of events.
+If you want to trap the removal of a table, you have to be sure to handle both
+sets of events. (The trick to this, of course, is to designate one stored
+procedure you create to hold the logic for both events, and have each of the
+events call that stored procedure. Calling code in an event is poor OOP.)
+Another issue is that if you open a table with a different alias, that alias
+(rather than the name of the table) is passed for the table name parameter. The
+workaround is to use CURSORGETPROP(&quot;SourceName&quot;) to determine the
+real name of the table.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=840 style='width:7.0in;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Event<o:p></o:p></b></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Fired When<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterAddTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a free table is added to the database.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterCloseTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a table is closed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterCreateTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a table is created.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterDropTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a table is removed with the DROP TABLE command.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterModifyTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a table's structure is modified.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterOpenTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a table is opened.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterRemoveTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a table is removed with the REMOVE TABLE command or
+  interactively.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterRenameTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a table's name (but not DBF name) has been changed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeAddTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a free table is added to the database.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeCloseTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a table is closed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeCreateTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a table is created.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeDropTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a table is removed with the DROP TABLE command.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeModifyTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a table's structure is modified.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeOpenTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a table is opened.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeRemoveTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a table is removed with the REMOVE TABLE command or
+  interactively.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeRenameTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a table's name (but not DBF name) is changed.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H3>Database Events for Views<o:p></o:p></p>
+
+<p class=MsoNormal>As with tables, anything you can do with a view has a
+database event associated with it. Some actions with views, such as creating or
+opening, cause the source tables to be opened, so the BeforeOpenTable and
+AfterOpenTable events fire for those tables as well, which both makes sense and
+is desirable. Interestingly, these events fire even if the tables are already
+open, giving us a glimpse of some internal processes involved in opening the
+view (such as opening a second copy of the tables).<o:p></o:p></p>
+
+<p class=MsoNormal>As with tables, if a view is opened with a different alias,
+that alias (rather than the name of the view) is passed for the table name
+parameter in the Open and Close events.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=840 style='width:7.0in;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Event<o:p></o:p></b></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Fired When<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterCloseTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a view is closed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterCreateOffline<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a view is taken offline.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterCreateView<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a view is created.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterDropOffline<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a view is taken back online.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterDropView<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a view is deleted (whether DROP VIEW or DELETE VIEW
+  is used).<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterModifyView<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a view is modified.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterOpenTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a view is opened.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterRenameView<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a view is renamed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeCloseTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a view is closed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeCreateOffline<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a view is taken offline.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeCreateView<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a view is created.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeDropOffline<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a view is taken back online.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeDropView<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a view is deleted (whether DROP VIEW or DELETE VIEW
+  is used).<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeModifyView<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a view is modified.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeOpenTable<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a view is opened.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeRenameView<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a view is renamed.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H3>Database Events for Relations<o:p></o:p></p>
+
+<p class=MsoNormal>There are only two types of events for relations: adding and
+removing. When a relation is modified, it's first removed and then re-added, so
+both the drop and add events fire.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=840 style='width:7.0in;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Event<o:p></o:p></b></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Fired When<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterAddRelation<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a relation is created.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterDropRelation<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a relation is removed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeAddRelation<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a relation is created.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeDropRelation<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a relation is removed.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H3>Database Events for Connections<o:p></o:p></p>
+
+<p class=MsoNormal>There are four types of events for connections: adding,
+removing, renaming, and modifying.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=840 style='width:7.0in;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Event<o:p></o:p></b></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Fired When<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterCreateConnection<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a connection is created.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterDeleteConnection<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a connection is removed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterModifyConnection<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a connection is modified.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterRenameConnection<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>After a connection is renamed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeCreateConnection<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a connection is created.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeDeleteConnection<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a connection is removed.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeModifyConnection<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a connection is modified.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:1.75in;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>BeforeRenameConnection<o:p></o:p></p>
+  </td>
+  <td width=630 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Before a connection is renamed.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H3>What Have You Done For Me Lately?<o:p></o:p></p>
+
+<p class=MsoNormal>So, what kinds of things can you use database events for?
+Lots of things. See &quot;DBF, FPT, CDX, DBC—Hike!&quot; for some ideas we've
+come up with.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ALanguage(), Activate Database Event, AfterAddRelation,
+  AfterAddTable, AfterAppendProc, AfterCloseTable, AfterCopyProc,
+  AfterCreateConnection, AfterCreateOffline, AfterCreateTable, AfterCreateView,
+  AfterDBGetProp, AfterDBSetProp, AfterDeleteConnection, AfterDropOffline,
+  AfterDropRelation, AfterDropTable, AfterDropView, AfterModifyConnection,
+  AfterModifyProc, AfterModifyTable, AfterModifyView, AfterOpenTable,
+  AfterRemoveTable, AfterRenameConnection, AfterRenameTable, AfterRenameView,
+  AfterValidateData, BeforeAddRelation, BeforeAddTable, BeforeAppendProc,
+  BeforeCloseTable, BeforeCopyProc, BeforeCreateConnection,
+  BeforeCreateOffline, BeforeCreateTable, BeforeCreateView, BeforeDBGetProp,
+  BeforeDBSetProp, BeforeDeleteConnection, BeforeDropOffline,
+  BeforeDropRelation, BeforeDropTable, BeforeDropView, BeforeModifyConnection,
+  BeforeModifyProc, BeforeModifyTable, BeforeModifyView, BeforeOpenTable,
+  BeforeRemoveTable, BeforeRenameConnection, BeforeRenameTable,
+  BeforeRenameView, BeforeValidateData, CloseData, CursorGetProp(),
+  DBGetProp(), DBSetProp(), Deactivate Database Event, ModifyData, OpenData,
+  PackData<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

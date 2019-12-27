@@ -1,0 +1,892 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g823_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g823_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>OLEDragOver, OLEDragDrop</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>hack7s4.dot</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:32:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:32:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>795</o:Words>
+  <o:Characters>4532</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>39424</o:Bytes>
+  <o:Lines>37</o:Lines>
+  <o:Paragraphs>9</o:Paragraphs>
+  <o:CharactersWithSpaces>5565</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>OLEDragOver, OLEDragDrop<o:p></o:p></p>
+
+<p class=MsoNormal>As their names suggest, these two events fire when data is
+dragged over an object or dropped onto an object, using OLE drag and drop. They
+give you a chance to respond programmatically to the drag or the drop.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>PROCEDURE oObject.OLEDragOver<o:p></o:p></p>
+  <p class=Preformatted>LPARAMETERS oDataObject, nEffect, nButton, <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">           
+  </span>nShift, nXCoord, nYCoord, nState<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>PROCEDURE oObject.OLEDragDrop<o:p></o:p></p>
+  <p class=Preformatted>LPARAMETERS oDataObject, nEffect, nButton, <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">           
+  </span>nShift, nXCoord, nYCoord<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Value<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Meaning<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>oDataObject<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Object<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>A reference to a DataObject containing the data being
+  dragged and information about it.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=4 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nEffect<o:p></o:p></p>
+  <p class=MsoNormal>(all applicable values are added together)<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>0<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>This target won't accept this drop.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>1<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The drop results in a copy.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>2<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The drop results in a move.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>4<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The drop copies the dropped data into the target and
+  creates a link between the original source and the target. Because of VFP's
+  caching of resources, this isn't useful for drop targets in VFP.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=3 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nButton <o:p></o:p></p>
+  <p class=MsoNormal>(all applicable values are added together)<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>1<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The left button was used for the drag.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>2<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The right button was used for the drag.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>4<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The middle button was used for the drag.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=3 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nShift<o:p></o:p></p>
+  <p class=MsoNormal>(all applicable values are added together)<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>1<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The Shift key was held down.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>2<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The Ctrl key was held down.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>4<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The Alt key was held down.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nXCoord, nYCoord<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The mouse position in pixels, relative to the form, when
+  the event fired.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nState<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>0<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The mouse is entering the object.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>1<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The mouse is leaving the object.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>2<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The mouse is inside the object.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>First, we think some of the parameter names are less than
+illuminating. We'd use nTargetReaction rather than nEffect, nModifierKeys
+rather than nShift, and nWhereAreWe instead of nState. However, since the
+parameter declarations are automatically placed in the methods, we show the
+official names in the table.<o:p></o:p></p>
+
+<p class=MsoNormal>These events belong to the drop target in OLE drag and drop.
+That is, they fire for the object under the mouse to indicate that the user is
+either dragging something over the object (OLEDragOver) or attempting to drop
+something into the object (OLEDragDrop). The drag source has events that fire
+right after these: OLEGiveFeedback fires after OLEDragOver, while
+OLECompleteDrag fires after OLEDragDrop. However, if either the source or the
+target is not a VFP object, you don't have access to one set or the other of
+these methods.<o:p></o:p></p>
+
+<p class=MsoNormal>These events fire only for objects whose OLEDropMode is set
+to 1-Enabled. If OLEDropMode is set to 2-Pass to Container, the container's
+OLEDragOver and OLEDragDrop events fire instead.<o:p></o:p></p>
+
+<p class=MsoNormal>Several of the parameters are bit-math things. The value you
+see is the sum of all the choices that apply. So, for example, if the user
+holds down Shift and Alt, nModifierKeys contains 5.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1025" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Both nButton and nShift are unreliable when nState is 1;
+  that is, when the mouse is leaving the object. Sometimes they contain the
+  right value, but often they contain 0. <o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=77
+  id="_x0000_i1026" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Some ActiveX controls don't fire these events, while others
+  do. We can't blame this on the VFP team, of course, since they didn't write
+  these controls. Bottom line here is that you need to test whether the control
+  you're using pays attention. The simplest way to do so is to put WAIT WINDOW
+  PROGRAM() NOWAIT in each of the relevant events on a test form and run it.
+  We'd rather recommend DEBUGOUT, but we haven't found it to be reliable even
+  in the controls that do fire these events. Sometimes we see a WAIT WINDOW
+  when a DEBUGOUT in the same method produces no results. Frankly, we think the
+  problem is with the controls, not with VFP, because some controls handle
+  DEBUGOUT just fine.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>So, what is it you use these events for? To take action
+based on the user's movements. You can inquire as to whether the data being dragged
+is available in a format this object can accept and set the target's properties
+accordingly. You can also reject a drop if you don't like its looks.<o:p></o:p></p>
+
+<p class=MsoNormal>For OLEDragDrop, there are various default behaviors based
+on the objects involved and the buttons pressed. For example, dragging text
+from a text box to an edit box moves the highlighted text normally, but copies
+it if Ctrl is pressed.<o:p></o:p></p>
+
+<p class=MsoNormal>You can change the results by writing appropriate code
+involving the DataObject's GetFormat and GetData methods, as well as, perhaps,
+checking the nButton and nShift values. However, the default behavior still
+occurs at the end of the method unless you also include NODEFAULT. In addition,
+the drag source's OLECompleteDrag is called at the end of OLEDragDrop. It
+receives as parameters the current value of nEffect, so if you do something
+different from what was indicated by the value received, you should give
+nEffect a new, appropriate value, so OLECompleteDrag can respond correctly.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* You might put this code in a form's DragOver event <o:p></o:p></p>
+  <p class=Preformatted>* to allow it to accept data passed from one of its
+  controls<o:p></o:p></p>
+  <p class=Preformatted>IF oDataObject.GetFormat(1)<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  
+  </span>This.OleDropHasData = 1<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  
+  </span>This.OLEDropEffects = 1<o:p></o:p></p>
+  <p class=Preformatted>ENDIF<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* Suppose I want a drop into an edit box to copy rather
+  than<o:p></o:p></p>
+  <p class=Preformatted>* move, despite the default. This code could go in
+  OLEDragDrop<o:p></o:p></p>
+  <p class=Preformatted>nEffect = 1<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; reset nEffect so OLECompleteDrag knows the score<o:p></o:p></p>
+  <p class=Preformatted>This.Value = oDataObject.GetData(1) &amp;&amp; copy the
+  data<o:p></o:p></p>
+  <p class=Preformatted>NODEFAULT<span style="mso-spacerun: yes">   
+  </span>&amp;&amp; prevent the default behavior<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>DataObject, GetData, GetFormat, NoDefault, OLE drag and
+  drop, OLECompleteDrag, OLEDrag, OLEDropEffects, OLEDropHasData, OLEDropMode,
+  OLEGiveFeedback, OLEStartDrag<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

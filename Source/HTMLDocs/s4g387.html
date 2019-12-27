@@ -1,0 +1,897 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g387_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g387_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>RowSource, RowSourceType</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>hack7s4.dot</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>2</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:27:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:27:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>921</o:Words>
+  <o:Characters>5253</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>39936</o:Bytes>
+  <o:Lines>43</o:Lines>
+  <o:Paragraphs>10</o:Paragraphs>
+  <o:CharactersWithSpaces>6451</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+h1
+	{mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	color:black;
+	mso-font-kerning:0pt;
+	layout-grid-mode:line;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+span.msoIns
+	{mso-style-type:export-only;
+	mso-style-name:"";
+	text-decoration:underline;
+	text-underline:single;
+	color:teal;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:1107094594;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1932798728;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:-1559065160;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:1902030028;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-191831902;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:505949462;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-201398478;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:716340020;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:922619266;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-666307578;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>RowSource, RowSourceType<o:p></o:p></p>
+
+<p class=MsoNormal>These two properties combine to determine the contents of a
+list box or combo box. RowSourceType indicates the type of data contained,
+while RowSource contains either the actual data or a pointer to it.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>oObject.RowSourceType = nSourceType<o:p></o:p></p>
+  <p class=Preformatted>nSourceType = oObject.RowSourceType<o:p></o:p></p>
+  <p class=Preformatted>oObject.RowSource = cSource<o:p></o:p></p>
+  <p class=Preformatted>cSource = oObject.RowSource<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>There are 10 choices for nSourceType, from 0 to 9. The
+choice you make for RowSourceType determines the kind of value you specify for
+RowSource. This table shows the various options:<o:p></o:p></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .75pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=167 valign=top style='width:99.9pt;border:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>RowSourceType<o:p></o:p></b></p>
+  </td>
+  <td width=128 valign=top style='width:76.5pt;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Meaning<o:p></o:p></b></p>
+  </td>
+  <td width=504 valign=top style='width:4.2in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>RowSource Contents<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=167 valign=top style='width:99.9pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0<o:p></o:p></p>
+  </td>
+  <td width=128 valign=top style='width:76.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>None<o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:4.2in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Nothing—combo or list data is added using either the
+  AddItem or AddListItem methods or by directly populating List or ListItem.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=167 valign=top style='width:99.9pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1<o:p></o:p></p>
+  </td>
+  <td width=128 valign=top style='width:76.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Value<o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:4.2in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The actual items for the list or combo as a
+  comma-separated list. If ColumnCount is more than 1, the items are
+  distributed into all the columns going across one row at a time. Don't leave
+  spaces after the commas; these are interpreted as the first character of the
+  next item. No need to put quotes in the list, either, as they're also
+  interpreted as part of the items.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=167 valign=top style='width:99.9pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>2<o:p></o:p></p>
+  </td>
+  <td width=128 valign=top style='width:76.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Alias<o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:4.2in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The alias for an open table whose data is used to populate
+  the list or combo. If ColumnCount is greater than 0, the first ColumnCount
+  fields are shown. If ColumnCount is 0, you see the first field only, just as
+  if ColumnCount were 1.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=167 valign=top style='width:99.9pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>3<o:p></o:p></p>
+  </td>
+  <td width=128 valign=top style='width:76.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>SQL Statement<o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:4.2in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>A SELECT-SQL statement, the results of which populate the
+  list or combo. ColumnCount is treated as with RowSourceType=2. Be sure to do
+  something with the query results—if there's no INTO clause, a Browse appears
+  when the query executes on the way into the form.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=167 valign=top style='width:99.9pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>4<o:p></o:p></p>
+  </td>
+  <td width=128 valign=top style='width:76.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Query<o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:4.2in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The name of a QPR file. The query is run and the results
+  populate the list or combo. ColumnCount is treated as with RowSourceType=2.
+  Again, make sure you send the results INTO somewhere or you'll see the
+  default Browse.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=167 valign=top style='width:99.9pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>5<o:p></o:p></p>
+  </td>
+  <td width=128 valign=top style='width:76.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Array<o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:4.2in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The name of an array used to populate the list or combo.
+  If the array is a property of an object, be sure to precede its name with a
+  reference to the object (such as &quot;This&quot; or &quot;ThisForm.&quot;)
+  If ColumnCount is greater than 0, the first ColumnCount columns of the array
+  are used.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=167 valign=top style='width:99.9pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>6<o:p></o:p></p>
+  </td>
+  <td width=128 valign=top style='width:76.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Fields<o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:4.2in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>A list of fields from a single table. Only the first field
+  should be preceded by the alias of the table. Field names are
+  comma-delimited. Normally, the number of fields in the list should equal
+  ColumnCount.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=167 valign=top style='width:99.9pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>7<o:p></o:p></p>
+  </td>
+  <td width=128 valign=top style='width:76.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Files<o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:4.2in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>A file skeleton. The list or combo is populated with the
+  names of files in the current directory matching the skeleton, plus items for
+  navigating directories. Make sure ColumnCount = 1 or 0 or you'll get really
+  weird results.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=167 valign=top style='width:99.9pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>8<o:p></o:p></p>
+  </td>
+  <td width=128 valign=top style='width:76.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Structure<o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:4.2in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The alias of an open table. The list or combo is populated
+  with the names of fields from the specified table. Field names occupy the
+  first column. Any other columns are empty.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=167 valign=top style='width:99.9pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>9<o:p></o:p></p>
+  </td>
+  <td width=128 valign=top style='width:76.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Popup<o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:4.2in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The name of a popup defined elsewhere. The popup's items
+  are used to populate the list or combo.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The last three RowSourceTypes are really included only for
+compatibility with FoxPro 2.x. We can't see a whole lot of reasons to use any
+of them. For a file list, you're better off using GETFILE() or PUTFILE() or the
+Common Dialogs control. We didn't use structure popups or lists in our 2.x
+apps—we're not planning to start now. (The exception, of course, is for
+developers' tools.) As for lists or combos based on popups, there were reasons to
+do it in 2.x, but we think RowSourceType=0 is a far better alternative. The
+only good arguments we've seen for using RowSourceType = 9 are to allow each
+element in a list or combo to be colored separately, something that's
+occasionally useful, but not your run-of-the-mill technique.<o:p></o:p></p>
+
+<p class=MsoNormal>Be careful with RowSourceTypes 2 and 6. They're connected
+right to the underlying tables, and moving the cursor in the list moves the
+record pointer. Among other things, this means that you should never set the
+RowSource and the ControlSource of a type 6 combo to the same field.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=77
+  id="_x0000_i1025" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>It's not just making a choice in a combo that moves the
+  record pointer. Simply passing the mouse over an item in a dropped combo so
+  that the item is highlighted is enough to position the record pointer on that
+  item. The pointer doesn't go back where it came from if you close the combo
+  without making a selection.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Although RowSourceType 2 says you should only give the
+alias, it actually behaves like RowSourceType 6, if you specify a list of
+fields.<o:p></o:p></p>
+
+<p class=MsoNormal>With RowSourceType set to 0, 1, or 5, you can disable an
+item in the list by preceding it with a backslash (&quot;\&quot;). To show an
+item beginning with a backslash, you need to use two backslashes.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1026" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Doubling the backslash doesn't work with RowSourceType 5.
+  Once there's a backslash in front of the text, the item is disabled. A double
+  backslash shows up as a disabled item that begins with a backslash.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>You can add a horizontal divider to the list by specifying
+the text for an item as &quot;\-&quot;, but this works only with RowSourceType
+0, 1, or 9.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=77
+  id="_x0000_i1027" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>In VFP 7, divider lines don't hit either side of the list
+  or combo. In earlier versions, divider lines correctly run from one edge to
+  the other. It's likely that having the lines not go all the way to the edges
+  is by design, but the actual implementation is still flawed—the lines simply
+  don't go far enough.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>We find that we use RowSourceTypes 0, 3, 5 and 6 the most.
+RowSourceType 1 is handy for situations where you know the list of choices
+can't change. <o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* This code in the Init for a list box populates<o:p></o:p></p>
+  <p class=Preformatted>* an array that's a property of the form and <o:p></o:p></p>
+  <p class=Preformatted>* sets the list to use the array.<o:p></o:p></p>
+  <p class=Preformatted>SELECT Last_Name,First_Name,Employee_Id ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>FROM Employee
+  ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>INTO ARRAY
+  ThisForm.aEmps<o:p></o:p></p>
+  <p class=Preformatted>This.RowSourceType = 5<o:p></o:p></p>
+  <p class=Preformatted>This.RowSource = &quot;ThisForm.aEmps&quot;<o:p></o:p></p>
+  <p class=Preformatted>This.ColumnCount = 2<o:p></o:p></p>
+  <p class=Preformatted>This.ColumnWidths = &quot;80,60&quot;<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* This code in the Init of a form<o:p></o:p></p>
+  <p class=Preformatted>* populates a combo on that form<o:p></o:p></p>
+  <p class=Preformatted>* with selected items from Customer.<o:p></o:p></p>
+  <p class=Preformatted>* It assumes the combo's RowSourceType is <o:p></o:p></p>
+  <p class=Preformatted>* set to the default 0.<o:p></o:p></p>
+  <p class=Preformatted>ThisForm.cboFaxTo.ColumnCount=2<o:p></o:p></p>
+  <p class=Preformatted>ThisForm.cboFaxTo.ColumnWidths=&quot;150,120&quot;<o:p></o:p></p>
+  <p class=Preformatted>SELECT Customer<o:p></o:p></p>
+  <p class=Preformatted>SCAN FOR NOT EMPTY(Fax)<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>WITH
+  ThisForm.cboFaxTo<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   
+  </span>.AddListItem(Company_Name,.NewItemId+1,1)<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   
+  </span>.AddListItem(Contact_Name,.NewItemId,2)<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>ENDWITH<o:p></o:p></p>
+  <p class=Preformatted>ENDSCAN<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AddItem, AddListItem, ColumnCount, ComboBox, List
+  Property, ListBox, ListItem<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-list:none;mso-list-ins:"Tamar E\. Granor" 20020226T0805'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

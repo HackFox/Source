@@ -1,0 +1,1334 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g266_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g266_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Candidate(), Primary(), Descending(), For(), Sys(2021), Key(), Sys(14),
+Tag(), Unique(), ATagInfo()</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:26:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:26:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1760</o:Words>
+  <o:Characters>10033</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>53760</o:Bytes>
+  <o:Lines>83</o:Lines>
+  <o:Paragraphs>20</o:Paragraphs>
+  <o:CharactersWithSpaces>12321</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+p.Bullet, li.Bullet, div.Bullet
+	{mso-style-name:Bullet;
+	mso-style-parent:"Definition List";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	mso-pagination:none;
+	mso-list:l10 level1 lfo11;
+	tab-stops:list .5in;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l10
+	{mso-list-id:1839037046;
+	mso-list-type:simple;
+	mso-list-template-ids:799194848;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:Bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>Candidate(), Primary(), Descending(), For(), Sys(2021), Key(),
+Sys(14), Tag(), Unique(), ATagInfo()<o:p></o:p></p>
+
+<p class=MsoNormal>These functions give you information about an index, either
+a stand-alone index or a tag. DESCENDING(), FOR() and, to a lesser extent,
+UNIQUE(), were welcome additions in FoxPro 2.6. CANDIDATE() and PRIMARY() were
+added in VFP 3. This group of functions tells you everything you'd need to know
+about an index in order to re-create it (except, of course, for the
+shortcomings we point out below). ATAGINFO(), added in VFP 7, fills an array
+with complete information about the indexes for a table, making the other
+functions somewhat less important for this purpose now.<o:p></o:p></p>
+
+<p class=MsoNormal>These functions can all give information about indexes for
+the current work area or for another work area. For the specified work area,
+most let you get index information for the current master index or another
+index. Some of them let you specify a particular CDX file, as well.<o:p></o:p></p>
+
+<p class=MsoNormal>The indexes open for any table are numbered based on the
+type of index and the order in which it was opened, with a catch. The order of
+indexes is: <o:p></o:p></p>
+
+<p class=Bullet><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Stand-alone IDX files, in the order they were opened; <o:p></o:p></p>
+
+<p class=Bullet><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Tags in the structural CDX file in their internal
+order; <o:p></o:p></p>
+
+<p class=Bullet><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Tags in any other CDX files in their internal order,
+with the CDX's in the order they were opened. <o:p></o:p></p>
+
+<p class=MsoNormal>This holds true even if you list a CDX before an IDX in the
+USE command.<o:p></o:p></p>
+
+<p class=MsoNormal>So what's the catch? If you open additional indexes with SET
+INDEX, the order may change because stand-alone IDX files always get the lowest
+numbers.<o:p></o:p></p>
+
+<p class=MsoNormal>All these functions take their parameters more or less from
+the following group, though some functions have more parameters than others.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Value<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Meaning<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cIndexName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of a compound CDX file or a stand-alone IDX file,
+  about which to return information.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Return information about either the current index or all
+  indexes, depending on the function.<span style='color:windowtext'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nIndexNumber<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The relative position of the index the function will
+  report on.<span style='color:windowtext'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Return information about the master tag in the specified
+  work area.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nWorkArea<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Return information about the specified index for the table
+  open in work area nWorkArea.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>If cAlias is also omitted, return information about the
+  specified index for the table open in the current work area.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cAlias<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Return information about the specified index for the table
+  open with alias cAlias.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>If nWorkArea is also omitted, return information about the
+  specified index for the table open in the current work area.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ArrayName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Array Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The array to fill with index information.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nIndexes<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The number of rows in the array.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>lIsCandidate = CANDIDATE( [ nIndexNumber <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun:
+  yes">                          </span>[, nWorkArea | cAlias ] ] )<o:p></o:p></p>
+  <p class=Preformatted>lIsPrimary = PRIMARY( [ nIndexNumber <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                
+  </span><span style="mso-spacerun: yes">     </span>[, nWorkArea | cAlias ] ]
+  )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>These two functions tell you whether the specified index is
+either a candidate or primary index. Primary indexes can be defined only for
+tables contained in a database; candidate indexes can be defined for any Visual
+FoxPro table. Candidate indexes are defined with the ADD UNIQUE clause of ALTER
+TABLE, the UNIQUE clause of CREATE TABLE, or the CANDIDATE (not the UNIQUE!)
+keyword of INDEX. Primary indexes are defined with the ADD PRIMARY clause of
+ALTER TABLE or the PRIMARY KEY clause of CREATE TABLE. Although candidate and
+primary indexes have a lot in common, a given tag is one or the other. So, for
+any given tag, at most one of these two functions returns .T.<o:p></o:p></p>
+
+<p class=MsoNormal>Only index tags in a compound index file (CDX) can be
+primary or candidate keys, so these functions always return .F. for stand-alone
+indexes (IDX). If you omit nIndexNumber, these functions return information
+about the master index tag (the one you SET ORDER TO).<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>OPEN DATA TasTrade<o:p></o:p></p>
+  <p class=Preformatted>USE Customer<o:p></o:p></p>
+  <p class=Preformatted>* This table has two tags, Company_Na, a regular index<o:p></o:p></p>
+  <p class=Preformatted>* and Customer_I, the primary index<o:p></o:p></p>
+  <p class=Preformatted>? CANDIDATE(1)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; Returns .F.<o:p></o:p></p>
+  <p class=Preformatted>? CANDIDATE(2)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; Returns .F.<o:p></o:p></p>
+  <p class=Preformatted>? PRIMARY(1)<span style="mso-spacerun: yes">   
+  </span>&amp;&amp; Returns .F.<o:p></o:p></p>
+  <p class=Preformatted>? PRIMARY(2)<span style="mso-spacerun: yes">   
+  </span>&amp;&amp; Returns .T.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>lIsDescending = DESCENDING( [ cIndexName, ] nIndexNumber
+  <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun:
+  yes">                            </span>[, nWorkArea | cAlias ] )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>It used to be hard to find out if an index was in ascending
+or descending order. You had to get SET(&quot;ORDER&quot;) and parse for the
+string &quot;DESCENDING&quot;. If it was there, you had a descending index; if
+not, it was ascending. Plus, you could ask about only the master index in the
+current work area. DESCENDING() was added in FoxPro 2.6 and makes life much
+simpler. <o:p></o:p></p>
+
+<p class=MsoNormal>There's one ugly twist with both SET(&quot;ORDER&quot;) and
+DESCENDING(), though. They don't tell how an index <i style='mso-bidi-font-style:
+normal'>was</i> defined; they tell how it is <i style='mso-bidi-font-style:
+normal'>now</i>. There's no way to be absolutely sure whether an index was
+defined as ascending or descending except to close the table in every work area
+where it's in use, then open it and test the appropriate index immediately. <o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>USE Customer<o:p></o:p></p>
+  <p class=Preformatted>DISPLAY STATUS<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; shows two tags: Company_Na and Customer_I<o:p></o:p></p>
+  <p class=Preformatted>? DESCENDING(1)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; returns .F.<o:p></o:p></p>
+  <p class=Preformatted>? DESCENDING(2)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; returns .F.<o:p></o:p></p>
+  <p class=Preformatted>SET ORDER TO Company_Na DESCENDING<span
+  style="mso-spacerun: yes">  </span>&amp;&amp; reverse name order<o:p></o:p></p>
+  <p class=Preformatted>? DESCENDING(1)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; returns .T.<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* Now for the complication<o:p></o:p></p>
+  <p class=Preformatted>SELECT 0<o:p></o:p></p>
+  <p class=Preformatted>USE Customer AGAIN ALIAS MoreCust<o:p></o:p></p>
+  <p class=Preformatted>? DESCENDING(1)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; returns .T.!<o:p></o:p></p>
+  <p class=Preformatted>? DESCENDING(2)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; returns .F.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The example shows the problem. When you USE a table AGAIN,
+it picks up the current direction of any indexes opened with it. (It also can
+close some open indexes, but that has nothing to do with DESCENDING()—see USE
+for a discussion of that bug.)<o:p></o:p></p>
+
+<p class=MsoNormal>In spite of this problem, DESCENDING() is a handy function
+and we're glad to have it.<span style='color:windowtext'><o:p></o:p></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>cFilter = FOR( [ nIndexNumber [, nWorkArea | cAlias ] ]
+  )<o:p></o:p></p>
+  <p class=Preformatted>cFilter = SYS( 2021, nIndexNumber [, nWorkArea | cAlias
+  ] )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>These two functions are almost identical. FOR() is another
+of the FoxPro 2.6 enhancements. The Help file says that FOR() is there for
+dBASE compatibility—it lies. We think it's far better to use FOR() in a program
+than SYS(2021). Someone reading your program will understand what FOR() does;
+SYS(2021) will send them running to the manual. The only difference between
+them is that if you omit the nIndexNumber parameter, FOR() tells you about the
+master index while SYS(2021) generates an error. FOR() looks better all the
+time. You can use this feature (omitting the index number) only in the current
+work area. For information about a filter in another work area, you have to
+pass the index number as well as the work area or alias.<o:p></o:p></p>
+
+<p class=MsoNormal>So what do these functions do, anyway? They return the
+filter expression for a filtered index. That is, if your original INDEX command
+included a FOR clause, these functions return the expression you placed in the
+FOR clause. If the index isn't filtered, the functions return the empty string.
+Of course, Rushmore can't use filtered indexes, so most of the time they're not
+worth having.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=77
+  id="_x0000_i1025" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>FOR() returns the filter expression in all caps. This is
+  no big deal, except for one thing. Even a string enclosed in quotes in the
+  filter expression is returned in capital letters. That means that you can't
+  necessarily re-create the index using the results of this function. Because
+  SYS(2021) is smart enough to not capitalize quoted strings, we suppose we
+  have to change our minds and our advice and tell you to use SYS(2021) even
+  though FOR() is more readable. ATAGINFO() also works correctly, so if you
+  want more than just the filter expression, use that function instead.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>USE Customer<o:p></o:p></p>
+  <p class=Preformatted>* create a filtered index<o:p></o:p></p>
+  <p class=Preformatted>INDEX ON UPPER(Company_Name) ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">      </span>FOR
+  Country = &quot;France&quot; ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">      </span>TAG
+  FrComps<o:p></o:p></p>
+  <p class=Preformatted>? FOR()<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; The new index is the master index<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        
+  </span>&amp;&amp; This returns the filter expression:<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        
+  </span>&amp;&amp; COUNTRY=&quot;FRANCE&quot;<o:p></o:p></p>
+  <p class=Preformatted>? SYS(2021,3) &amp;&amp; Returns: COUNTRY =
+  &quot;France&quot;<o:p></o:p></p>
+  <p class=Preformatted>? FOR(1) &amp;&amp; Returns &quot;&quot; since the
+  first tag, Company_Na<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        
+  </span>&amp;&amp; has no filter.<o:p></o:p></p>
+  <p class=Preformatted>* Don't forget to delete this tag<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>cKey = KEY( [ [ cIndexName, ] nIndexNumber <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span><span
+  style="mso-spacerun: yes">         </span>[, nWorkArea | cAlias ] ] )<o:p></o:p></p>
+  <p class=Preformatted>cKey = SYS( 14, nIndexNumber [, nWorkArea | cAlias ] )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>These two functions are also almost identical, but KEY() is
+more capable. Both return the key expression for the specified index. KEY()
+allows you to name a particular compound index (CDX) file, while SYS(14)
+requires an index number from the full set of open indexes. Also, like FOR(),
+with no nIndexNumber parameter, KEY() returns information about the master
+index. In the same circumstances, SYS(14) gives an error. For both of these
+reasons as well as for readability, we recommend you use KEY().<o:p></o:p></p>
+
+<p class=MsoNormal>Both functions return the key expression in all caps. If you
+go too far and there aren't as many indexes as nIndexNumber, they return the
+empty string. Very handy for looping through index information.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>USE Customer<o:p></o:p></p>
+  <p class=Preformatted>* Customer has two index tags, Company_Na and
+  Customer_I<o:p></o:p></p>
+  <p class=Preformatted>? KEY(1)<span style="mso-spacerun: yes">    
+  </span>&amp;&amp; Returns &quot;UPPER(COMPANY_NAME)&quot;<o:p></o:p></p>
+  <p class=Preformatted>? SYS(14,2)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; Returns &quot;CUSTOMER_ID&quot;<o:p></o:p></p>
+  <p class=Preformatted>SELECT 0<span style="mso-spacerun: yes">    
+  </span>&amp;&amp; Go to another work area<o:p></o:p></p>
+  <p class=Preformatted>? KEY(2,&quot;Customer&quot;)<span style="mso-spacerun:
+  yes">  </span>&amp;&amp; Returns &quot;CUSTOMER_ID&quot;<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>CTagName = TAG( [ [ cIndexName, ] nIndexNumber <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">               
+  </span>[, nWorkArea | cAlias ] ] )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>This function tells you the name of an index. Despite the
+function name, it also returns names for stand-alone indexes. The name of the
+tag or the name portion of the IDX filename is returned in all caps.<o:p></o:p></p>
+
+<p class=MsoNormal>If you omit nIndexNumber, TAG() returns the name of the
+master index (the same result as ORDER()).<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>USE Customer<o:p></o:p></p>
+  <p class=Preformatted>? TAG(1) &amp;&amp; Returns &quot;COMPANY_NA&quot;<o:p></o:p></p>
+  <p class=Preformatted>? TAG(2) &amp;&amp; Returns &quot;CUSTOMER_I&quot;<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>lIsUnique = UNIQUE( [ [ cIndexName, ] nIndexNumber <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                   
+  </span>[, nWorkArea | cAlias ] ] )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>This function tells you whether the index was created with
+an Xbase unique index. This is not the same at all as the ADD UNIQUE clause of
+ALTER TABLE or the UNIQUE keyword of CREATE TABLE. Unique indexes in Xbase are
+a disaster waiting to happen, and we recommend you run like the wind from them.
+(For details, see INDEX.)<o:p></o:p></p>
+
+<p class=MsoNormal>UNIQUE() returns .T. if the specified index was created with
+the UNIQUE keyword of INDEX or with SET UNIQUE ON. If nIndexNumber is omitted,
+UNIQUE() tells you about the master index.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>USE Customer ORDER Company_Na<o:p></o:p></p>
+  <p class=Preformatted>? UNIQUE()<span style="mso-spacerun: yes">  
+  </span>&amp;&amp; Returns .F.<o:p></o:p></p>
+  <p class=Preformatted>? UNIQUE(2)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; Returns .F.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>nIndexes = ATAGINFO( ArrayName [, cIndexName, <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span><span
+  style="mso-spacerun: yes">                  </span>[, nWorkArea | cAlias ] ]
+  )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>ATAGINFO(), added in VFP 7, gets all of the information
+about the tags of a table. It does in a single function what in earlier
+versions of VFP you had to use all the other functions in this group and about
+5,000 lines of code to do. (Well, perhaps that's an exaggeration, but our
+version of this function, provided in earlier editions of this book, was over
+100 lines.) It even works with non-structural indexes as long as they're open.
+This function fills the specified array with one row per tag and the following
+columns of information, and returns the number of rows in the array.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=789 style='width:473.25pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=81 valign=top style='width:48.85pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Column<o:p></o:p></b></p>
+  </td>
+  <td width=131 valign=top style='width:78.3pt;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Type<o:p></o:p></b></p>
+  </td>
+  <td width=381 valign=top style='width:228.35pt;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Content<o:p></o:p></b></p>
+  </td>
+  <td width=196 valign=top style='width:117.75pt;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Replaces<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=81 valign=top style='width:48.85pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>1<o:p></o:p></p>
+  </td>
+  <td width=131 valign=top style='width:78.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=381 valign=top style='width:228.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Tag or IDX name<o:p></o:p></p>
+  </td>
+  <td width=196 valign=top style='width:117.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>TAG()<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=81 valign=top style='width:48.85pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>2<o:p></o:p></p>
+  </td>
+  <td width=131 valign=top style='width:78.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=381 valign=top style='width:228.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Tag type: &quot;PRIMARY&quot;, &quot;CANDIDATE&quot;,
+  &quot;REGULAR&quot;, or &quot;UNIQUE&quot;<o:p></o:p></p>
+  </td>
+  <td width=196 valign=top style='width:117.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>PRIMARY(), CANDIDATE(), UNIQUE()<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=81 valign=top style='width:48.85pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>3<o:p></o:p></p>
+  </td>
+  <td width=131 valign=top style='width:78.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=381 valign=top style='width:228.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Key expression<o:p></o:p></p>
+  </td>
+  <td width=196 valign=top style='width:117.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>KEY(), SYS(14)<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=81 valign=top style='width:48.85pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>4<o:p></o:p></p>
+  </td>
+  <td width=131 valign=top style='width:78.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=381 valign=top style='width:228.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Filter expression<o:p></o:p></p>
+  </td>
+  <td width=196 valign=top style='width:117.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>FOR(), SYS(2021)<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=81 valign=top style='width:48.85pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>5<o:p></o:p></p>
+  </td>
+  <td width=131 valign=top style='width:78.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=381 valign=top style='width:228.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Order: &quot;ASCENDING&quot; or &quot;DESCENDING&quot;<o:p></o:p></p>
+  </td>
+  <td width=196 valign=top style='width:117.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>DESCENDING()<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=81 valign=top style='width:48.85pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>6<o:p></o:p></p>
+  </td>
+  <td width=131 valign=top style='width:78.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=381 valign=top style='width:228.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Collate sequence<o:p></o:p></p>
+  </td>
+  <td width=196 valign=top style='width:117.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>IDXCOLLATE()<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>As mentioned earlier, unlike FOR(), ATAGINFO() is smart
+enough to keep the case of quoted strings in the returned filter expression
+(the fourth column of the array).<o:p></o:p></p>
+
+<p class=MsoNormal>Specify cIndexName to fill the array with information about
+the tags in the specified CDX or IDX only; omit this parameter to get
+information about all tags in all open CDX and IDX files.<o:p></o:p></p>
+
+<p class=MsoNormal>ATAGINFO() is ideal for creating metadata that can later be
+used to re-create the indexes of a table if they become corrupted (although
+you'll also need to get information about persistent relationships in the case
+of a table in a database.)<span style='color:windowtext'><o:p></o:p></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>USE Customer<o:p></o:p></p>
+  <p class=Preformatted>* Customer has two index tags, Company_Na and
+  Customer_I<o:p></o:p></p>
+  <p class=Preformatted>* Create another one in an IDX<o:p></o:p></p>
+  <p class=Preformatted>INDEX ON UPPER(Address) TO Temp<o:p></o:p></p>
+  <p class=Preformatted>ATAGINFO(laTags)<o:p></o:p></p>
+  <p class=Preformatted>DISPLAY MEMORY LIKE laTags<o:p></o:p></p>
+  <p class=Preformatted>* Don't forget to delete this tag<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Alter Table, Create Table, IDXCollate(), Index, Order(),
+  Set Index, Set Order, TagCount(), TagNo(), Use<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,874 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g654_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g654_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>GetPEM(), PEMStatus()</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>hack7s4.dot</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:30:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:30:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>784</o:Words>
+  <o:Characters>4473</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>40448</o:Bytes>
+  <o:Lines>37</o:Lines>
+  <o:Paragraphs>8</o:Paragraphs>
+  <o:CharactersWithSpaces>5493</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>GetPEM(), PEMStatus()<o:p></o:p></p>
+
+<p class=MsoNormal>These two functions were added in version 3.0b. They let you
+ask questions about the properties, events and methods of objects and classes.
+Although these two are extremely useful, they have some problems. <o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>uValue = GetPEM( oObject | cClass, cPEMName )<o:p></o:p></p>
+  <p class=Preformatted>uResult = PEMStatus( oObject | cClass, <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                    
+  </span>cPEMName | cObjectName, nAttribute )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Value<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Meaning<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>oObject<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Object<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The object about which PEM information is to be returned.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cClass<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of a class about which PEM information is to be
+  returned.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cPEMName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of the property, event or method about which
+  information is to be returned.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cObjectName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name of a contained object of oObject or cClass.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=7 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nAttribute<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>0<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Has the property changed?<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>1<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Is the property read-only?<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>2<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Is the PEM protected?<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>3<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Which is this: property, event, method or (contained)
+  object?<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>4<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Is the PEM user-defined?<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>5<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Is there such a PEM?<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>6<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Is this PEM inherited from a class higher in the class
+  hierarchy?<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>uValue<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character, Numeric, Currency, Date, DateTime, Logical<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The current value of the specified PEM. If cPEMName refers
+  to an event or method, uValue receives (as a character string) the code
+  contained in the event or method.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>uResult<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Logical or Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The value of the specified attribute for the specified
+  PEM.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>These functions let you poke around in an object or a class
+definition to see what's what. Used together with AMEMBERS(), you can put
+together quite a complete picture of an object or class.<o:p></o:p></p>
+
+<p class=MsoNormal>GetPEM() might seem a little redundant for properties. After
+all, you can just check the property's value. But having one function that
+works on both properties and methods makes lots of coding easier. We suspect
+GetPEM() will find lots of use in builders and developer tools, though it
+doesn't replace the ReadExpression method. Even at design-time, GetPEM()
+evaluates the property value. If a property is defined with an expression (such
+as &quot;=DATE()&quot;), it doesn't return the expression, it returns the
+current value of the expression. <o:p></o:p></p>
+
+<p class=MsoNormal>For methods, GetPEM() is equivalent to the ReadMethod method
+(sounds redundant, doesn't it?). Like ReadMethod, it works only at design-time.<o:p></o:p></p>
+
+<p class=MsoNormal>PEMStatus() provides a lot of useful information about
+classes and objects that lets you figure out who they are and where they came
+from. The last value for nAttribute, 6, which indicates whether the PEM was
+inherited or added at this level, was added in VFP 6. Also added in VFP 6 was
+the ability to ask about a member object by passing its name. We're a little
+puzzled by this one, frankly, since it doesn't seem to tell anything you
+couldn't find out elsewhere.<o:p></o:p></p>
+
+<p class=MsoNormal>Although you can find out whether a property is protected,
+there's no way to check whether it's hidden. We suspect that Microsoft simply
+hasn't noticed yet that that's a useful piece of information.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1025" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Both functions have a nasty bug when working with classes
+  at runtime. In order to use the function, the class definition has to be in
+  memory. To get it there, you have to instantiate the class at least once. You
+  can destroy the instance immediately, but you have to have done it. Since we
+  understand why it works this way, we might be inclined to lay this one at
+  design's door, if only it were documented.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1026" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Passing 0 for PEMStatus()'s third parameter is supposed to
+  work only for properties. In fact, you can do it with methods of visual
+  classes (though not code classes), too, but the results aren't quite what
+  you'd expect. If the method has code at any level in the class hierarchy,
+  PEMStatus() returns .T. While this is somewhat useful (and more than the docs
+  would lead you to expect), it doesn't help you figure out if you've overridden
+  a method in this particular subclass or instance. Use AMembers() to do that.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=77
+  id="_x0000_i1027" src="..\..\..\..\..\HackGIFs\fixbug1.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>And yet another bug, this one more serious than either of
+  the others. In some situations, if an object calls PEMStatus() more than
+  twice in the same line of code, the object can't be released. We've been
+  unable to nail down exactly the combination of circumstances that causes this
+  one. For sure, using PEMStatus(_SCREEN.ActiveForm,…,5) three or more times in
+  a line is one way to do it. In general, if you have an object that won't go
+  away, check for multiple uses of PEMStatus(). It appears that this bug was
+  fixed in one of the VFP 6 service packs. We're reluctant to commit absolutely
+  on the subject, since the bug was so hard to pin down, but our test form that
+  demonstrates the problem in VFP 5 and the original release of VFP 6 works
+  properly in VFP 6 SP5 and VFP 7.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>oForm = CreateObject(&quot;FORM&quot;)<o:p></o:p></p>
+  <p class=Preformatted>oForm.Left = 20<o:p></o:p></p>
+  <p class=Preformatted>? GetPEM(oForm, &quot;Left&quot;)<span
+  style="mso-spacerun: yes">             </span>&amp;&amp; Returns 20<o:p></o:p></p>
+  <p class=Preformatted>? PEMStatus(oForm, &quot;Left&quot;, 0)<span
+  style="mso-spacerun: yes">       </span>&amp;&amp; Returns .T.<o:p></o:p></p>
+  <p class=Preformatted>? PEMStatus(oForm, &quot;BaseClass&quot;, 1)<span
+  style="mso-spacerun: yes">  </span>&amp;&amp; Returns .T.<o:p></o:p></p>
+  <p class=Preformatted>? PEMStatus(oForm, &quot;Init&quot;, 3)<span
+  style="mso-spacerun: yes">       </span>&amp;&amp; Returns &quot;Event&quot;<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>SET CLASSLIB TO CoolStuf<span style="mso-spacerun:
+  yes">            </span>&amp;&amp; From the Downloads <o:p></o:p></p>
+  <p class=Preformatted>oSpin = CreateObject(&quot;DateSpin&quot;)<span
+  style="mso-spacerun: yes">    </span>&amp;&amp; To work around bug<o:p></o:p></p>
+  <p class=Preformatted>RELEASE oSpin<o:p></o:p></p>
+  <p class=Preformatted>? GetPEM(&quot;DateSpin&quot;,
+  &quot;BackStyle&quot;)<span style="mso-spacerun: yes">   </span>&amp;&amp;
+  Returns 0<o:p></o:p></p>
+  <p class=Preformatted>? PEMStatus(&quot;DateSpin&quot;, &quot;nYear&quot;, 2)
+  &amp;&amp; Returns .F.<o:p></o:p></p>
+  <p class=Preformatted>? PEMStatus(&quot;DateSpin&quot;, &quot;nYear&quot;, 4)
+  &amp;&amp; Returns .T.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AMembers(), ReadExpression, ReadMethod, Sys(1269),
+  WriteExpression, WriteMethod<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,726 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g098_files/filelist.xml">
+<title>Define Menu, Define Pad, Define Popup, Define Bar, <br>
+Release Menus, Release Pad, Release Popups, Release Bar</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>hack7s4.dot</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:24:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:24:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1268</o:Words>
+  <o:Characters>7231</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>36864</o:Bytes>
+  <o:Lines>60</o:Lines>
+  <o:Paragraphs>14</o:Paragraphs>
+  <o:CharactersWithSpaces>8880</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+span.msoIns
+	{mso-style-type:export-only;
+	mso-style-name:"";
+	text-decoration:underline;
+	text-underline:single;
+	color:teal;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:-373917952;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1381765632;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:1910664342;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:2121416176;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:1788018066;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:-913148162;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-1696048416;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-244797886;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:1657050834;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:21911488;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>Define Menu, Define Pad, Define Popup, Define Bar, <br>
+Release Menus, Release Pad, Release Popups, Release Bar<o:p></o:p></p>
+
+<p class=MsoNormal>These commands create and destroy the components of a
+Windows-style menu. See Menus for an explanation of the various components.<o:p></o:p></p>
+
+<p class=MsoNormal>Because the Menu Designer generates the DEFINE commands for
+you and the RELEASEs aren't needed when you're dealing with the system menu
+bar, you'll rarely write these commands yourself. This is somewhat less true in
+VFP 7, where new capabilities for menu bars may lead you to write some menu
+handling code yourself.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>DEFINE MENU MenuBarName<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ BAR [
+  AT LINE nRow ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ IN [
+  WINDOW ] ContainingWindow | IN SCREEN ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ FONT
+  cFontName [, nFontSize ] ] [ STYLE cStyleCodes ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ KEY
+  KeyLabel ] [ MARK cMarkCharacter ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  MESSAGE cMessageText ] [ NOMARGIN ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ COLOR
+  SCHEME nScheme | COLOR ColorPairList ]<o:p></o:p></p>
+  <p class=Preformatted>RELEASE MENUS [ MenuBarList [ EXTENDED ] ]<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>DEFINE PAD PadName1 OF MenuBarName PROMPT cPadText<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ AT
+  nRow, nColumn ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ BEFORE
+  PadName2 | AFTER PadName3 ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  NEGOTIATE PositionInVFP [, PositionInActiveDoc ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ FONT
+  cFontName [, nFontSize ] ] [ STYLE cStyleCodes ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ KEY
+  KeyLabel [, cKeyText ] ] [ MARK cMarkCharacter ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ SKIP [
+  FOR lExpression ] ] [ MESSAGE cMessageText ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ COLOR
+  SCHEME nScheme | COLOR ColorPairList ]<o:p></o:p></p>
+  <p class=Preformatted>RELEASE PAD PadName | ALL OF MenuBarName <o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>DEFINE POPUP PopupName<span style="mso-spacerun:
+  yes">         </span><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ FROM
+  nTop, nLeft ] [ TO nBottom, nRight ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ IN [
+  WINDOW ] ContainingWindow | IN SCREEN ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ FONT
+  cFontName [, nFontSize ] ] [ STYLE cStyleCodes ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ PROMPT
+  FIELD FieldName <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>|
+  PROMPT FILES [ LIKE FileSkeleton ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">             </span>|
+  PROMPT STRUCTURE ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ TITLE
+  cMenuTitleText ] [ FOOTER cFooterText ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ KEY KeyLabel
+  ] [ MESSAGE cMessageText ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ MARGIN
+  ] [ MARK cMarkCharacter ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ MOVER
+  ] [ MULTISELECT ] [ SCROLL ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  SHORTCUT ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  RELATIVE ] [ SHADOW ]<span style='color:red'><o:p></o:p></span></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ COLOR
+  SCHEME nScheme | COLOR ColorPairList ]<o:p></o:p></p>
+  <p class=Preformatted>RELEASE POPUPS [ PopupList [ EXTENDED ] ] <o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>DEFINE BAR nBarNumber1 | SystemItemName OF PopupName <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>PROMPT
+  cBarText<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  PICTURE cPictureFile | PICTRES nSystemBar ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ BEFORE
+  nBarNumber2 | AFTER nBarNumber3 ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ FONT
+  cFontName [, nFontSize ] ] [ STYLE cStyleCodes ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ KEY
+  KeyLabel [, cKeyText ] ] [ MARK cMarkCharacter ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  MESSAGE cMessageText ] [ SKIP [ FOR lExpression ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ COLOR
+  SCHEME nScheme | COLOR ColorPairList ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ MRU ]
+  [ INVERT ]<o:p></o:p></p>
+  <p class=Preformatted>RELEASE BAR nBarNumber | SystemItemName | ALL OF
+  PopupName<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The DEFINE commands create the objects and leave them in
+memory. You need an ACTIVATE command or SYSMENU set appropriately to actually
+use these things. The RELEASE commands remove the definitions from memory.<o:p></o:p></p>
+
+<p class=MsoNormal>There are a few things here that are different from FoxPro
+2.x, as well as a few that are just plain confusing. Let's take a look. <o:p></o:p></p>
+
+<p class=MsoNormal>The FONT and STYLE clauses at each level were added in VFP
+3. These clauses let you decide what font to use when you're not working with
+the system menu. The system menu picks up its font settings from the Registry
+and ignores any fonts you specify. <o:p></o:p></p>
+
+<p class=MsoNormal>Like so many other menu components, fonts propagate from
+container to contained item. That is, the font you specify for a menu is used
+for the pads of that menu, unless they include the FONT clause. The font you
+specify for a popup applies to all bars in that popup that don't have their own
+font definition. <o:p></o:p></p>
+
+<p class=MsoNormal>These clauses give you the ability to create menus as ugly
+as some of the flyers we receive for social events. Just because you can use
+lots of different fonts doesn't mean you should. <o:p></o:p></p>
+
+<p class=MsoNormal>We ranted in the original <i style='mso-bidi-font-style:
+normal'>Hacker's Guide</i> about the inability to set fonts for the system
+menu. Since then, however, we've come to see the user-interface light and
+realized that menus really should be based on system-wide settings and that
+coding specific fonts and sizes into your application's menus is likely to
+annoy your users.<o:p></o:p></p>
+
+<p class=MsoNormal>The MARK clause is ignored. No matter what you specify, you
+get the checkmark character. The SHADOW clause is another that appears to be
+ignored, although GENMENU includes it for popups other than shortcut menus you
+define in the Menu Designer.<o:p></o:p></p>
+
+<p class=MsoNormal>DEFINE PAD's NEGOTIATE clause controls what happens to a pad
+when your application works with another application. How the pad behaves for
+OLE in-place editing is dictated by the PositionInVFP keyword; how it behaves
+in an active document is determined by the PositionInActiveDoc. The choices are
+NONE, LEFT, RIGHT and MIDDLE. NONE means the pad doesn't appear in that case.
+The exact meaning of MIDDLE seems to vary depending on which application is
+taking over. For active documents, RIGHT means &quot;put the item on the Help
+menu.&quot; Weird behavior, but it is documented that way.<o:p></o:p></p>
+
+<p class=MsoNormal>The PROMPT clause of DEFINE POPUP lets you create a popup
+without having to define individual bars. You can automatically fill it with a
+list of files, the fields of a table, or, the most useful, the value of an
+expression for each record in a table. These popups are pretty restricted in
+what else they can do—no multiselect and no mover bars are the most serious
+restrictions.<o:p></o:p></p>
+
+<p class=MsoNormal>The SHORTCUT keyword of DEFINE POPUP was added in VFP 5 to
+make it easier to create context (or shortcut) menus. When you add the SHORTCUT
+keyword, the generated popup has the substantial 3-D look of Windows' context
+menus. Without it, the popup is a pretty sad-looking thing. <o:p></o:p></p>
+
+<p class=MsoNormal>Beginning in VFP 7, you can specify an icon to appear on a
+menu bar. There are two, mutually exclusive, ways to do it. Use the PICTURE
+clause to specify a picture file. You can specify pretty much any picture file,
+but if it's too big, it's not going to look as you expect. The alternative
+approach is to take advantage of the icons already included in the VFP system
+menu. Use PICTRES and follow it with the constant for any VFP menu item, found
+in the Help file under &quot;System menu names.&quot; (The names of the VFP
+menu bars are really just constants for large negative numbers.) The DEFINE
+POPUP for the menu containing the bars must have the MARGIN clause for the
+pictures to show up—again, the Menu Designer takes care of this for you.<o:p></o:p></p>
+
+<p class=MsoNormal>Menu bars in VFP 7 have two other new capabilities. The MRU
+clause indicates that the bar should display the downward-pointing chevron used
+by other Windows applications (and Windows itself) to indicate that more items
+are available. Unlike ordinary menu items, holding the mouse over an MRU item
+for more than a brief moment fires the code associated with it. That code can
+do whatever you want—most often, it will expand the menu options, just as in
+Windows and Office. While the MRU item doesn't have to be the last item on a
+given popup, you probably want it to be.<o:p></o:p></p>
+
+<p class=MsoNormal>The other clause new to VFP 7 is INVERT, which makes a bar
+look as if it's set back from the other items on the menu popup. Bars with the
+INVERT characteristic usually have a background paler than those without it.
+(The exact appearance depends on the Windows color scheme.) A typical use of
+INVERT is to distinguish the items added after the user chooses the MRU item
+from the items always on the menu.<o:p></o:p></p>
+
+<p class=MsoNormal>The Menu Designer supports the PICTURE and PICTRES clauses,
+but there's no direct way to add MRU or INVERT clauses. However, as with other
+clauses not supported in the Menu Designer, you can specify them in the Skip
+For condition by putting them after the desired condition. If no Skip For
+clause is needed, use .F. for the condition, like this:<o:p></o:p></p>
+
+<p class=Preformatted>.F. MRU <o:p></o:p></p>
+
+<p class=MsoNormal>In VFP 7, GenMenu.PRG removes any SKIP FOR .F. clauses from
+DEFINE BAR commands (leaving any following clauses), so there's no longer a
+performance penalty for tricking the designer in this way.<o:p></o:p></p>
+
+<p class=MsoNormal>Some of the other common clauses are discussed under Menus.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>DEFINE MENU MyMenu FONT &quot;Arial&quot;,14 STYLE
+  &quot;I&quot;<o:p></o:p></p>
+  <p class=Preformatted>DEFINE PAD MyFirst OF MyMenu PROMPT &quot;First&quot;<o:p></o:p></p>
+  <p class=Preformatted>DEFINE PAD MySecond OF MyMenu PROMPT &quot;Second&quot;<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>DEFINE POPUP MyPop1 <o:p></o:p></p>
+  <p class=Preformatted>DEFINE BAR 1 OF MyPop1 PROMPT &quot;Item 1&quot;<o:p></o:p></p>
+  <p class=Preformatted>DEFINE BAR 2 OF MyPop1 PROMPT &quot;Item 2&quot;<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>DEFINE POPUP MyPop2 MARGIN<o:p></o:p></p>
+  <p class=Preformatted>DEFINE BAR 1 OF MyPop2 PROMPT &quot;Other 1&quot; FONT
+  &quot;Courier New&quot;,12<o:p></o:p></p>
+  <p class=Preformatted>DEFINE BAR 2 OF MyPop2 PROMPT &quot;Other 2&quot; ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>PICTURE HOME()
+  + &quot;FFC\GRAPHICS\HYPERLINK.ICO&quot;<o:p></o:p></p>
+  <p class=Preformatted>DEFINE BAR 3 OF MyPop2 PROMPT &quot;Other 3&quot;
+  PICTRES _mtl_wzrds<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>ON PAD MyFirst OF MyMenu ACTIVATE POPUP MyPop1<o:p></o:p></p>
+  <p class=Preformatted>ON PAD MySecond OF MyMenu ACTIVATE POPUP MyPop2<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>ON SELECTION BAR 1 OF MyPop1 ?&quot;Item 1 chosen&quot;<o:p></o:p></p>
+  <p class=Preformatted>ON SELECTION BAR 2 OF MyPop1 ?&quot;Item 2 chosen&quot;<o:p></o:p></p>
+  <p class=Preformatted>ON SELECTION POPUP MyPop2 ?&quot;Item from Popup2&quot;<o:p></o:p></p>
+  <p class=Preformatted>ON SELECTION BAR 3 OF MyPop2 ?&quot;But I'm
+  different&quot;<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>ACTIVATE MENU MyMenu<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Activate Menu, Activate Popup, Deactivate Menu, Deactivate
+  Popup, Menus, On Bar, On Pad, On Selection Bar, On Selection Menu, On
+  Selection Pad, On Selection Popup<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-list:none;mso-list-ins:"Tamar E\. Granor" 20020226T0805'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,995 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g404_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g404_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>GetPrinter(), PrtInfo(), Sys(1037)</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:28:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:28:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>777</o:Words>
+  <o:Characters>4433</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>41472</o:Bytes>
+  <o:Lines>36</o:Lines>
+  <o:Paragraphs>8</o:Paragraphs>
+  <o:CharactersWithSpaces>5444</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+p.h60, li.h60, div.h60
+	{mso-style-name:"h6\0027";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>GetPrinter(), PrtInfo(), Sys(1037)<o:p></o:p></p>
+
+<p class=MsoNormal>These three functions are a wonderful relief from the
+printing challenges of early FoxPro versions. GETPRINTER() presents the Windows
+dialog to choose the printer for output, PRTINFO() allows the programmer to
+query all the details of the capabilities of the printer, and SYS(1037) puts up
+a decent Print Setup dialog.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted style='margin-top:6.0pt'>cPrinterChosen = GETPRINTER( )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Value<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Meaning<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cPrinterChosen<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of the printer chosen.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Empty String<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>User chose Cancel, or closed the dialog box any way other
+  than selecting OK.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>This is a weak-looking dialog, allowing the user only to
+select a printer, but not set other properties. We don't understand why we
+don't get the full dialog we see in REPORT FORM…TO PRINT PROMPT.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>cPrinter = GETPRINTER()<o:p></o:p></p>
+  <p class=Preformatted>IF NOT EMPTY(cPrinter)<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>SET PRINTER TO
+  NAME (cPrinter)<o:p></o:p></p>
+  <p class=Preformatted>ENDIF<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted style='margin-top:6.0pt'>nResult = PRTINFO( nIndex [,
+  cPrinterName ] )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Value<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Meaning<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=13 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=h60>nIndex<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>1<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Orientation.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>2<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Paper size. If –1 is returned, use parameters 3 and 4 to determine
+  the custom paper size.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>3<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Paper length, in tenths of a millimeter.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>4<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Paper width, in tenths of a millimeter.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>5<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Scaling factor.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>6<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Number of copies to print.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>7<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Paper tray chosen as the default paper source.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>8<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Print quality, expressed in dots per inch, if a positive
+  number, or a relative scale (Draft, Low, Medium, High) if a negative number
+  (–1 to –4, respectively).<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>9<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Color printing? 1=Color, 2=Single color.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>10<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Printer duplexing (printing both sides of the page) mode.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>11<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Vertical resolution, in dots per inch.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>12<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Options for printing TrueType fonts.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>13<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Whether or not output is collated.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cPrinterName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of the printer, as returned by GETPRINTER() and
+  APRINTERS().<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nResult<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>–1<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>With two exceptions noted above (paper size, number 2 and
+  print quality, number 8), a negative return indicates the information is
+  unavailable. Either this feature may not be implemented for this printer, or
+  you may have specified a printer that doesn't exist.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Integer<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Result of querying the particular parameter above, as
+  documented above and in the help file.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>These return values can be used to very precisely plan out
+how output will appear on the page. This is tremendously useful if you are
+trying to generate reports on the fly, or trying to make a certain amount of
+material fit on a single page. Rather than trying to memorize the above 13
+possible index values and what they're good for, use the FoxPro.H file and the
+easier-to-use constant names included there. <o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* Note that the following must be compiled <o:p></o:p></p>
+  <p class=Preformatted>* to include FoxPro.H and run properly.<o:p></o:p></p>
+  <p class=Preformatted>#INCLUDE \VFP\FOXPRO.H<o:p></o:p></p>
+  <p class=Preformatted>? &quot;Orientation: &quot;<o:p></o:p></p>
+  <p class=Preformatted>nResult = PRTINFO(PRT_ORIENTATION)<o:p></o:p></p>
+  <p class=Preformatted>DO CASE<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>CASE nResult =
+  -1<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>?? &quot;Not
+  Available&quot;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>CASE nResult =
+  0<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>??
+  &quot;Portrait&quot;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>CASE nResult =
+  1<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>??
+  &quot;Landscape&quot;<o:p></o:p></p>
+  <p class=Preformatted>ENDCASE<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted style='margin-top:6.0pt'>cEmptyString = SYS( 1037 )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=77
+  id="_x0000_i1025" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The documentation erroneously claims that SYS(1037) brings
+  forth a Page Setup dialog, and it even links to a description of the Page
+  Setup dialog. However, calling this function brings up a dialog labeled
+  &quot;Print Setup,&quot; which is obviously not the Page Setup dialog. <o:p></o:p></p>
+  <p class=MsoNormal>In the Print Setup dialog, the Properties button does
+  allow you to adjust the default paper size, orientation and other settings
+  specific to your printer. And it works just fine, unless you've tinkered with
+  the Page Setup option from the menu while creating or editing your report. If
+  you want to give the user the ability to use his SYS(1037) settings instead,
+  you need to delete the stored settings from the report. They're in TAG and
+  TAG2 of the first record of the FRX—you can use something like this:<o:p></o:p></p>
+  <p class=Preformatted>SYS(1037)<o:p></o:p></p>
+  <p class=Preformatted>SELECT * FROM MyReport.FRX INTO CURSOR TempReport<o:p></o:p></p>
+  <p class=Preformatted>SELECT TempReport<o:p></o:p></p>
+  <p class=Preformatted>BLANK FIELDS TAG, TAG2<o:p></o:p></p>
+  <p class=Preformatted>REPORT FORM TempReport TO PRINT<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>There are few areas of the product that cause more confusion
+and grief than printing. Much of this is due to a lack of understanding of what
+the product can do, some to misleading documentation, and some to the fact that
+&quot;everyone knows&quot; Fox can't do something. Carefully examine the
+functionality and return values of each of these functions, and we think you'll
+find that Fox can do whatever printing task is needed.<o:p></o:p></p>
+
+<p class=MsoNormal>To see a Page Setup dialog, call up a report in the Report
+Designer, and select—surprise!—Page Setup from the File menu. There are options
+for the number of columns, whether the print area occupies the whole page (or
+just the printable portions), the order in which labels should print (left to
+right, or up and down) and the margin to use. These would be some nice features
+to be able to call up while a user is trying to fit text on his labels, without
+having to call up the entire designer.<o:p></o:p></p>
+
+<p class=MsoNormal>The help for FoxPro 2.6a claims that SYS(1037) only works
+for the Macintosh. Wrong. It also brings up the Print Setup dialog in version
+2.6a for Windows. Where it does, finally, bring up the Page Setup dialog is on
+the Mac only. Page Setup on the Mac doesn't have the Page Layout options of the
+Report Writer, either, but the name of the dialog is, in fact, Page Setup. We
+suspect this is just a case of bad translation among the several platforms, but
+we sympathize with our poor fellow developers who spend time trying to get the
+right dialog box to come up.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted style='margin-top:6.0pt'>=SYS(1037)<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>#INCLUDE, APrinters(), Set Printer<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

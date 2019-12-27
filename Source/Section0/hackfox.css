@@ -1,0 +1,59 @@
+.h1 { font-family: Verdana;
+font-size: x-large;
+color: black;
+background-image: url("bkgndatitle.gif");
+font-weight: bold;
+padding-top: 0px;
+padding-bottom: 0px ; 
+padding-left: 30px }
+
+.h2 { font-family: Verdana;
+font-size: large;
+color: black;
+background-image: url("bkgndatitle.gif");
+font-weight: bold;
+padding-top: 0px;
+padding-bottom: 0px; 
+padding-left: 30px }
+
+.h3 { font-family: Verdana;
+font-size: small;
+color: darkblue;
+font-weight: bold;
+padding-top: 0px;
+padding-bottom: 0px }
+
+.h4 { font-family: Verdana;
+font-size: x-small;
+color: darkblue;
+font-weight: bold;
+padding-top: 0px;
+padding-bottom: 0px }
+
+.h6 { font-family: Verdana;
+font-size: 6pt; }
+
+.Blockquote { font-family: Verdana;
+font-size: x-small;
+margin-left: .25in;
+color: #9999FF}
+
+table { font-family: Verdana;
+font-size: x-small;
+font-weight: normal;
+padding: 5 }
+
+td { font-family: Verdana;
+font-size: x-small;
+font-weight: normal;
+vertical-align: top }
+
+body { font-family: Verdana;
+font-size: x-small;
+background-image: url("bkgnda1.gif");
+background-repeat: repeat-y;
+padding-left: 30px }
+
+pre { font-family: Courier New;
+font-size: x-small;
+font-weight: bold; }

@@ -1,0 +1,1021 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g074_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g074_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Index, Reindex, Delete Tag, Set Unique, Set(&quot;Unique&quot;)</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:24:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:24:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2302</o:Words>
+  <o:Characters>13124</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>52224</o:Bytes>
+  <o:Lines>109</o:Lines>
+  <o:Paragraphs>26</o:Paragraphs>
+  <o:CharactersWithSpaces>16117</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>Index, Reindex, Delete Tag, Set Unique, Set(&quot;Unique&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal>These commands all relate to the care and feeding of
+indexes. INDEX lets you create regular, unique and candidate indexes. REINDEX
+re-creates existing indexes. DELETE TAG lets you remove index tags from a
+compound index file. SET UNIQUE determines whether newly created indexes are
+regular or unique—leave it set to OFF all the time.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>INDEX ON eKeyExpr <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>TO
+  IDXFile | TAG TagName [ OF CDXFile ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ FOR
+  lFilter ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  COMPACT ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">       </span><span
+  style="mso-spacerun: yes"> </span>[ ASCENDING | DESCENDING ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ UNIQUE
+  | CANDIDATE ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  ADDITIVE ]<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Value<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Meaning<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>eKeyExpr<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Expression<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The index key.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>IDXFile<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>A stand-alone index file to contain this index.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>TagName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name to assign this tag.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>CDXFile<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>A compound index file to contain this tag.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Store this tag in the structural compound index file for
+  this table.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>lFilter<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Logical<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>An expression that determines whether a particular record
+  is included in this index.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>FoxPro's indexes can be divided up several ways. The first
+distinction is in how and where they're stored. There are two kinds of index
+files: stand-alone and compound. As the names suggest, a stand-alone index
+holds data for a single key, while a compound index can hold multiple keys.<o:p></o:p></p>
+
+<p class=MsoNormal>By default, stand-alone indexes are stored with an extension
+of IDX. These are compatible with all versions of FoxPro going back to FoxBase.
+Stand-alone indexes can also have the COMPACT attribute, which reduces their
+storage requirements. Since compact stand-alone indexes were introduced at the
+same time as compound indexes, there's not much reason to use them. In fact,
+the only reason to use stand-alone indexes at all is to maintain compatibility
+with other products or older versions that can't read compound index files.<o:p></o:p></p>
+
+<p class=MsoNormal>Compound indexes use a default extension of CDX. Each index
+in the file is called a tag and has a name that identifies it. Within a single
+CDX, each tag's name must be unique, but a table can have several tags of the
+same name in different compound index files.<o:p></o:p></p>
+
+<p class=MsoNormal>Every table may have a structural CDX file. That's a
+compound index file that has the same name as the table—only the extension is
+different. If a table has a structural CDX, it's automatically opened whenever
+the table is opened, and closed whenever the table is closed. We strongly
+suggest you use the structural CDX for every index you plan to maintain. Use
+other compound index files or stand-alone indexes only for infrequent,
+on-the-fly operations. That way, you're sure that your indexes are always kept
+up-to-date.<o:p></o:p></p>
+
+<p class=MsoNormal>The next question is what goes into the index. There are
+several choices here. <o:p></o:p></p>
+
+<p class=MsoNormal>A regular index contains a key for each record in the table.
+<o:p></o:p></p>
+
+<p class=MsoNormal>A candidate index contains a key for each record in the
+table and prohibits duplicates in the key expression—attempting to add a record
+with an existing key generates an error. Candidate indexes can also be created
+with CREATE TABLE and ALTER TABLE. Those two commands also let you create a
+primary index—that's a candidate index that you've designed as the primary key
+for the table. Only tables in a database can have primary indexes. You can't
+create primary indexes with INDEX, only by using CREATE TABLE, ALTER TABLE, or
+the Table Designer.<span style='color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal>&quot;Unique&quot; indexes are misnamed. (In fact, candidate
+indexes are unique. These are not.) Back in the FoxBase and FoxPro 1.0 days,
+they were useful for temporarily creating a list of distinct values in a table.
+However, since SQL SELECT was added in FoxPro 2.0 (yes, more than a decade
+ago), we don't think there's any reason to use them anymore. A so-called unique
+index contains a key only for the first record that has a particular key value.
+That is, once a key value occurs, no other records with that key value get
+added to the index. There's no mechanism to enforce uniqueness here, just a way
+to find one of each. However, unique indexes are not properly maintained. If
+you delete a record that's represented in the index, FoxPro does not add the
+next record in the table that has the same key value. Don't ever use
+&quot;unique&quot; indexes—there's always a better way to do it.<o:p></o:p></p>
+
+<p class=MsoNormal>Each of the index types can be filtered by adding the FOR
+clause. In that case, only the records meeting lFilter are added to the index.
+Filtered indexes are properly maintained—as records change, the index is
+updated to include those that now qualify. However, any index that's filtered
+in this way is ignored by Rushmore when it attempts to optimize commands, so
+use these cautiously. (Don't be misled by the VFP Help, which seems to imply that
+filtered tags are used by Rushmore. In fact, what it's really saying is that
+Rushmore will optimize the INDEX command itself if appropriate tags exist.)<span
+style='color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal>In VFP 3 and VFP 5, the only way to filter a primary key is
+through the Table Designer. The FOR clause in ALTER TABLE (added in VFP 6) lets
+you create filtered indexes (primary, unique, or foreign key) directly.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1025" src="..\..\..\..\..\HackGIFs\fixbug1.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>VFP 7 Service Pack 1 fixed an ugly bug that was introduced
+  in VFP 7: None of the records added to the table after a filtered index was
+  created were visible until you reindexed.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Indexes can be created in either ascending or descending
+order. Regardless of how you create them, you can use them in either order as
+well by specifying ASCENDING or DESCENDING in the SET ORDER command. The only
+advantage of creating an index in descending order is that the first time you
+SET ORDER TO it, if you don't specify, it's descending. We don't think that's
+enough of an advantage to make it worth worrying about whether an index is
+ascending or descending. Create all indexes in ascending order and use them as
+needed. As we mention in SET ORDER TO, you need to use the ASCENDING/DESCENDING
+keyword only the first time you open an index in a session. Once you do so,
+it's opened in that orientation until it's explicitly set the other way. In
+fact, if a table is open more than once using the same tag for ordering, all
+the copies are either ascending or descending. You can't SET ORDER TO ATag ASCENDING
+in one work area and SET ORDER TO ATag DESCENDING in another at the same time
+(well, you can, but then they both end up in descending order).<o:p></o:p></p>
+
+<p class=MsoNormal>An index key can be simply a single field, or it can be any
+valid FoxPro expression (though it normally contains a field of the table). For
+character fields, it's almost always a good idea to use UPPER() in the index
+key so you can search without worrying about case. For example, the Company
+Name tag for TasTrade's Customer table is UPPER(COMPANY_NAME). However,
+remember that for Rushmore optimization, you then have to use UPPER() in the
+expressions in SEEK, SET FILTER TO, SQL SELECT, and other commands. See
+&quot;Faster Than a Speeding Bullet&quot; in the front section of the book for
+information on how Rushmore works.<span style='color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal>When indexing on fields of different types, the best bet is
+generally to convert them all to strings and concatenate the strings. For
+example, a key involving a string and a date normally uses DTOS() to put the
+date in character format and in true date order (including the year).<o:p></o:p></p>
+
+<p class=MsoNormal>Occasionally, you need an index that uses two fields in
+different orders. For example, you might want to index an Orders table in
+customer-number order with each customer's orders in reverse date order. To do
+this sort of thing requires a trick—subtract the field you want in descending
+order from a suitably large number or date. Date math lets you use the trick
+with both numbers and dates. There's an example below.<o:p></o:p></p>
+
+<p class=MsoNormal>VFP lets you specify an index key that doesn't have a fixed
+length (like ALLTRIM(cLastName)). However, internally, it pads the index back
+to a standard length. Most often, we've seen people do this when combining
+fields (as in ALLTRIM(cLastName)+ALLTRIM(cFirstName)). This is a bad idea and
+can actually put the records in the wrong order. Well, &quot;wrong&quot; as in
+you didn't mean that one; VFP is just doing what you told it. Since index keys
+always have fixed length anyway, there's no reason to trim them.<o:p></o:p></p>
+
+<p class=MsoNormal>FoxPro lets you create indexes whose keys reference another
+table. Don't! Just like mama told you, just because you can doesn't always mean
+you should. Like &quot;unique&quot; indexes, indexes with foreign fields are
+not automatically maintained. There's always another way to do it either by
+setting a relation or using SELECT-SQL. In the same vein, user-defined
+functions can be used as part of an index expression. Don't do it—performance
+can be slowed by several orders of magnitude; and loss of, or change to, the
+UDF code can wreak havoc with your data design. <o:p></o:p></p>
+
+<p class=MsoNormal>Finally, the ADDITIVE clause. This is one we haven't used
+for years. When you're working with non-structural indexes, opening one index
+closes others. Creating an index is the same as opening one from this point of
+view. ADDITIVE lets you create a new stand-alone or non-structural compound
+index without closing other stand-alone or non-structural compound indexes.<o:p></o:p></p>
+
+<p class=MsoNormal>You should have exclusive use of a table before you start
+creating indexes. A stand-alone index or the first tag of a compound structural
+index can be created with only shared use of a table, but additional tags
+cannot be added to the structural index. We think that if you are doing
+system-wide maintenance like indexing, it is always a good idea to open the
+table exclusively.<o:p></o:p></p>
+
+<p class=MsoNormal>You can create indexes for cursors, whether they were
+created with CREATE CURSOR or SQL SELECT, or by opening a view. When you close
+the cursor, VFP automatically deletes any index files for the cursor. However,
+you have to follow a couple of rules. First, attempting to create indexes while
+table buffering is in effect causes an error: &quot;Command cannot be issued on
+a table with cursors in table buffering mode.&quot; So, if you want to use
+table buffering, you have to temporarily change to row buffering, create the
+indexes, and then switch back to table buffering. The second example below
+shows this.<o:p></o:p></p>
+
+<p class=MsoNormal>The second rule is that if the cursor is read-only, you can
+create only a single tag of a structural CDX for the cursor; you'll get an
+error if you try to create a second one. You can create as many non-structural
+indexes (IDX or CDX) as you want. If you need more than one tag in a structural
+CDX, use a read-write cursor instead. In versions prior to VFP 7, the way to do
+this for a cursor created by SQL SELECT is to open a second instance of the
+cursor using code similar to the following:<o:p></o:p></p>
+
+<p class=Preformatted>SELECT * FROM Customers INTO CURSOR CustomerCursor<o:p></o:p></p>
+
+<p class=Preformatted>SELECT 0<o:p></o:p></p>
+
+<p class=Preformatted>USE DBF('CustomerCursor') AGAIN<o:p></o:p></p>
+
+<p class=Preformatted>INDEX ON ...<o:p></o:p></p>
+
+<p class=Preformatted>INDEX ON ...<o:p></o:p></p>
+
+<p class=MsoNormal>Starting in VFP 7, you can use the READWRITE clause of a SQL
+SELECT statement to create a read-write cursor.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1026" src="..\..\..\..\..\HackGIFs\fixbug1.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>In the first release of VFP 7, you couldn't create an
+  index on a cursor created by opening a view or an IDX-style index for a table
+  belonging to a database if the DBC was opened with the NOUPDATE clause or was
+  marked as read-only at the operating system level. In previous versions, you
+  could. Since in neither case is the index information written to the DBC,
+  this didn't make sense. Fortunately, this bug was fixed in Service Pack 1.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=77
+  id="_x0000_i1027" src="..\..\..\..\..\HackGIFs\fixbug1.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>VFP 7 Service Pack 1 fixes another, more obscure bug,
+  albeit one that goes back to at least VFP 5: Under certain settings of
+  foreground memory and with table buffering turned on, making certain changes
+  to a lot of key fields could cause VFP to hang.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>In VFP 7, if the table belongs to a database that has
+database events turned on, the BeforeModifyTable and AfterModifyTable events
+fire when you use the INDEX command.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>USE Orders<o:p></o:p></p>
+  <p class=Preformatted>INDEX ON Order_Id TAG Order_Id CANDIDATE &amp;&amp;
+  Prevent duplicates.<o:p></o:p></p>
+  <p class=Preformatted>INDEX ON UPPER(Ship_To_Country) TAG ShipCtry<o:p></o:p></p>
+  <p class=Preformatted>* This one's in customer order, then reverse date
+  order.<o:p></o:p></p>
+  <p class=Preformatted>INDEX ON
+  UPPER(Customer_Id)+STR({12/31/2099}-Order_Date) ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>TAG
+  CustDate<o:p></o:p></p>
+  <p class=Preformatted>* Create an index in date order, only for records with<o:p></o:p></p>
+  <p class=Preformatted>* some notes.<o:p></o:p></p>
+  <p class=Preformatted>INDEX ON Order_Date FOR NOT EMPTY(Notes)<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>USE MyView<o:p></o:p></p>
+  <p class=Preformatted>* Turn on optimistic table buffering.<o:p></o:p></p>
+  <p class=Preformatted>CURSORSETPROP('Buffering', 5)<o:p></o:p></p>
+  <p class=Preformatted>* Do some other things here<o:p></o:p></p>
+  <p class=Preformatted>* Now we want to create an index, so switch to row
+  buffering<o:p></o:p></p>
+  <p class=Preformatted>* temporarily.<o:p></o:p></p>
+  <p class=Preformatted>CURSORSETPROP('Buffering', 3)<o:p></o:p></p>
+  <p class=Preformatted>INDEX ON SomeField TAG SomeTagName<o:p></o:p></p>
+  <p class=Preformatted>CURSORSETPROP('Buffering', 5)<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted style='margin-top:6.0pt'>REINDEX [ COMPACT ]<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>This command regenerates all open indexes in the current
+work area. It sounds like a really useful command and we've been known to use
+it occasionally. But it has no place in an application. If the index header
+information is damaged, REINDEX leaves the damage there—it doesn't fix it.
+Also, it causes &quot;CDX bloat&quot;, because it doesn't overwrite the space
+used in the CDX file by the former indexes. Instead, it marks those indexes as
+not being used anymore and adds the new ones to the end of the file. We've seen
+CDX grow to many times the size of the DBF file simply by repeatedly using
+REINDEX. For these reasons, it's much better to delete all the tags and
+re-create them from scratch. (But see our comments below.) <o:p></o:p></p>
+
+<p class=MsoNormal>The COMPACT keyword converts stand-alone indexes to compact,
+stand-alone indexes. We've never used that one.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>DELETE TAG TagName1 [ OF CDXFile1 ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ ,
+  TagName2 [ OF CDXFile2 ] [ , ... ] ]<o:p></o:p></p>
+  <p class=Preformatted>DELETE TAG ALL [ OF CDXFile3 ]<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>As the name suggests, DELETE TAG removes a single index from
+a compound index file. When specifying individual tags, you need the OF clause
+only if there are multiple tags with the same name.<o:p></o:p></p>
+
+<p class=MsoNormal>Since the introduction of compound index files, DELETE TAG
+ALL has been a key component of just about every file maintenance system.
+Dozens of books and articles tell you to DELETE TAG ALL followed by INDEX to
+rebuild your indexes. In fact, we've told people to do that many times. In
+addition to avoiding the problems of REINDEX, it does a nice job of cleaning
+out the CDX file, throwing away any residual garbage that might be lurking
+there. That's because it makes the CDX file disappear. Deleting all the tags in
+a CDX, either one by one or with DELETE TAG ALL, actually deletes the file.<span
+style='color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal>Unfortunately, for tables in a database, just deleting tags
+creates all kinds of trouble. For one thing, not only are the indexes removed
+from the table, they're also removed from the DBC. However, a bigger problem is
+that deleting the tags for a table also deletes any persistent relationships
+for that table. That makes sense, since persistent relationships are based on
+indexes, but re-creating those persistent relationships is kind of a hassle;
+you have to use ALTER TABLE on the child table in the relationship, even if the
+index you deleted belonged to the parent table. Like PACK, this is another case
+where a good database maintenance tool like Stonefield Database Toolkit is
+worth its weight in gold.<o:p></o:p></p>
+
+<p class=MsoNormal>In VFP 7, if the table belongs to a database that has
+database events turned on, the BeforeModifyTable and AfterModifyTable events
+fire when you remove tags using this command.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* To clean up a free table's indexes, you can do
+  something like:<o:p></o:p></p>
+  <p class=Preformatted>USE MyTable<o:p></o:p></p>
+  <p class=Preformatted>DELETE TAG ALL<o:p></o:p></p>
+  <p class=Preformatted>INDEX ON UPPER(cLastName+cFirstName) TAG Name<o:p></o:p></p>
+  <p class=Preformatted>INDEX ON DateField TAG DateField<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>SET UNIQUE ON | OFF<o:p></o:p></p>
+  <p class=Preformatted>cUniqueSetting = SET(&quot;UNIQUE&quot;) <o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>This setting determines whether indexes are &quot;unique&quot;
+by default. Don't use it. In fact, we suggest you don't use so-called unique
+indexes at all. But, if you insist on doing so, use the UNIQUE keyword of
+INDEX. Don't mess with this system-wide (actually, now it's data session-wide)
+setting. The corresponding and undocumented SET(&quot;UNIQUE&quot;) tells you
+the current setting.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>See Also<o:p></o:p></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AfterModifyTable, Alter Table, ATagInfo(),
+  BeforeModifyTable, Create Cursor, Create Table, CursorSetProp(),
+  Descending(), For(), Key(), Open Database, Seek, Select-SQL, Set Order,
+  Tag(), TagCount(), TagNo(), Unique()<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,882 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g073_files/filelist.xml">
+<title>Delete, Deleted(), Pack, Recall, Set Deleted, Set(&quot;Deleted&quot;)</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>hack7s4.dot</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:24:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:24:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1334</o:Words>
+  <o:Characters>7606</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>38912</o:Bytes>
+  <o:Lines>63</o:Lines>
+  <o:Paragraphs>15</o:Paragraphs>
+  <o:CharactersWithSpaces>9340</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+span.msoIns
+	{mso-style-type:export-only;
+	mso-style-name:"";
+	text-decoration:underline;
+	text-underline:single;
+	color:teal;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:-654434456;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1372353570;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:-437747710;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:-1646787384;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-1266125128;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:-52923812;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-587982876;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:2008959738;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-773299696;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-81365470;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>Delete, Deleted(), Pack, Recall, Set Deleted,
+Set(&quot;Deleted&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal>These commands and functions control deletion of records
+from a table. Deleting a record in FoxPro (and in any other Xbase language) is
+a dance—a two-step—because it takes two steps to really and truly make a record
+go away. First, you &quot;mark&quot; the record for deletion. You can
+permanently throw away all the marked records when you want. Until you do so,
+you can &quot;unmark&quot; the record. It's like deleting files using the
+Windows Recycle Bin; the file's not really deleted from the disk until you
+empty the bin. Come to think of it, it's not so different from real life. You
+put something in the trash, but you can retrieve it (and uncrumple it) until
+the trash can is emptied.<o:p></o:p></p>
+
+<p class=MsoNormal>The first byte of every record in each table is a deletion
+flag. That's why the total length shown in the Table Designer is always at
+least one more than the sum of the field lengths (null fields can further
+increase the record length; see &quot;Nulls&quot; in &quot;DBF, FPT, CDX, DBC—Hike!&quot;)
+This flag field contains an asterisk (&quot;*&quot;) when the record is marked
+for deletion and a space when it's not marked. You can see this by opening up a
+table using a hex editor—that's how we figured it out.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>DELETE [ Scope ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">       </span>[ FOR
+  lForExpression ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">       </span>[ WHILE
+  lWhileExpression ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">       </span>[ IN
+  cAlias | nWorkArea ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">       </span>[
+  NOOPTIMIZE ]<o:p></o:p></p>
+  <p class=Preformatted>RECALL [ Scope ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">       </span>[ FOR
+  lForExpression ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">       </span>[ WHILE
+  lWhileExpression ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">       </span>[ IN
+  cAlias | nWorkArea ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">       </span>[
+  NOOPTIMIZE ] <o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>DELETE marks one or more records for deletion. The command
+accepts a Scope, a FOR and a WHILE. Its default scope is NEXT 1. (Good choice
+for a destructive command. It limits the damage if you make a mistake.) RECALL
+unmarks one or more records. Again, the default scope is NEXT 1. <o:p></o:p></p>
+
+<p class=MsoNormal>Both DELETE and RECALL allow you to specify another work
+area using IN. We've changed our minds on using this clause and now recommend
+that you always do so. That way, you're sure what table you're working on. In
+addition, always DELETE the fewest records that make sense. In many cases, you
+should ask the user to confirm the deletion at least once; in extreme cases,
+maybe even twice depending on the reason for the deletion. DELETE and RECALL
+both accept the NOOPTIMIZE keyword, but we've never been able to think of a
+reason to use it. If you really think you need it, see SET OPTIMIZE.<o:p></o:p></p>
+
+<p class=MsoNormal>With Visual FoxPro's Referential Integrity Builder, you'll
+need to write a lot less deletion code than before. If you set deletion to
+cascade in appropriate one-to-many relationships, you need to delete only the
+record on the one side, and the RI code handles all the many records. <span
+style='color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal>Visual FoxPro actually offers two ways to delete records
+(though only one to recall them). DELETE-SQL has pretty much the same
+functionality as the traditional Xbase DELETE. However, Xbase's DELETE pays
+attention to the current deletion status of records and therefore seems to be
+faster when some records are already deleted.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* This might be in the Click event of a Delete button<o:p></o:p></p>
+  <p class=Preformatted>#INCLUDE FoxPro.H<o:p></o:p></p>
+  <p class=Preformatted>IF MESSAGEBOX(&quot;Do you really want to delete this
+  record&quot;,;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">     </span>MB_YESNO +
+  MB_ICONQUESTION + MB_DEFBUTTON2, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    
+  </span>&quot;Delete current record?&quot;) = ID_YES<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>DELETE NEXT 1<o:p></o:p></p>
+  <p class=Preformatted>ENDIF<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted style='margin-top:6.0pt'>PACK [ MEMO | DBF ] [
+  TableName ] [ IN cAlias | nWorkArea ]<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Value<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Meaning<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>TableName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>In VFP 7, specifies the table to pack without opening it
+  first. Just add the path and file name of the table to the command.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cAlias<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Pack the table that's open with the specified alias.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>If nWorkArea and TableName are also omitted, pack the
+  table that's open in the current work area.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nWorkArea<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Pack the table that's open in the specified work area.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>If cAlias and TableName are also omitted, pack the table
+  that's open in the current work area.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>PACK permanently removes all marked records. What it
+actually does is copy all the unmarked records into a new file and then rename
+the new file. (The table is also reindexed.) Because PACK does this behind the
+scenes, there is a small chance for data loss if your system crashes during a
+PACK.<span style='color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal>Use PACK with caution. Before VFP, the standard advice was
+to do the same steps yourself, using COPY TO, DELETE FILE and RENAME. That's
+still your best bet for free tables. Either way, you need exclusive access to
+the file to perform this maintenance. Also, in either case, you should SET
+ORDER TO the tag you use most often before starting the process. That way, the
+records in the resulting file will be in the order in which they are most often
+accessed, resulting in better performance. Here's an example to get you
+started:<o:p></o:p></p>
+
+<p class=Preformatted>USE MyTable ORDER BestOrder EXCLUSIVE<o:p></o:p></p>
+
+<p class=Preformatted>COPY TO MyNewTable FOR NOT DELETED()<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Preformatted>IF FILE(&quot;MyNewTable.DBF&quot;) AND
+FILE(&quot;MyNewTable.FPT&quot;)<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   </span>* Only go on if
+the new version was created<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   </span>USE<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   </span>DELETE FILE
+MyTable.DBF<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   </span>DELETE FILE
+MyTable.FPT<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   </span>DELETE FILE
+MyTable.CDX<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   </span>RENAME
+MyNewTable.DBF TO MyTable.DBF<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   </span>RENAME
+MyNewTable.FPT TO MyTable.FPT<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   </span>* Now re-create
+the indexes<o:p></o:p></p>
+
+<p class=Preformatted>ELSE<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   </span>WAIT WINDOW
+&quot;Trouble in Paradise&quot; NOWAIT<o:p></o:p></p>
+
+<p class=Preformatted>ENDIF<o:p></o:p></p>
+
+<p class=MsoNormal>For tables in a database, things are a little more
+difficult. Using the COPY TO approach, you lose all the database information
+for the table. In particular, your relations get trashed. Your best bet is to
+get a good database maintenance tool (like Stonefield Database Toolkit) to
+handle these chores.<o:p></o:p></p>
+
+<p class=MsoNormal>Memo files (FPT) can accumulate a lot of wasted space
+because replacement of existing data doesn't reuse the same disk space. Over
+time, this can really add up, especially if those humongous general field OLE
+objects are used and edited. PACK MEMO cleans up this wasted space without
+removing the records marked for deletion. There's also a PACK DBF version, but
+it's another of those items that seems to have been added for completeness, not
+because it was useful. It removes deleted records without compacting memo
+space. (If you find a reason to use it, let us know.)<o:p></o:p></p>
+
+<p class=MsoNormal>VFP 7 makes it a little easier to use PACK. First, it
+acquires an IN clause, so you can specify which table you mean and not depend
+on being in the right work area. More interestingly, the new TableName
+parameter means that you can pack a table without having to explicitly open it
+first. To use it, the table must not be open anywhere, since PACK needs
+exclusive access. Among other things, this means that you can't combine the
+TableName and IN clauses, because having the table open in a work area prevents
+it from being opened exclusively for packing. Like a good citizen, VFP cleans
+up after itself and the table is closed after it's packed. Would that all our
+code was as careful. <span style='color:red'><o:p></o:p></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted style='margin-top:6.0pt'>lIsDeleted = DELETED( [ cAlias
+  | nWorkArea ] )<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>DELETED() tells you whether a record has been marked for
+deletion. If so, it returns .T. By default, DELETED() refers to the current
+work area, but you can pass it an alias or work area number to check the status
+of the current record in another work area.<o:p></o:p></p>
+
+<p class=MsoNormal>DELETED() can be very handy in FOR clauses, letting you do
+things like:<o:p></o:p></p>
+
+<p class=Preformatted>BROWSE FOR NOT DELETED()<o:p></o:p></p>
+
+<p class=MsoNormal>to see all the current records in a table.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>SET DELETED ON | OFF<o:p></o:p></p>
+  <p class=Preformatted>cDeletedSetting = SET(&quot;DELETED&quot;)<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The final members of this group are the most confusing. SET
+DELETED is extremely useful, but equally counter-intuitive. This command tells
+other commands whether or not to pay attention to records marked for deletion.
+SET DELETED ON indicates that marked records should be ignored (that is, turn
+off the deleted records). SET DELETED OFF says to include the marked records
+(that is, turn them on). It's only recently that we've been able to use this
+command without looking it up first. (Even the Microsoft/Fox technical writers
+have trouble with this one. The FoxPro 2.5 Language Reference contained an
+error that made both options sound like SET DELETED ON.)<o:p></o:p></p>
+
+<p class=MsoNormal>Setting DELETED ON is similar to setting a filter. It's as
+if the deleted records don't exist. You can issue commands with a scope of ALL
+and have the deleted records ignored. Many applications operate with DELETED ON
+all the time.<o:p></o:p></p>
+
+<p class=MsoNormal>For a long time, the prevailing advice was that working with
+SET DELETED ON meant that every table should have an index tag with a key of DELETED().
+Rushmore uses the tag to optimize elimination of deleted records. Otherwise,
+result sets have to be checked sequentially for records marked for deletion. It
+doesn't matter whether or not any records are actually deleted. Only the SET
+DELETED choice was thought to matter. (See &quot;Faster than a Speeding
+Bullet&quot; for more on this.)<o:p></o:p></p>
+
+<p class=MsoNormal>However, an article by Chris Probst in the May 1999 issue of
+<i>FoxPro Advisor</i> showed that, in some network situations, a tag on
+DELETED() can slow things down rather than speed them up. The issue is bringing
+the index information across the network to figure out which records you want. <o:p></o:p></p>
+
+<p class=MsoNormal>SET(&quot;DELETED&quot;) returns either &quot;ON&quot; or
+&quot;OFF&quot; to indicate the current setting. It's handy for saving the old
+setting when you need to change it.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>cOldDeleted=SET(&quot;DELETED&quot;)<o:p></o:p></p>
+  <p class=Preformatted>SET DELETED OFF<o:p></o:p></p>
+  <p class=Preformatted>* Find a deleted record, perhaps to recycle it<o:p></o:p></p>
+  <p class=Preformatted>LOCATE FOR DELETED()<o:p></o:p></p>
+  <p class=Preformatted>RECALL NEXT 1<o:p></o:p></p>
+  <p class=Preformatted>* Stuff some data into it<o:p></o:p></p>
+  <p class=Preformatted>GATHER MEMVAR<o:p></o:p></p>
+  <p class=Preformatted>* Now clean up<o:p></o:p></p>
+  <p class=Preformatted>SET DELETED &amp;cOldDeleted<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Delete-SQL, Reindex, Set, Set Optimize<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-list:none;mso-list-ins:"Tamar E\. Granor" 20020208T1618'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

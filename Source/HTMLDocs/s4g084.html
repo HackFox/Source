@@ -1,0 +1,799 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g084_files/filelist.xml">
+<title>Set Relation, Set(&quot;Relation&quot;), Set Skip, Set(&quot;Skip&quot;)</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:24:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:24:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1298</o:Words>
+  <o:Characters>7400</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>32256</o:Bytes>
+  <o:Lines>61</o:Lines>
+  <o:Paragraphs>14</o:Paragraphs>
+  <o:CharactersWithSpaces>9087</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>Set Relation, Set(&quot;Relation&quot;), Set Skip,
+Set(&quot;Skip&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal>The two commands here control temporary relations—that is,
+relations you set up in a program for a particular purpose, while the
+corresponding functions tell you about those relations. They have no connection
+with persistent relations stored as part of a database (except that they may
+involve the same tables).<o:p></o:p></p>
+
+<p class=MsoNormal>SET RELATION turns relations on and off while SET SKIP
+indicates that a relation is one-to-many. Don't confuse this form of SET SKIP
+(SET SKIP TO) with the other version (SET SKIP OF), which affects menus and
+popups.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>SET RELATION TO [ eExpr1 INTO cAlias1 | nWorkArea1 <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[,
+  eExpr2 INTO cAlias2 | nWorkArea2 [, ... ] ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ IN
+  cParentAlias | nParentWorkArea ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  ADDITIVE ] ]<o:p></o:p></p>
+  <p class=Preformatted>SET RELATION OFF INTO [ cAlias | nWorkArea ]<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>SET RELATION TO establishes temporary relations. There are
+two ways to define these relationships between two tables. One of them harks
+back to the early days of Xbase. In both cases, two tables are involved: a
+&quot;parent&quot; or controlling table and a &quot;child&quot; or controlled
+table. Once the relation is established, moving the record pointer in the
+parent table automatically moves the record pointer in the child table.<o:p></o:p></p>
+
+<p class=MsoNormal>The usual way connects an expression from the parent record
+to an index key of the child record. The order of the child table must be set
+to the appropriate index before SET RELATION is issued. Once you set the
+relation, moving the record pointer in the parent issues an implied SEEK eExpr<i
+style='mso-bidi-font-style:normal'>n</i> in the child work area. If there is no
+related record, the child's record pointer ends up at EOF().<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>USE Customer<o:p></o:p></p>
+  <p class=Preformatted>USE Orders IN 0 ORDER Customer_I<o:p></o:p></p>
+  <p class=Preformatted>SET RELATION TO Customer_Id INTO Orders<o:p></o:p></p>
+  <p class=Preformatted>* Now moving in Customer moves the record pointer in <o:p></o:p></p>
+  <p class=Preformatted>* Orders to the first order for that customer<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>We've run across a number of people who think a relation can
+be based only on a single field or that the related fields of the child and the
+parent have to have the same name. Neither of these is true. The important
+thing is that the parent must have appropriate fields to create an expression
+that is the same as the key for some tag of the child. In some situations, you
+want to set things up with an expression in the parent that's only part of the
+key expression. For example, say the parent is customer and the child is
+invoice. The invoice table may have a tag on customer_id plus invoice date
+(CUSTOMER_ID+DTOS(INV_DATE)). As long as SET EXACT is OFF, you can establish a
+relation based on just the customer_id; you'll then be able to see the invoices
+for each customer in date order.<o:p></o:p></p>
+
+<p class=MsoNormal>The old, old way of setting a relation uses the record
+number of the child to connect to the parent. In this case, no order is set in
+the child table and the relational expression eExpr<i style='mso-bidi-font-style:
+normal'>n</i> must be numeric. When the record pointer moves in the parent, an
+implied GOTO is issued in the child. We use this technique very, very
+occasionally to connect query results to the original data. (It's usually
+better, though, because of the unreliability of record numbers, to include the
+primary key in the query and base a relation on that field.)<o:p></o:p></p>
+
+<p class=MsoNormal>Family relations are more fluid in the database world than
+in the real world. One table might act as the parent (or controlling) table of
+another at one time, then the relationship may be reversed later. The terms
+&quot;parent&quot; and &quot;child&quot; refer to what's going on at this
+moment rather than to a permanent state of affairs.<o:p></o:p></p>
+
+<p class=MsoNormal>You can establish multiple relations at the same time. That
+is, one parent can control several children (this works better in FoxPro than
+in real life). There are two ways to do this. First, you can list several pairs
+of relational expressions and controlled tables in a single SET RELATION.
+Alternatively, you can use the ADDITIVE clause to allow new relations to be
+added without closing existing relations. The example below shows both
+techniques.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* Open the TasTrade Orders table and relate it to<o:p></o:p></p>
+  <p class=Preformatted>* the Line items and Shippers tables<o:p></o:p></p>
+  <p class=Preformatted>OPEN DATA TasTrade<o:p></o:p></p>
+  <p class=Preformatted>USE Orders<o:p></o:p></p>
+  <p class=Preformatted>USE Order_Line_Items IN 0 ORDER Order_id<o:p></o:p></p>
+  <p class=Preformatted>USE Shippers IN 0 ORDER Shipper_Id<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* Here's both relations set at once<o:p></o:p></p>
+  <p class=Preformatted>SET RELATION TO Order_Id INTO Order_line_items, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">               
+  </span>Shipper_Id INTO Shippers<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* This time, the two relations are set separately<o:p></o:p></p>
+  <p class=Preformatted>SET RELATION TO Order_Id INTO Order_line_items<o:p></o:p></p>
+  <p class=Preformatted>SET RELATION TO Shipper_Id INTO Shippers ADDITIVE<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Issuing SET RELATION TO without any parameters turns off all
+relations for the current work area. To turn off relations selectively, use SET
+RELATION OFF and specify which relation is being terminated.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* Turn off the relation into line items<o:p></o:p></p>
+  <p class=Preformatted>SET RELATION OFF INTO Order_line_items<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The optional IN clause lets you establish relations where
+the parent is in a work area other than the current work area. You can't turn
+relations off this way, though—for that, you have to be in the right work area.
+We find this clause most useful when establishing several levels of
+relationships. Using IN, all the work can be done without changing work areas.<o:p></o:p></p>
+
+<p class=MsoNormal>Multiple levels of relations can be specified. Think of
+parent–child–grandchild–great-grandchild, and so on. For example, in TasTrade,
+you might set up relationships from Customers into Orders, then from Orders
+into Order_Line_Items and then from Order_Line_Items into Products. Moving the
+record pointer in Customers would then move the record pointers for Orders,
+Order_Line_Items and Products.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted style='margin-top:6.0pt'>SET SKIP TO [ cAlias1 [,
+  cAlias2 [ , ... ] ] ] <o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>This command turns a relation into a one-to-many relation.
+It indicates that issuing SKIP in the parent should proceed to the next record in
+the child and not go on to the next parent record until there are no more child
+records for this parent. This allows you to process all the children for a
+given parent. SET SKIP TO by itself changes the relation back to one-to-one.<o:p></o:p></p>
+
+<p class=MsoNormal>SET SKIP is most useful for Browses and reports, where it
+lets you display all the children of a parent.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* Set up a one-to-many relation<o:p></o:p></p>
+  <p class=Preformatted>* between Customers and Orders<o:p></o:p></p>
+  <p class=Preformatted>USE Customer<o:p></o:p></p>
+  <p class=Preformatted>USE Orders IN 0 ORDER Customer_I<o:p></o:p></p>
+  <p class=Preformatted>SET RELATION TO Customer_Id INTO Orders<o:p></o:p></p>
+  <p class=Preformatted>* This Browse shows the first order for each company<o:p></o:p></p>
+  <p class=Preformatted>BROWSE FIELDS Company_Name, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">             
+  </span>Orders.Order_Number,Orders.Order_Date<o:p></o:p></p>
+  <p class=Preformatted>* Now make it one-to-many<o:p></o:p></p>
+  <p class=Preformatted>SET SKIP TO Orders<o:p></o:p></p>
+  <p class=Preformatted>* This Browse shows all orders for each company<o:p></o:p></p>
+  <p class=Preformatted>* and shows each company name only once<o:p></o:p></p>
+  <p class=Preformatted>BROWSE FIELDS Company_Name, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">             
+  </span>Orders.Order_Number,Orders.Order_Date<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>When multiple levels of relations are in place, you can set
+one-to-many relations at any level. To make all the relations in the chain
+one-to-many, issue SET SKIP TO followed by the alias of each table other than
+the parent. In the example above with Customers, Orders, Order_Line_Items and
+Products, to make all three relations one-to-many, you'd issue:<o:p></o:p></p>
+
+<p class=Preformatted>SET SKIP TO Orders,Order_Line_Items,Products<o:p></o:p></p>
+
+<p class=MsoNormal>You can mix and match relations, making some relations in a
+chain one-to-one and others one-to-many. The best way to see the differences is
+to open a few tables, set the relations, then try different parameters to SET
+SKIP, issuing BROWSE each time to see the result.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted style='margin-top:6.0pt'>cRelationPhrase = SET(
+  &quot;RELATION&quot; )<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The undocumented SET(&quot;RELATION&quot;) function returns
+a string that's exactly what you need to put in the SET RELATION command to
+establish the existing relationships for the current work area. The string
+shows every existing relation, including both the relational expression and the
+target.<o:p></o:p></p>
+
+<p class=MsoNormal>The function accepts a second parameter, but it doesn't
+change the output.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>OPEN DATA TasTrade<o:p></o:p></p>
+  <p class=Preformatted>USE Orders<o:p></o:p></p>
+  <p class=Preformatted>USE Order_Line_Items IN 0 ORDER Order_Id<o:p></o:p></p>
+  <p class=Preformatted>USE Shippers IN 0 ORDER Shipper_Id<o:p></o:p></p>
+  <p class=Preformatted>SET RELATION TO Order_Id INTO Order_Line_Items<o:p></o:p></p>
+  <p class=Preformatted>SET RELATION TO Shipper_Id INTO Shippers ADDITIVE<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>?SET(&quot;RELATION&quot;)<o:p></o:p></p>
+  <p class=Preformatted>* &quot;shipper_id INTO shippers, order_id INTO
+  order_line_items&quot;<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>You can use SET(&quot;RELATION&quot;) to store the existing
+relations for a table while you set different ones, then restore the old ones
+when you're done. To get the same information broken into its components, use
+TARGET() and RELATION().<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted style='margin-top:6.0pt'>cSkipAliases =
+  SET(&quot;SKIP&quot;)<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>SET(&quot;SKIP&quot;) is also undocumented. It tells you
+which child tables have one-to-many relationships with the current table. Like
+SET(&quot;RELATION&quot;), it returns a character string that you can plug into
+the corresponding command. In this case, the string is a comma-delimited list
+of aliases.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>OPEN DATA TasTrade<o:p></o:p></p>
+  <p class=Preformatted>USE Orders<o:p></o:p></p>
+  <p class=Preformatted>USE Order_Line_Items IN 0 ORDER Order_Id<o:p></o:p></p>
+  <p class=Preformatted>USE Shippers IN 0 ORDER Shipper_Id<o:p></o:p></p>
+  <p class=Preformatted>SET RELATION TO Order_Id INTO Order_Line_Items<o:p></o:p></p>
+  <p class=Preformatted>SET RELATION TO Shipper_Id INTO Shippers ADDITIVE<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>SET SKIP TO Order_Line_Items<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>?SET(&quot;SKIP&quot;)<span style="mso-spacerun:
+  yes">        </span>&amp;&amp; Returns &quot;Order_line_items&quot;<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>As with SET(&quot;RELATION&quot;), you can use
+SET(&quot;SKIP&quot;) to grab current information before you change it, then
+restore it later. Unlike SET(&quot;RELATION&quot;), there's no other way to get
+the data returned by SET(&quot;SKIP&quot;).<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Alter Table, Create Table, Relation(), Set Order, Target(),
+  Use<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

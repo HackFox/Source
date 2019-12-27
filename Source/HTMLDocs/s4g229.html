@@ -1,0 +1,898 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g229_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g229_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>#Define, #UnDef, #If, #ElIf, #Else, #EndIf, #IfDef, #IfNDef, #Include,
+_Include</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:26:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:26:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1516</o:Words>
+  <o:Characters>8642</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>44032</o:Bytes>
+  <o:Lines>72</o:Lines>
+  <o:Paragraphs>17</o:Paragraphs>
+  <o:CharactersWithSpaces>10612</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>#Define, #UnDef, #If, #ElIf, #Else, #EndIf, #IfDef, #IfNDef,
+#Include, _Include<span style='color:black'><o:p></o:p></span></p>
+
+<p class=MsoNormal>Visual FoxPro 3.0 introduced many new concepts to FoxPro
+programmers, and the ability to manage constants, like the other
+&quot;real&quot; languages, was a most welcome feature. Visual FoxPro supports
+the ability to insert defined constants into program, form and class code, as
+well as the ability to conditionally test and undefine these constants as
+required.<o:p></o:p></p>
+
+<p class=MsoNormal>These are not FoxPro commands, but rather preprocessor
+directives. If you include one of these as a string and attempt to macro-expand
+it within FoxPro, you get the error message &quot;Syntax error.&quot; That's
+because these commands are not intended to be run by the FoxPro interpreter,
+but are directed to the preprocessor, which produces the pseudo-object code
+(&quot;p-code&quot;), which the Visual FoxPro interpreter then runs. To
+distinguish them from FoxPro commands, we often refer to them as &quot;compiler
+directives,&quot; even though, strictly speaking, FoxPro lacks a true compiler.<o:p></o:p></p>
+
+<p class=MsoNormal>Here's the inside scoop. Within the development version of
+FoxPro, source code can be compiled at various times. When saving a method of a
+form, the code is compiled during the save process. When running a program
+whose compiled version is older than its source (with SET DEVELOPMENT ON), the
+source is recompiled. Finally, source is recompiled when you explicitly tell it
+to—either by selecting Compile from the Program menu or by building a project.
+When the preprocessor is called into play, it scans the source code for
+preprocessor directives, all of which begin with the # symbol. If it finds any
+of these, it performs the action specified by the command. If this command
+introduces more preprocessor directives (such as #INCLUDEing another file)
+these directives are completed, too, until all directives have been performed.
+At that point, FoxPro source code is converted into the p-code the interpreter
+(and runtime) will be able to run. Let's review the various commands, and see
+what they can do.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>#DEFINE cName eExpression<o:p></o:p></p>
+  <p class=Preformatted>#UNDEF cName<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>#DEFINE declares a placeholder cName, which is to be
+replaced at compile time with the expression eExpression defined in the
+statement. #DEFINE statements work as in-line search-and-replace commands,
+replacing any occurrence of a specified phrase with an expression. This search
+and replace occurs in any command line anywhere a command keyword (or even a
+command itself) can appear. #DEFINE does not affect a literal string set off
+from the commands with quotation marks, but it does work within square brackets.
+The example below shows how you might want to take advantage of this.<o:p></o:p></p>
+
+<p class=MsoNormal>#DEFINE is in effect only for the single program that
+contains the command or the current event or method procedure within a form or
+class. This is because this is the largest amount of code the preprocessor sees
+at one time—form methods are each compiled individually. A #DEFINE can be
+narrowed in scope even further with the addition of an &quot;undefine&quot;
+(#UNDEF) statement—only code between the #DEFINE and #UNDEF has the substitution
+performed.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>#DEFINE c_nVERSION_NO<span style="mso-spacerun: yes"> 
+  </span>&quot;1.23&quot;<o:p></o:p></p>
+  <p class=Preformatted>* The following inserts the literal TTOC() expression <o:p></o:p></p>
+  <p class=Preformatted>* into the source, rather than the date and time.<o:p></o:p></p>
+  <p class=Preformatted>#DEFINE c_tVERSION_BUILT TTOC(DATETIME())<o:p></o:p></p>
+  <p class=Preformatted>* 1st example: evaluate both outside of quotes.<o:p></o:p></p>
+  <p class=Preformatted>WAIT WINDOW &quot;Version &quot;+ c_nVERSION_NO + ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">           
+  </span>&quot;, built &quot;+c_tVERSION_BUILT<o:p></o:p></p>
+  <p class=Preformatted>* 2nd example: Constants evaluated inside square
+  brackets.<o:p></o:p></p>
+  <p class=Preformatted>WAIT WINDOW [Version c_nVERSION_NO , built
+  c_tVERSION_BUILT]<o:p></o:p></p>
+  <p class=Preformatted>* 3rd example: Constant substitution doesn't take place
+  <o:p></o:p></p>
+  <p class=Preformatted>* within single or double quotes.<o:p></o:p></p>
+  <p class=Preformatted>WAIT WINDOW 'Version c_nVERSION_NO , built
+  c_tVERSION_BUILT'<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>#IF eExpression <o:p></o:p></p>
+  <p class=Preformatted>[ #ELIF eExpression ]<o:p></o:p></p>
+  <p class=Preformatted>[ #ELSE ]<o:p></o:p></p>
+  <p class=Preformatted>#ENDIF<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>These statements tests a condition at compile time, and if
+it's true, the code within the IF...ENDIF pair is included in the source code
+to be compiled. This lets you include lots of code in your application while
+developing—tracing and debugging routines, special function key definitions
+that can pause and single-step the code, routines to provide &quot;backdoors&quot;
+into certain parts of the application—and prevent the code from even being
+included in the final version you install at a client site. What a relief not
+to worry that some data entry clerk will find that
+&quot;Ctrl+Alt+Shift+F12&quot; routine you used to test the end-of-the-year
+closeout routine in July!<o:p></o:p></p>
+
+<p class=MsoNormal>#IF directives can also be used to include or exclude
+platform- or version-specific code. In VFP 3.0 and earlier, slightly different
+commands or functions are needed on the different platforms to support
+platform-specific functions. When the new version on the new platform is
+released, the commands or functions are not recognized on the older software of
+other platforms, generating compiler errors and defeating the cross-platform
+compatibility trademark of FoxPro. This new code can be &quot;wrapped&quot; in
+the #IF...#ELSE…#ENDIF test so that it's included only on the new platform, as
+the second example below illustrates.<span style='color:windowtext'><o:p></o:p></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>#IF C_DEBUGGING<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>do DebugLog
+  with Program(), Pcount()<o:p></o:p></p>
+  <p class=Preformatted>#ENDIF<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* Use the faster VARTYPE() if <o:p></o:p></p>
+  <p class=Preformatted>* compiling under VFP 6 or later.<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>#IF &quot;FOXPRO 06&quot; $ UPPER(VERSION(1)) OR ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>&quot;FOXPRO
+  07&quot; $ UPPER(VERSION(1))<span style="mso-spacerun: yes">  </span><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>IF
+  VARTYPE(toObject) &lt;&gt; &quot;O&quot;<o:p></o:p></p>
+  <p class=Preformatted>#ELSE<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>IF
+  TYPE(&quot;toObject&quot;) # &quot;O&quot; or ISNULL(toObject)<o:p></o:p></p>
+  <p class=Preformatted>#ENDIF<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>RETURN .F.<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>ENDIF<span
+  class=CODE><b><o:p></o:p></b></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The other directive option used with #IF…#ENDIF is the #ELIF
+directive. #ELIF, which translates to &quot;Else If,&quot; allows you to add
+multiple decisions to preprocessor directives. Return either a numeric value (0
+representing false, a non-zero value representing true) or a logical value to
+the expression after the #ELIF, to determine whether the successive lines are
+included.<span style="mso-spacerun: yes">  </span>See the example, below. <o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* <o:p></o:p></p>
+  <p class=Preformatted>#IF &quot;FOXPRO 07&quot; $ UPPER(VERSION(1))<span
+  style="mso-spacerun: yes">  </span><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>? &quot;Using
+  the current version.&quot;<o:p></o:p></p>
+  <p class=Preformatted>#ELIF &quot;FOXPRO 06&quot; $ UPPER(VERSION(1)) <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>? &quot;Using
+  an older version.&quot;<o:p></o:p></p>
+  <p class=Preformatted>#ELIF &quot;FOXPRO 05&quot; $ UPPER(VERSION(1))<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>? &quot;Using
+  a pretty old version.&quot;<o:p></o:p></p>
+  <p class=Preformatted>#ELSE<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>? &quot;Using
+  a really old version!<o:p></o:p></p>
+  <p class=Preformatted>#ENDIF<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>#IFDEF cConstantName<o:p></o:p></p>
+  <p class=Preformatted>#ENDIF<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>This pair of statements tests for the existence of a
+predefined constant, declared with the #DEFINE statement above, at compile
+time, and if it's defined, the code within the IFDEF...ENDIF pair is included
+in the source code to be compiled.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>#IFDEF cAuditing<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; Auditing functions to be included<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>IF cAuditing<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>DO
+  AuditTrail with ...<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>ELSE<o:p></o:p></p>
+  <p class=Preformatted>.... more code<o:p></o:p></p>
+  <p class=Preformatted>#ENDIF<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>#IFNDEF cConstantName<o:p></o:p></p>
+  <p class=Preformatted>#ENDIF<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>This pair of statements is the reverse of the above, the
+equivalent of NOT in the IF portion of the test. If a predefined constant is
+not in effect, either through the lack of a<span style="mso-spacerun: yes"> 
+</span>#DEFINE statement or the removal of the definition using an #UNDEF, the
+code within the IFNDEF...ENDIF pair is included in the source code to be
+compiled.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>#IFNDEF C_DEBUGGING<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>SET
+  DEVELOPMENT OFF<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>SET TRBETWEEN
+  OFF<o:p></o:p></p>
+  <p class=Preformatted>#ENDIF<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>#INCLUDE cFileName<o:p></o:p></p>
+  <p class=Preformatted>_INCLUDE = eFileAndPathName<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>#INCLUDE inserts a second file into the first file, in
+memory, just before performing the compile. This allows you to keep a set of
+handy #DEFINEs around, written in just one place, and stick them into all of
+your programs. A couple of caveats apply, of course:<o:p></o:p></p>
+
+<p class=MsoNormal>One very neat thing is that a file that's #INCLUDEd can have
+any or all of the preprocessor directive statements within it, and these, too,
+are processed by the preprocessor. Our suggestion: Break constant files into
+bite-sized chunks and create a STANDARD.H file that #INCLUDEs them all. That
+way, if a specific set of definitions must be maintained, they can be located
+most easily. Breaking them up by function (display, I/O, security) can make it
+easier to swap out a set when replacing or upgrading a subsystem. An
+alternative is to have a &quot;common&quot; set of definitions in a COMMON.H
+and include that in &quot;subsystem&quot; include files.<o:p></o:p></p>
+
+<p class=MsoNormal>Rather than using this function in every method of a form or
+class, check out the &quot;Include File...&quot; option on the Form or Class
+menu. This makes the #INCLUDEd material available to each and every method
+within the form or class.<span style='color:windowtext'><o:p></o:p></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted><span style='color:black'><img width=95 height=77
+  id="_x0000_i1025" src="..\..\..\..\HackGifs\fixbug1.gif"></span><span
+  class=CODE><o:p></o:p></span></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>In VFP version 3.x, compiling a file that #INCLUDE's other
+  files doesn't return any error messages if the #INCLUDEd file is not located
+  or cannot be opened because it is in use. This one trips us up all the time:
+  If you open FoxPro.H to see what they called a constant, and then compile and
+  run a program using that file without closing the editing window, you'll get
+  stupid errors like &quot;Variable 'COLOR_RED' is not found.&quot; In VFP 5.0
+  and later, a dialog appears, informing you the file can't be opened, and
+  generates an ERR file if you choose &quot;Ignore&quot; to continue compiling.
+  Although we at least get an error telling us it's open, we wish having the
+  #INCLUDE file open didn't prevent you from compiling. That's just plain
+  annoying. <span class=CODE><span style='font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><img width=114 height=66 id="_x0000_i1026"
+  src="..\..\..\..\HackGIFs\Cool.gif"><span class=CODE><span style='font-size:
+  10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>We've mentioned FoxPro.H in a few places throughout the
+  book, and thought we should clue you in on this file. This file contains
+  predefined sets of constants for many of the more difficult-to-remember
+  functions, such as color numbers, low-level file routines, PRTINFO() types,
+  parameters to MessageBox() and so forth. This file is worth browsing and
+  using. We far prefer to see code using these constants, because it's much
+  easier to read and, therefore, to maintain.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>_INCLUDE is a system memory variable introduced in VFP 6.
+_INCLUDE is blank unless we set the preferences in Tools | Options | File
+Locations. When _INCLUDE is set to a header file, this file is automatically
+included in the compilation of all forms and classes. This is a wonderful way
+to ensure that your constants are available throughout your projects. We wish,
+however, they would have considered making _INCLUDE available for <i
+style='mso-bidi-font-style:normal'>all</i> compilation—programs, menu code,
+whatever—for consistency.<o:p></o:p></p>
+
+<p class=MsoNormal>While .H is a standard extension for a header file, you can
+use any extension you like, provided you specify it in the #INCLUDE statement.
+Do remember that other programmers are likely looking for the .H extension,
+though.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* STANDARD.H<o:p></o:p></p>
+  <p class=Preformatted>#INCLUDE FOXPRO.H<o:p></o:p></p>
+  <p class=Preformatted>#INCLUDE MyVars.H<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* Much easier-to-read code<o:p></o:p></p>
+  <p class=Preformatted>#INCLUDE FOXPRO.H<o:p></o:p></p>
+  <p class=Preformatted>IF MESSAGEBOX(&quot;Question&quot;,;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span><span
+  style="mso-spacerun: yes">           </span>MB_YESNO + MB_ICONQUESTION +
+  MB_DEFBUTTON2, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">             
+  </span>&quot;Title&quot;) = IDYES<o:p></o:p></p>
+  <p class=Preformatted>* than:<o:p></o:p></p>
+  <p class=Preformatted>IF MESSAGEBOX(&quot;Question&quot;, 292,
+  &quot;Title&quot;) = 6<span style="mso-spacerun: yes">  </span>&amp;&amp;
+  what's 292? 6?<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>_INCLUDE =
+  LOCFILE(HOME()+&quot;FOXPRO.H&quot;,&quot;H&quot;)<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Compile, Set Development<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

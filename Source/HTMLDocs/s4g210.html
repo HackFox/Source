@@ -1,0 +1,1012 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g210_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g210_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>ACopy()</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:26:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:26:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1109</o:Words>
+  <o:Characters>6323</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>38912</o:Bytes>
+  <o:Lines>52</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>7765</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>ACopy()<o:p></o:p></p>
+
+<p class=MsoNormal>This function copies data from one array to another. Sounds
+simple, doesn't it? But it's not because ACOPY() doesn't require a one-to-one
+correspondence between the two arrays. You can copy from any consecutive set of
+elements in the source array to consecutive positions anywhere in the
+destination array. You can even copy data from one place to another in the same
+array! As with many array functions, ACOPY() doesn't care if the arrays you
+hand it are one-dimensional or two-dimensional; it treats them as
+one-dimensional. You supply a starting element and number of elements to copy
+from the source array and a starting element in the destination array.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>nNumberCopied = ACOPY(SourceArray, DestArray [,
+  nSourceStart <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                      
+  </span>[, nSourceLength [, nDestStart ] ] ] )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Value<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Meaning<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>SourceArray<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Array Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The array containing the data to be copied. It can be one-
+  or two-dimensional, but must exist.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>DestArray<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Array Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The array to which data is copied. If it doesn't exist,
+  Visual FoxPro creates it and makes it identical in dimensions to SourceArray.
+  If it's too small to hold the number of elements copied, as many elements as
+  fit are copied and then an error is generated. If DestArray is larger than
+  the number of items copied, extra array elements are left alone. If DestArray
+  has a different shape, elements are simply copied in order and the array is <i
+  style='mso-bidi-font-style:normal'>not</i> reshaped to match the source.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nSourceStart<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The first element of SourceArray to be copied. This is
+  always an element number, even if SourceArray is two-dimensional.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>All elements in SourceArray are copied.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nSourceLength<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The number of elements copied.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>All elements from nSourceStart to the end of the array are
+  copied.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nDestStart<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The first element of DestArray where copied data is
+  placed. Copying continues from that element toward the end of the array.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Data is placed in DestArray beginning at the first
+  element.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nNumberCopied<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The number of items copied.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>As with other array functions, one of the tricks to
+understanding ACOPY() is the dual nature of FoxPro's two-dimensional arrays.
+Much of FoxPro's internal processing treats two-dimensional arrays as if they
+were one-dimensional, assigning each element an &quot;element number&quot; by going
+across each row in turn. (For example, the first item in the third row of a 3x2
+array is element 5.) The two starting values in ACOPY(), nSourceStart and
+nDestStart, use this element notation.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>DIMENSION aSample[3,2]<o:p></o:p></p>
+  <p class=Preformatted>* fill the array<o:p></o:p></p>
+  <p class=Preformatted>FOR nCnt = 1 TO 6<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   
+  </span>aSample[nCnt]=nCnt<o:p></o:p></p>
+  <p class=Preformatted>ENDFOR<o:p></o:p></p>
+  <p class=Preformatted>* copy the whole array<o:p></o:p></p>
+  <p class=Preformatted>= ACOPY(aSample, aNew)<o:p></o:p></p>
+  <p class=Preformatted>DISPLAY MEMORY LIKE A*<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; shows new array<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                       
+  </span>&amp;&amp; identical to the original<o:p></o:p></p>
+  <p class=Preformatted>* copy the last row<o:p></o:p></p>
+  <p class=Preformatted>= ACOPY(aSample, aOneRow, 5)<o:p></o:p></p>
+  <p class=Preformatted>DISPLAY MEMORY LIKE A*<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; shows new array <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                       
+  </span>&amp;&amp; with one row filled in<o:p></o:p></p>
+  <p class=Preformatted>* copy the second row<o:p></o:p></p>
+  <p class=Preformatted>= ACOPY(aSample, aSecond, 3, 2)<o:p></o:p></p>
+  <p class=Preformatted>DISPLAY MEMORY LIKE A*<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; shows new array<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                       
+  </span>&amp;&amp; again one row filled in<o:p></o:p></p>
+  <p class=Preformatted>* create a large, one-dimensional array<o:p></o:p></p>
+  <p class=Preformatted>DIMENSION aLarge[50]<o:p></o:p></p>
+  <p class=Preformatted>* copy the entire first array positioning at item 11<o:p></o:p></p>
+  <p class=Preformatted>= ACOPY(aSample, aLarge, 1, 6, 11)<o:p></o:p></p>
+  <p class=Preformatted>DISPLAY MEMORY LIKE A*<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; show result<o:p></o:p></p>
+  <p class=Preformatted>* now copy last 3 elements positioning at item 25<o:p></o:p></p>
+  <p class=Preformatted>= ACOPY(aSample, aLarge, 4, 3, 25)<o:p></o:p></p>
+  <p class=Preformatted>DISPLAY MEMORY<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; show result<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=94 height=94
+  id="_x0000_i1025" src="..\..\..\..\HackGIFs\Design.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The examples show one really weird behavior of ACOPY().
+  When the destination array doesn't exist, FoxPro creates it and makes it
+  match the source array. Sounds sensible, except for one thing. It does it
+  even when copying only a subset of the element in the source. Take a look
+  again at what happens when you copy only one row of the source to aOneRow—the
+  new array is still 3x2 even though only the first row contains data. This
+  behavior is documented, but we can't see why it was designed this way.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>By now, you may have noticed that while ACOPY() is great for
+copying all the elements in an array or copying a group of rows, it's totally
+useless if you want to copy one or more columns. That's because of the way
+FoxPro handles two-dimensional arrays. Since we get asked about this a lot,
+here's a function that copies the data from one or more columns. Unlike
+ACOPY(), you do have to create the second array before you call the function in
+order to pass it (by reference) as a parameter. If the array is too small,
+aColCopy() redimensions it to the appropriate size to hold the copied data in
+the specified position. (If you pass a variable that's not an array, it gets
+turned into an appropriate array.) aColCopy() does require you to pass the
+number of the first column to copy since there's no reason to use it to copy a
+whole array.<o:p></o:p></p>
+
+<p class=Preformatted>FUNCTION aColCopy<o:p></o:p></p>
+
+<p class=Preformatted>* Copy one or more columns from a source array to a
+destination array.<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Preformatted>LPARAMETERS aSource, aDest, nStartCol, nColCount,
+nDestCol<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>* aSource =
+array to be copied<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>* aDest =
+destination array<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>* nStartCol =
+first column to copy - required<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>* nColCount =
+number of columns to copy - optional. <o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>*<span
+style="mso-spacerun: yes">             </span>Go to end of aSource, if omitted<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>* nDestCol =
+first column of destination to receive copied data - optional<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>*<span
+style="mso-spacerun: yes">            </span>1 if omitted<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Preformatted>LOCAL nRetVal,nOldRows,nOldCols,nOldCount,nItem<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>* nRetVal =
+return value, number of columns copied.<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>*<span
+style="mso-spacerun: yes">         </span>= -1, if can't copy<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span><o:p></o:p></p>
+
+<p class=Preformatted>* Check source array<o:p></o:p></p>
+
+<p class=Preformatted>IF TYPE(&quot;aSource[1]&quot;)=&quot;U&quot; OR
+ALEN(aSource,2)=0<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>* not a 2-d
+array, can't do it<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>RETURN -1<o:p></o:p></p>
+
+<p class=Preformatted>ENDIF<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Preformatted>* Check for starting column<o:p></o:p></p>
+
+<p class=Preformatted>IF TYPE(&quot;nStartCol&quot;)&lt;&gt;&quot;N&quot;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>RETURN -1<o:p></o:p></p>
+
+<p class=Preformatted>ENDIF<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Preformatted>* Check number of columns. Compute if necessary<o:p></o:p></p>
+
+<p class=Preformatted>IF TYPE(&quot;nColCount&quot;)&lt;&gt;&quot;N&quot; OR
+nStartCol+nColCount&gt;ALEN(aSource,2)<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes"> 
+</span>nColCount=ALEN(aSource,2)-nStartCol+1<o:p></o:p></p>
+
+<p class=Preformatted>ENDIF<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Preformatted>* Check destination column.<o:p></o:p></p>
+
+<p class=Preformatted>IF TYPE(&quot;nDestCol&quot;)&lt;&gt;&quot;N&quot;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>nDestCol=1<o:p></o:p></p>
+
+<p class=Preformatted>ENDIF<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span><o:p></o:p></p>
+
+<p class=Preformatted>* Check destination array for size. It must exist to be
+passed in.<o:p></o:p></p>
+
+<p class=Preformatted>* First, make sure it's an array.<o:p></o:p></p>
+
+<p class=Preformatted>* Then, see if it's shaped right for all the data.<o:p></o:p></p>
+
+<p class=Preformatted>* Two cases - if enough cols, but not enough rows, can
+just add<o:p></o:p></p>
+
+<p class=Preformatted>* If not enough cols, have to move data around.<o:p></o:p></p>
+
+<p class=Preformatted>IF TYPE(&quot;aDest[1]&quot;)=&quot;U&quot;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>DIMENSION
+aDest[ALEN(aSource,1),nColCount+nDestCol-1]<o:p></o:p></p>
+
+<p class=Preformatted>ELSE<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>IF ALEN(aDest,2)&gt;=nColCount+nDestCol-1<span
+style="mso-spacerun: yes">  </span>&amp;&amp; enough columns<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span>IF
+ALEN(aDest,1)&lt;ALEN(aSource,1)<span style="mso-spacerun: yes">  
+</span>&amp;&amp; not enough rows<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">      </span>DIMENSION
+aDest[ALEN(aSource,1),ALEN(aDest,2)]<span style="mso-spacerun: yes"> 
+</span>&amp;&amp; add some<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span>ENDIF<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>ELSE<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span>* now the hard
+one<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span>* not enough
+columns, so need to add more (and maybe rows, too)<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   
+</span>nOldRows=ALEN(aDest,1)<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   
+</span>nOldCols=ALEN(aDest,2)<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   
+</span>nOldCount=ALEN(aDest)<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span>DIMENSION
+aDest[MAX(nOldRows,ALEN(aSource,1)),nColCount+nDestCol-1]<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span><o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span>* DIMENSION
+doesn't preserve data location, so we need to adjust the data<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span>* We go
+backward from the end of the array toward the front, moving data <o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span>* down, so we
+don't overwrite any data by accident<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span>FOR
+nItem=nOldCount TO 2 STEP -1<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">      </span>* Use new
+item number and old dimensions to determine<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">      </span>* new item
+number for each element<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">      </span>IF
+nOldCols&lt;&gt;0<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">       
+</span>nRow=CEILING(nItem/nOldCols)<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">       
+</span>nCol=MOD(nItem,nOldCols)<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">        </span>IF nCol=0<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">          </span>nCol=1<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">        </span>ENDIF<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">      </span>ELSE<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">        </span>nRow=nItem<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">        </span>nCol=1<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">      </span>ENDIF<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span><o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">     
+</span>aDest[nRow,nCol]=aDest[nItem]<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes"> </span><span
+style="mso-spacerun: yes">   </span>ENDFOR<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>ENDIF<o:p></o:p></p>
+
+<p class=Preformatted>ENDIF<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Preformatted>* finally ready to start copying<o:p></o:p></p>
+
+<p class=Preformatted>FOR nCol=1 TO nColCount<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>FOR nRow=1 TO
+ALEN(aSource,1)<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   
+</span>aDest[nRow,nDestCol+nCol-1]=aSource[nRow,nStartCol+nCol-1]<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  </span>ENDFOR<o:p></o:p></p>
+
+<p class=Preformatted>ENDFOR<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Preformatted>RETURN nColCount*ALEN(aSource,1)<o:p></o:p></p>
+
+<p class=MsoNormal>For example, suppose you want just the filenames from an
+ADIR() listing. You could use aColCopy() like this:<o:p></o:p></p>
+
+<p class=Preformatted>=ADIR(aFiles)<o:p></o:p></p>
+
+<p class=Preformatted>DIMENSION aNames[1]<o:p></o:p></p>
+
+<p class=Preformatted>=aColCopy(@aFiles,@aNames,1,1)<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ADel(), AElement(), AIns(), Array Manipulation,
+  ASubscript(), Copy To Array, Dimension<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

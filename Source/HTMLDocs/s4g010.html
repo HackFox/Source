@@ -1,0 +1,697 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g010_files/filelist.xml">
+<title>(), Evaluate(), &amp;, ExecScript()</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:24:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:24:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1131</o:Words>
+  <o:Characters>6447</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>32256</o:Bytes>
+  <o:Lines>53</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>7917</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>(), Evaluate(), &amp;, ExecScript()<o:p></o:p></p>
+
+<p class=MsoNormal>Sometimes you need to refer to a file without knowing its
+name or you need to build an expression or even a series of lines of code and
+then execute it. Think of () (called &quot;indirect reference&quot; or
+&quot;name expression&quot;), EVALUATE() (better known as EVAL()), &amp; (macro
+expansion), and EXECSCRIPT() as the guillotine that performs the execution.
+Hmmm, maybe that's not such a good analogy.<o:p></o:p></p>
+
+<p class=MsoNormal>In any case, all four items let you write code when you
+don't know exactly what should happen when the code runs. There are four
+levels, which correspond to the four choices.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>(cName)<o:p></o:p></p>
+  <p class=Preformatted>uResult = EVALUATE(cExpression)<o:p></o:p></p>
+  <p class=Preformatted>&amp;cString<o:p></o:p></p>
+  <p class=Preformatted>uResult = EXECSCRIPT(cCode)<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>First, perhaps you want to let a user select a report to
+run, or you'd like to use the same piece of code to open several different
+tables. Indirect reference lets you put a name in a variable and refer to the
+variable instead of giving the specific name. For example, if you write:<o:p></o:p></p>
+
+<p class=Preformatted>USE (m.cFileName)<o:p></o:p></p>
+
+<p class=MsoNormal>FoxPro evaluates the variable cFileName and substitutes the
+name found there in the USE command.<o:p></o:p></p>
+
+<p class=MsoNormal>Indirect reference works only when FoxPro expects a name. So
+you can't write something like:<o:p></o:p></p>
+
+<p class=Preformatted>BROWSE FOR (m.cExpression)<o:p></o:p></p>
+
+<p class=MsoNormal>because FoxPro expects an expression there, not a name.<o:p></o:p></p>
+
+<p class=MsoNormal>Which brings us neatly to the next level. When FoxPro
+expects an expression, you can use EVALUATE(), which tells FoxPro to evaluate
+the named variable, and then use the result as part of the command.
+(Incidentally, TYPE() and EVALUATE() use exactly the same level of indirection.
+If you have trouble figuring out what parameter to pass to TYPE(), imagine that
+you're passing it to EVALUATE() to be evaluated.)<o:p></o:p></p>
+
+<p class=MsoNormal>For example, in the BROWSE above, you could write:<o:p></o:p></p>
+
+<p class=Preformatted>BROWSE FOR EVAL(m.cExpression)<o:p></o:p></p>
+
+<p class=MsoNormal>It turns out, though, that it's not a great idea to use
+EVALUATE() in a FOR clause. We'll explain why below. But here's a better
+example of EVALUATE():<o:p></o:p></p>
+
+<p class=Preformatted>STORE EVAL(cFieldName) TO SomeVar<o:p></o:p></p>
+
+<p class=MsoNormal>EVALUATE() is essential in reports, where macro expansion
+doesn't work. You can use expressions like:<o:p></o:p></p>
+
+<p class=Preformatted>EVAL(FIELD(1))<o:p></o:p></p>
+
+<p class=MsoNormal>to handle reporting on query results where the field names
+are unknown (such as in a crosstab). You can also use:<o:p></o:p></p>
+
+<p class=Preformatted>EVAL(cGroupExpr)<o:p></o:p></p>
+
+<p class=MsoNormal>as a grouping expression to avoid designing separate reports
+where grouping is the only difference.<o:p></o:p></p>
+
+<p class=MsoNormal>The third level is for the times when you want to build up
+whole pieces of code and then execute them. In this case, the string contains
+more than just an expression—perhaps even an entire command. Here, you need
+macro expansion. (These are &quot;real&quot; macros, not to be confused with
+the wimpy keyboard macros covered in SAVE MACROS, PLAY MACRO, and RESTORE
+MACROS. Keyboard macros are just a simplistic recording and playback of
+keystrokes. This macro expansion—arguably one of Fox's most powerful
+commands—tells Fox to interpret, compile and execute the code on the fly.)
+Macros are also used to substitute for reserved words. For example, you've
+probably written something like this:<o:p></o:p></p>
+
+<p class=Preformatted>cOldSafety=SET(&quot;SAFETY&quot;)<o:p></o:p></p>
+
+<p class=Preformatted>SET SAFETY OFF<o:p></o:p></p>
+
+<p class=Preformatted>* some code<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Preformatted>SET SAFETY &amp;cOldSafety<o:p></o:p></p>
+
+<p class=MsoNormal>Here, the &quot;ON&quot; or &quot;OFF&quot; that was stored
+in cOldSafety is a character string, but the command SET SAFETY expects a
+keyword of ON or OFF. The &amp; macro operator converts the string to a
+keyword.<o:p></o:p></p>
+
+<p class=MsoNormal>Another common place for a macro is in queries. You might
+build up any of the field list, the table list or the WHERE clause in a string
+and then macro-expand it like this:<o:p></o:p></p>
+
+<p class=Preformatted>SELECT &amp;cFieldList ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span>FROM
+&amp;cTableList ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">    </span>WHERE
+&amp;cWhere<o:p></o:p></p>
+
+<p class=MsoNormal>Macros are powerful and work almost everywhere (though not,
+as noted above, in reports). There are a couple of gotchas, though.<o:p></o:p></p>
+
+<p class=MsoNormal>First, only variables can be macro expanded. You can't apply
+a macro to a field or property. So, you need two steps when the string to be
+expanded is in a field or property. Say the field cCmd of MyTable contains an
+entire command to be executed by macro expansion. You have to do it like this:<o:p></o:p></p>
+
+<p class=Preformatted>cVar=MyTable.cCmd<o:p></o:p></p>
+
+<p class=Preformatted>&amp;cVar<o:p></o:p></p>
+
+<p class=MsoNormal>The second gotcha is sort of a consequence of the first.
+When you macro-expand a variable, you can't use the &quot;m.&quot; variable
+notation. This is okay because you can't macro-expand a field, so there's no
+ambiguity. But why does it work this way?<o:p></o:p></p>
+
+<p class=MsoNormal>The &quot;.&quot; is a terminator for macro expansion. (Boy,
+this is a gory topic. We've got &quot;executed&quot; commands and
+&quot;terminators.&quot; Where's Arnold?) This means the string to be expanded
+ends as soon as you reach a period. This can be very convenient if you want to
+add something to the expanded string or expand several strings in sequence.
+Before the addition of indirect reference to the Fox language in 2.0, it was
+essential because you could write something like:<o:p></o:p></p>
+
+<p class=Preformatted>USE &amp;cFileName..EXT<o:p></o:p></p>
+
+<p class=MsoNormal>but now, with named expressions, it's better to write:<o:p></o:p></p>
+
+<p class=Preformatted>USE (cFileName+&quot;.EXT&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal>We still find uses for the double period in something like:<o:p></o:p></p>
+
+<p class=Preformatted>lcAlias = alias()<o:p></o:p></p>
+
+<p class=Preformatted>* more code in here<o:p></o:p></p>
+
+<p class=Preformatted>xx = &amp;lcAlias..Field1<o:p></o:p></p>
+
+<p class=MsoNormal>or:<o:p></o:p></p>
+
+<p class=Preformatted>ThisForm.pgfPageFrame.&amp;PageName..Control.Property =
+.T.<o:p></o:p></p>
+
+<p class=MsoNormal>though you could use EVAL(lcAlias+&quot;.Field1&quot;) in
+the first case.<o:p></o:p></p>
+
+<p class=MsoNormal>The consequence of the period as terminator is what happens
+when you write something like:<o:p></o:p></p>
+
+<p class=Preformatted>&amp;m.cVar<o:p></o:p></p>
+
+<p class=MsoNormal>FoxPro sees this as &quot;macro expand m, then tack the
+results onto 'cVar'.&quot; Since you don't usually have a character variable
+called &quot;m&quot;, generally you get an error message when you do this. Even
+if there is a variable m, you certainly don't get what you wanted.<o:p></o:p></p>
+
+<p class=MsoNormal>What about performance? We often see people going to great
+lengths to eliminate macros from their code. But the truth is that, in certain
+cases, macros are actually faster than EVALUATE(). Here are a couple of
+guidelines.<o:p></o:p></p>
+
+<p class=MsoNormal>Always use indirect reference rather than EVALUATE() or a
+macro. If FoxPro expects a name, indirect reference is the right choice.<o:p></o:p></p>
+
+<p class=MsoNormal>In a command that will be executed repeatedly, it's
+generally better to use a macro than EVALUATE(). The macro is expanded once and
+substituted into the command while an EVALUATE() expression is evaluated each
+time the command executes. This is also true for scoped commands that apply to
+multiple records, like the BROWSE above. The macro is expanded once and the
+result used on each record; EVALUATE() is re-evaluated for each record. So, for
+the BROWSE above, you're better off issuing:<o:p></o:p></p>
+
+<p class=Preformatted>BROWSE FOR &amp;cExpression<o:p></o:p></p>
+
+<p class=MsoNormal>Macros that execute only once aren't really all that slow.
+The place to avoid macros is inside loops. <o:p></o:p></p>
+
+<p class=MsoNormal>Indirect referencing, EVALUATE(), and macros fill in parts
+of a line of code, or can even stand in for a whole line of code. But what if
+you want to compose and run multiple lines of code? In versions prior to VFP 7,
+you had to use a utility like Randy Pearson's CodeBlock or RunCode.PRG from the
+VFP FFC subdirectory. But VFP 7 gives us EXECSCRIPT(), which runs many lines of
+code, much like highlighting several lines in the Command Window and executing
+them (they're probably running the same code internally). EXECSCRIPT() takes a
+character string as its first parameter, which can be a variable, character
+field, or memo field. Subsequent parameters are passed to the code contained in
+the first parameter.<o:p></o:p></p>
+
+<p class=MsoNormal>Perhaps you have a table of user-defined formulas. They all
+take two numeric parameters, nFirst and nSecond. A really cool module of your
+application allows them to define the formula, then stores it in a memo field
+in the UDCode table. The memo field, cleverly called cCode, might contain:<o:p></o:p></p>
+
+<p class=Preformatted>LPARAMETERS nFirst, nSecond<o:p></o:p></p>
+
+<p class=Preformatted>RETURN nFirst + nSecond<o:p></o:p></p>
+
+<p class=MsoNormal>To execute the code in the memo field, issue:<o:p></o:p></p>
+
+<p class=Preformatted>nNewValue = EXECSCRIPT(UDCode.cCode, 2, 4)<o:p></o:p></p>
+
+<p class=MsoNormal>Since EXECSCRIPT() returns a value, you can embed it in
+other statements, such as within SELECT commands. The possibilities are
+mind-boggling. You can store code in memo fields, perhaps providing custom
+functionality for individual clients. You can build and execute multiple lines
+on the fly, built from information entered by the user. <span style='color:
+windowtext'><o:p></o:p></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Play Macro, Restore Macros, Save Macros, Type()<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

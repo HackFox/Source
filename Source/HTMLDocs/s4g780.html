@@ -1,0 +1,695 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g780_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g780_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Access, Assign</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:31:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:31:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1060</o:Words>
+  <o:Characters>6045</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>36352</o:Bytes>
+  <o:Lines>50</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>7423</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2><span style='color:black'>Access, Assign<o:p></o:p></span></p>
+
+<p class=MsoNormal>These methods, added in VFP 6, make it easier to write good
+OOP code. Every property of an object can have an Access method and an Assign
+method. The property's Access method fires whenever the property is read
+(accessed) while its Assign method fires whenever the property is changed
+(assigned). <o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>PROCEDURE property_Access<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>PROCEDURE property_Assign<o:p></o:p></p>
+  <p class=Preformatted>LPARAMETERS uNewValue<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>One of the key OOP themes is encapsulation, the idea that an
+object should know how to take care of itself. These methods take that idea one
+step further and let a <i style='mso-bidi-font-style:normal'>property</i> take
+care of itself. <o:p></o:p></p>
+
+<p class=MsoNormal>Ordinarily, when a property value is used or changed,
+there's nothing we can do about it because no event fires. When properties are
+bound to controls, we can take advantage of the control's events to notice
+changes to the bound properties, but that still leaves us with no way to
+respond to the use of properties or to changes to properties not bound to
+controls. Similarly, if we know a property is being used or changed in code, we
+can write more code at that point to deal with the change. But it requires us
+to know that the property is used or changed and to make sure we remember to
+add the code every single time.<o:p></o:p></p>
+
+<p class=MsoNormal>Access and Assign methods take a different point of view.
+They belong to the property and monitor everything that happens to that
+property. When anyone looks at the property's value, the property's Access
+method fires. When anyone saves a value to the property, the property's Assign
+method fires. This means we can respond immediately to both uses and changes of
+a property. <o:p></o:p></p>
+
+<p class=MsoNormal>Why do we care? Ever had one property that should be updated
+whenever another one gets changed? Ever wanted to keep track of the number of
+times a value is read? Ever wanted to create a read-only public property? Until
+now, we've always had to handle these situations by writing code wherever the
+property gets changed or wherever it gets used. Now we can encapsulate that
+code with the property itself so that we don't have to remember to copy the
+right code or call the right routine every time.<o:p></o:p></p>
+
+<p class=MsoNormal>Not only do Access and Assign methods give you new events to
+hook into, they also let you control what the outside world can see and do with
+a property. A property's Access method is called before the value is provided
+to the code using the property—you can jump in and change what gets returned.
+Specifically, the code that uses the property sees the return value of the
+Access method, not the actual value stored in the property. So you can do
+things like have a different internal representation of a property than what
+the world sees.<o:p></o:p></p>
+
+<p class=MsoNormal>As for the Assign method, it too gets called before the
+operation actually occurs. The new value is passed as a parameter. It's up to
+you whether the value actually gets assigned to the property. You can do any
+validity checking you want (so only a limited set of values are accepted),
+ignore the new value altogether (creating a de facto read-only property),
+change the input, or whatever. When you add an Assign method for a property, it
+gets created with a line setting the property to the parameter value, but you
+can change it if you want.<o:p></o:p></p>
+
+<p class=MsoNormal>Access and Assign methods don't just apply to properties;
+there's also a special This_Access method that fires at the object level. This
+can lead to some very, er, interesting and powerful behaviors, like the fourth
+example below. In that example, if a property of an object does not exist, when
+an attempt is made to access it, the object creates the property on the fly!
+This_Access even fires when a method of the object is called. <o:p></o:p></p>
+
+<p class=MsoNormal>As with the property-specific Access and Assign methods,
+This_Access fires first. It returns an object reference—the actual behavior
+that was requested is applied to that object. That's right—you can redirect a
+method call or a request for a property value or an attempt to assign a value
+to an entirely different object than the one mentioned in the call. It seems to
+us that you'd want to do such a thing only very rarely. Littering your code
+with this kind of thing is the path to ravioli code (the OOP equivalent of
+spaghetti code—code that's impossible to trace and understand).<o:p></o:p></p>
+
+<p class=MsoNormal>We suspect there's a fair amount of overhead in calling
+these methods, so don't create them indiscriminately. Save them for those
+properties where they really make a difference.<o:p></o:p></p>
+
+<p class=MsoNormal>On to practical matters. You create Access and Assign
+methods through the New Property dialog or the Edit Property/Method dialog.
+Each contains check boxes for Access and Assign. Checking either one adds that
+method for that property. The name of the method is propertyname_Access or
+propertyname_Assign. You can also create Access and Assign methods using the
+New Method dialog. Just watch your spelling.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=114 height=66
+  id="_x0000_i1025" src="..\..\..\..\HackGIFs\cool.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>You can even create Access and Assign methods for built-in
+  properties of classes. Use the Edit Property/Method dialog. To do this for
+  forms (created with the Form Designer), you have to create the methods using
+  New Method—the form's built-in properties don't show up in the Edit Property/Method
+  dialog. That's probably because forms aren't really sure whether they're
+  objects or classes.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Once you create the methods, they appear in the usual places
+for methods: the Methods tab of the property sheet, the drop-down list in the
+method-editing window, and so forth. Because they already contain code, though,
+they're always in the top group in the method editor. <o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1026" src="..\..\..\..\..\HackGIFs\fixbug1.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>VFP 7 Service Pack 1 fixes a bug in the original release
+  of VFP 7 (but not previous versions of VFP): Storing a reference to an object
+  in a property of another object with an Assign method left a dangling
+  reference to the first object (the one being stored). Dangling references are
+  bad, because they prevent objects from being released properly (for example,
+  forms won't close even when you click on the Close box).<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* Make BackColor read-only<o:p></o:p></p>
+  <p class=Preformatted>PROCEDURE backcolor_assign<o:p></o:p></p>
+  <p class=Preformatted>LPARAMETERS vNewVal<o:p></o:p></p>
+  <p class=Preformatted>* Throw away the new value<o:p></o:p></p>
+  <p class=Preformatted>RETURN<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* Limit a custom property to values between 1 and 10<o:p></o:p></p>
+  <p class=Preformatted>PROCEDURE myproperty_assign<o:p></o:p></p>
+  <p class=Preformatted>LPARAMETERS vNewVal<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>IF VARTYPE(vNewVal)&lt;&gt;&quot;N&quot;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>ERROR
+  1732<span style="mso-spacerun: yes">  </span>&amp;&amp; &quot;Data type
+  invalid for this property&quot;<o:p></o:p></p>
+  <p class=Preformatted>ELSE<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>IF
+  BETWEEN(vNewVal,1,10)<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">     
+  </span>This.MyProperty = m.vNewVal<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>ELSE<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">      </span>ERROR
+  46<span style="mso-spacerun: yes">  </span>&amp;&amp; &quot;Expression
+  evaluated to an illegal value&quot;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>ENDIF<o:p></o:p></p>
+  <p class=Preformatted>ENDIF<o:p></o:p></p>
+  <p class=Preformatted>RETURN<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* Make sure a property contains the right value when
+  it's used.<o:p></o:p></p>
+  <p class=Preformatted>* In this case, perimeter is meant to be the perimeter
+  of a <o:p></o:p></p>
+  <p class=Preformatted>* quadrilateral, so it should always be the sum of the <o:p></o:p></p>
+  <p class=Preformatted>* four sides.<o:p></o:p></p>
+  <p class=Preformatted>PROCEDURE perimeter_access<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>This.Perimeter = This.Side1 + This.Side2 + ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                
+  </span>This.Side3 + This.Side4<o:p></o:p></p>
+  <p class=Preformatted>RETURN This.Perimeter<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* Demonstration of on-the-fly property creation using <o:p></o:p></p>
+  <p class=Preformatted>* This_Access<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>oDear = CreateObject(&quot;cusTestAA&quot;)<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>? oDear.False<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; Displays .F. for the newly created property<o:p></o:p></p>
+  <p class=Preformatted>oDear.BackColor = RGB(255,255,255)<o:p></o:p></p>
+  <p class=Preformatted>? oDear.BackColor<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; Shows the numeric equivalent of white<o:p></o:p></p>
+  <p class=Preformatted>release oDear<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>return<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>DEFINE CLASS cusTestAA as Custom<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>PROCEDURE
+  This_Access<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>LPARAMETERS
+  cMember<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>* Determine if
+  the member already exists<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>IF
+  PemStatus(This, cMember, 5)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; Already exists, okay<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>ELSE<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   
+  </span>This.AddProperty(cMember)<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>ENDIF<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>RETURN This<o:p></o:p></p>
+  <p class=Preformatted>ENDDEFINE<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

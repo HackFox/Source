@@ -1,0 +1,943 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g059_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g059_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Append From, Copy To, Import, Export</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:24:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:24:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1764</o:Words>
+  <o:Characters>10056</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>48128</o:Bytes>
+  <o:Lines>83</o:Lines>
+  <o:Paragraphs>20</o:Paragraphs>
+  <o:CharactersWithSpaces>12349</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l10
+	{mso-list-id:1290821941;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-417157038 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>Append From, Copy To, Import, Export<o:p></o:p></p>
+
+<p class=MsoNormal>These commands let you move data in and out of DBF format.
+APPEND FROM and COPY TO also let you move data between tables.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>APPEND FROM FileName | ? <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ FIELDS
+  FieldList ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ FOR
+  lCondition ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ [ TYPE
+  ] [ DELIMITED <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[ WITH
+  Delimiter | WITH BLANK | WITH TAB<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[ WITH
+  CHARACTER Separator ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>| DIF |
+  FW2 | MOD | PDOX | RPD | SDF <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>| SYLK
+  | WK1 | WK3 | WKS | WR1 | WRK | CSV | XLS <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>| XL5 [
+  SHEET SheetName ] | XL8 [ SHEET SheetName ] ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ AS
+  nCodePage ]<o:p></o:p></p>
+  <p class=Preformatted>IMPORT FROM FileName<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  DATABASE DBCName [ NAME LongTableName ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ TYPE ]
+  FW2 | MOD | PDOX | RPD | WK1 | WK3 | WKS<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>| WR1 |
+  WRK | XLS | XL5 [ SHEET cSheetName ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>| XL8 [
+  SHEET cSheetName ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ AS
+  nCodePage ]<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>APPEND FROM and IMPORT bring in data in a foreign format and
+put it in a FoxPro table. The difference is that APPEND FROM adds data to an
+existing table, while IMPORT creates a new table, figuring out what fields it
+should have. (In some cases, the new table's field names are distinctly
+stupid.) In addition, APPEND FROM lets you specify the mapping of data to
+fields and lets you omit some of the incoming data.<o:p></o:p></p>
+
+<p class=MsoNormal>APPEND FROM adds the data to the table open in the current
+work area. IMPORT creates and opens a table, giving it the same name as the
+source file, but with a DBF extension.<o:p></o:p></p>
+
+<p class=MsoNormal>APPEND FROM deals with more file formats than IMPORT. In
+addition to all the foreign formats, you can use it to move data between two FoxPro
+tables or from text files into a table. (If you omit the TYPE clause entirely,
+data is appended from one FoxPro table to another.)<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1025" src="..\..\..\..\HackGIFs\bug.gif"><span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Don't count on a COPY TO and APPEND FROM pair returning the
+  original file in all configurations. SYLK is limited to 9,999 records while
+  APPENDing. COPYing to most of the spreadsheet formats, like DIF and MOD,
+  introduces a header that may create a blank first record while importing. VFP
+  is limited by the number of rows the spreadsheet supports: 8,192 rows for
+  WK1, WKS, WR1 and WRK formats, and 16,383 for Excel. (Although APPEND FROM
+  can import the 65,536 possible rows of Excel 2000 and later, COPY TO can only
+  output 16,383 rows.) Note that for several of the formats, such as WK3, you
+  can use APPEND FROM, but not COPY TO. <span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>We figure if you have data with one of the listed
+extensions, you know where it came from and what it looks like, so we won't get
+into details like &quot;PDOX is Paradox data.&quot; If you really want to know,
+Help has a complete list.<o:p></o:p></p>
+
+<p class=MsoNormal>Instead, let's look at the ones that don't correspond to
+foreign file formats: DELIMITED and SDF. SDF is simpler—it stands for
+&quot;system data format&quot; and refers to a file where each field takes up a
+fixed amount of space corresponding to its length. SDF files are also sometimes
+called &quot;column-separated&quot; files, and are a common way to import
+mainframe data. Using SDF, any application capable of columnar output files can
+serve as input to VFP. Even if APPEND FROM didn't support SDF files, these are
+pretty easy to read in and parse.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1026" src="..\..\..\..\HackGIFs\bug.gif"><span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>APPEND FROM SDF has a problem with Date fields: It assumes
+  that dates in the data being appended have two-digit years, so anything after
+  the second digit is assumed to be the start of the next field. DateTime
+  fields are treated correctly.<span class=CODE><span style='font-size:10.0pt;
+  font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>DELIMITED is for files that contain data with delimiters and
+separators. There's a lot of confusion about those two, particularly since the
+command itself mixes them up. Delimiters are characters that surround the data
+in a field. For example, the word &quot;snazzlefritz&quot; is delimited by
+quote marks in this sentence. Separators come between two data items. For
+example, the following list of colors uses commas as separators:
+&quot;chartreuse, lavender, fuchsia, taupe, teal.&quot; A delimited file
+normally contains both delimiters and separators. Here's an example (generated
+from the Labels.DBF that comes with VFP):<o:p></o:p></p>
+
+<p class=Preformatted>&quot;DATAW&quot;,&quot;LABELLYT&quot;,&quot;Avery
+4143&quot;,F,4869,/<span style="mso-spacerun: yes">  </span>/<o:p></o:p></p>
+
+<p class=Preformatted>&quot;DATAW&quot;,&quot;LABELLYT&quot;,&quot;Avery
+4144&quot;,F,39266,/<span style="mso-spacerun: yes">  </span>/<o:p></o:p></p>
+
+<p class=Preformatted>&quot;DATAW&quot;,&quot;LABELLYT&quot;,&quot;Avery
+4145&quot;,F,24620,/<span style="mso-spacerun: yes">  </span>/<o:p></o:p></p>
+
+<p class=Preformatted>&quot;DATAW&quot;,&quot;LABELLYT&quot;,&quot;Avery
+4146&quot;,F,32961,/<span style="mso-spacerun: yes">  </span>/<o:p></o:p></p>
+
+<p class=MsoNormal>Each character field is surrounded by quotes (the
+delimiters), and fields are separated by commas. This is the default format for
+a delimited file. <o:p></o:p></p>
+
+<p class=MsoNormal>TYPE DELIMITED can handle several other options. DELIMITED
+WITH BLANK and DELIMITED WITH TAB use quotes for delimiters, and fields are
+separated by spaces or tabs. DELIMITED WITH DELIMITER lets you specify the
+delimiter—fields are separated by commas. <o:p></o:p></p>
+
+<p class=MsoNormal>VFP 5 introduced the DELIMITED WITH CHARACTER clause that
+lets you specify the separator. So DELIMITED WITH CHARACTER ! means that
+there's an exclamation point between each pair of fields. We can't see why they
+couldn't have improved the situation here by giving this option a useful name
+like SEPARATED BY. Nonetheless, we're very grateful to have this option because
+it increases the number of files we can handle without having to break out the
+low-level file functions.<o:p></o:p></p>
+
+<p class=MsoNormal>You can combine DELIMITED WITH and DELIMITED WITH CHARACTER
+to specify both the delimiter and the separator.<o:p></o:p></p>
+
+<p class=MsoNormal>TYPE CSV (&quot;comma-separated values&quot;) is like
+DELIMITED, except VFP assumes the first line in the file contains field names,
+so it skips that line.<o:p></o:p></p>
+
+<p class=MsoNormal>On the whole, the choices are quite a mess. If you're still
+confused by this, we suggest you do what we did to figure all this out. Try
+COPY TO with each option on a small data sample.<o:p></o:p></p>
+
+<p class=MsoNormal>The FOR clause of APPEND FROM looks at each record as if it
+had already been added to the table in question and evaluates the condition in
+that situation. In older versions of FoxPro, this was a big issue because the
+deleted flag of a record didn't come along on an APPEND, so it could be very
+difficult to copy all the deleted or all the undeleted records. Starting in VFP
+3, the deleted flag comes along, so this issue just doesn't come up very often.
+The time you're most likely to run into this is if the table you're copying
+from has a logical field indicating that it should be copied, but the field
+doesn't exist in the destination. Say there's an lArchive field in the source
+indicating that the record is ready to be archived. When you issue a command
+like:<o:p></o:p></p>
+
+<p class=Preformatted>USE Archive<o:p></o:p></p>
+
+<p class=Preformatted>APPEND FROM Source FOR Source.lArchive<o:p></o:p></p>
+
+<p class=MsoNormal>the lArchive field is evaluated only for the current record
+of the source, not for each one in turn. So either all records or no records
+are copied. Setting a filter on the source table doesn't help; VFP ignores it.
+The workaround is to use a SQL SELECT statement to select the matching records
+into a temporary cursor, or COPY the records to a temporary file, and then
+APPEND from there.<o:p></o:p></p>
+
+<p class=MsoNormal>The AS clause of both commands lets you specify the code
+page of the original data so it can be translated on the way in.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=94 height=93
+  id="_x0000_i1027" src="..\..\..\..\HackGIFs\Design.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Unlike APPEND FROM, IMPORT doesn't set _TALLY to the
+  number of records imported (in our testing, it set _TALLY to 1). Use
+  RECCOUNT() instead.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1028" src="..\..\..\..\HackGIFs\bug.gif"><span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>If you specify a database to which the new table created
+  by IMPORT is added, and that database has database events turned on in VFP 7,
+  you'd expect the BeforeAddTable and AfterAddTable (or perhaps
+  BeforeCreateTable and AfterCreateTable) events to fire. Unfortunately, no
+  events fire.<span class=CODE><span style='font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>USE MyTable<o:p></o:p></p>
+  <p class=Preformatted>APPEND FROM MyOtherTable FOR nAmount&gt;500<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>IMPORT FROM MailList.XLS TYPE XLS<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>COPY TO FileName <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  DATABASE DBCName [ NAME LongTableName ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ FIELDS
+  FieldList<span style="mso-spacerun: yes">  </span><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>|
+  FIELDS LIKE Skeleton <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>|
+  FIELDS EXCEPT Skeleton ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ Scope
+  ] [ FOR lForCondition ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ WHILE
+  lWhileCondition ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ [ WITH
+  ] CDX | [ WITH ] PRODUCTION ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  NOOPTIMIZE ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ [ TYPE
+  ] FOXPLUS | FOX2X | DIF | MOD | SDF | SYLK<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>| WK1 |
+  WKS | WR1 | WRK | CSV | XLS | XL5<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>|
+  DELIMITED [ WITH Delimiter | WITH BLANK <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>| WITH
+  TAB ] [ WITH CHARACTER Separator ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ AS
+  nCodePage ]<o:p></o:p></p>
+  <p class=Preformatted>EXPORT TO FileName [ FIELDS FieldList ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ Scope
+  ] [ FOR lForCondition ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ WHILE
+  lWhileCondition ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span><span
+  style="mso-spacerun: yes">      </span>[ NOOPTIMIZE ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ TYPE ]
+  DIF | MOD | SYLK | WK1 | WKS | WR1 | WRK <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>| XLS |
+  XL5<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ AS
+  nCodePage ]<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Both COPY TO and EXPORT copy selected data to another file.
+We can't see much reason to use EXPORT, since COPY TO can do everything it does
+and more. (In fact, we're fairly convinced EXPORT exists only because IMPORT
+does.) Both create a brand-new file containing the specified data.<o:p></o:p></p>
+
+<p class=MsoNormal>Because the original source for COPY TO and EXPORT is a
+table, you have more options as to which records are involved. The usual Scope,
+FOR and WHILE clauses let you pick and choose among the records. Unlike APPEND
+FROM, in COPY TO the clauses are evaluated before the data is copied. And, just
+in case you like to slow things down, there's NOOPTIMIZE.<o:p></o:p></p>
+
+<p class=MsoNormal>See the discussion above for an explanation of SDF and
+DELIMITED files. COPY TO also includes the FOXPLUS and FOX2X options that let
+you create tables that are compatible with older Fox products. A FOXPLUS table
+is really a dBase III Plus table and is compatible with just about everything
+around.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=94 height=94
+  id="_x0000_i1029" src="..\..\..\..\HackGIFs\Design.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The behavior of COPY TO ... DELIMITED differs between
+  versions of VFP:<o:p></o:p></p>
+  <ul style='margin-top:0in' type=disc>
+   <li class=MsoNormal style='mso-list:l10 level1 lfo11;tab-stops:list .5in'>DELIMITED
+       WITH BLANK: In FoxPro 2.x, character fields aren't surrounded by quotes.
+       Leading spaces in character fields are removed in VFP 3. All other
+       versions work correctly.<o:p></o:p></li>
+   <li class=MsoNormal style='mso-list:l10 level1 lfo11;tab-stops:list .5in'>DELIMITED
+       WITH &quot;&quot; or DELIMITED WITH []: These commands give an error in
+       versions prior to VFP 7. In VFP 7, they create a text file with no
+       quotes around any field.<o:p></o:p></li>
+  </ul>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=77
+  id="_x0000_i1030" src="..\..\..\..\HackGIFs\bug.gif"><span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Earlier versions of Excel permitted a maximum of 16,384
+  rows. Although more recent versions of Excel extend that limit to 65,536
+  rows, neither COPY TO nor EXPORT will create an Excel file with more than
+  16,384 rows. This is because COPY TO only supports XL5 copying, while APPEND
+  FROM and IMPORT support XL8. This is sort of a &quot;by-design&quot; gotcha,
+  but we sure wish they'd change it.<span class=CODE><span style='font-size:
+  10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+  color:windowtext'><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=94 height=94
+  id="_x0000_i1031" src="..\..\..\..\HackGIFs\Design.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>COPY TO ... TYPE XLS is as much as 10-15 times faster than
+  COPY TO ... TYPE XL5. In addition, XL5 files are significantly larger than
+  their XLS counterparts. However, date fields aren't treated properly in XLS
+  files. You'll see them displayed in Excel as &quot;DD-MMM-YY&quot;, and
+  changing the format to &quot;MM/DD/YYYY&quot; doesn't help. You actually have
+  to go into each cell, edit (without making any changes), and then click in
+  another cell to see the date formatted properly. Dates work just fine in XL5
+  files.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>When you're copying to another Visual FoxPro table, you can
+make various choices. You can create either a free table or a table that's
+contained in a database. If you choose to put it into a database, you can
+specify a long name for it. You can also decide whether to copy the structural
+CDX file—that's what WITH is all about.<o:p></o:p></p>
+
+<p class=MsoNormal>The AS clause lets you create the new file with a different
+code page than the original.<o:p></o:p></p>
+
+<p class=MsoNormal>Unlike the bug mentioned earlier with IMPORT, the
+BeforeAddTable and AfterAddTable events do fire if you specify a database in
+the COPY TO command and if that database has database events turned on in VFP 7
+and later.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>USE Labels<o:p></o:p></p>
+  <p class=Preformatted>* Check out some of the options.<o:p></o:p></p>
+  <p class=Preformatted>COPY TO LabelPlus TYPE FOXPLUS<o:p></o:p></p>
+  <p class=Preformatted>COPY TO Label2x TYPE FOX2X<o:p></o:p></p>
+  <p class=Preformatted>COPY TO Label.Txt FIELDS Type, Id, Name, CkVal ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>TYPE
+  DELIMITED<o:p></o:p></p>
+  <p class=Preformatted>COPY TO Label.Txt FIELDS Type, Id, Name, CkVal;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>TYPE
+  DELIMITED WITH BLANK<o:p></o:p></p>
+  <p class=Preformatted>COPY TO Label.Txt FIELDS Type, Id, Name, CkVal;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>TYPE
+  DELIMITED WITH TAB<o:p></o:p></p>
+  <p class=Preformatted>COPY TO Label.Txt FIELDS Type, Id, Name, CkVal;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>TYPE
+  DELIMITED WITH ~<o:p></o:p></p>
+  <p class=Preformatted>COPY TO Label.Txt FIELDS Type, Id, Name, CkVal;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>TYPE
+  DELIMITED WITH CHARACTER #<o:p></o:p></p>
+  <p class=Preformatted>COPY TO Label.Txt FIELDS Type, Id, Name, CkVal;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>TYPE
+  DELIMITED WITH ~ WITH CHARACTER #<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Take a look at the file created for each of the last six
+examples to understand the different DELIMITED options.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Append From Array, AfterAddTable, AfterCreateTable,
+  BeforeAddTable, BeforeCreateTable, Copy File, Set Optimize, _Tally<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

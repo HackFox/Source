@@ -1,0 +1,1508 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g351_files/filelist.xml">
+<title>Define Class</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>hack7s4.dot</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>2</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:27:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:27:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2860</o:Words>
+  <o:Characters>16305</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>61440</o:Bytes>
+  <o:Lines>135</o:Lines>
+  <o:Paragraphs>32</o:Paragraphs>
+  <o:CharactersWithSpaces>20023</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{mso-style-update:auto;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	mso-pagination:none;
+	mso-list:l9 level1 lfo1;
+	tab-stops:list .25in;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+span.msoIns
+	{mso-style-type:export-only;
+	mso-style-name:"";
+	text-decoration:underline;
+	text-underline:single;
+	color:teal;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:153263762;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:-570555544;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:-1315694614;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:-9428608;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-214170142;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:-1107499948;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:1179944244;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:6961116;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-177560818;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-2080578730;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"List Bullet";
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>Define Class<o:p></o:p></p>
+
+<p class=MsoNormal>This command is the code-based method for defining new
+classes based on existing ones (including the Visual FoxPro base classes). You
+define a class &quot;as&quot; an existing class, and then spell out the
+differences between the new class and the old one. With each new version of
+VFP, use of this command seems to increase. The Document View tool added in VFP
+7 makes working with classes defined in code far easier than in earlier
+versions.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>DEFINE CLASS ClassName AS ParentClass [ OF
+  ParentClassLibrary ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span>[ OLEPUBLIC ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  PROTECTED ProtectedPropertyList ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ HIDDEN
+  HiddenPropertyList ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  Property = uExpr ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  Property_COMATTRIB = nFlags |<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         
+  </span>DIMENSION PEMName_COMATTRIB[ 5 ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[
+  Property_COMATTRIB[ 1 ] = nFlags ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[
+  Property_COMATTRIB[ 2 ] = cHelpString ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[
+  Property_COMATTRIB[ 3 ] = cPropertyCase ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[
+  Property_COMATTRIB[ 4 ] = cPropertyType ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[
+  Property_COMATTRIB[ 5 ] = nOptionalParams ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[
+  IMPLEMENTS cInterface [ EXCLUDE ] IN<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         
+  </span>cTypeLib | TypeLibGUID | cProgID ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ ADD
+  OBJECT [ PROTECTED ] ObjectName AS ObjectClass <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[
+  NOINIT ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[ WITH
+  PropertyList ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ [
+  PROTECTED | HIDDEN ] PROCEDURE | FUNCTION MethodName<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            </span>[ (
+  ParamName [ AS ParamType ] [ @ ] [, … ] ) ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            </span>[ AS
+  MethodReturnType ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            </span>[
+  HELPSTRING cHelpString ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         
+  </span>Commands<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[
+  ENDPROC | ENDFUNC ] ]<o:p></o:p></p>
+  <p class=Preformatted>ENDDEFINE<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Value<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Meaning<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ClassName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name to assign the new class.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ParentClass<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Class Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The existing class on which the new class is based.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ParentClassLibrary<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Class Library Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The full path and name of the class library containing
+  ParentClass.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ProtectedPropertyList<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>List of Names<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Names of properties that can be seen only within the class
+  and its subclasses.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>HiddenPropertyList<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>List of Names<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Names of properties that can be seen only in this class.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Property<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>A property to receive an initial value. It can be one
+  listed in ProtectedPropertyList or HiddenPropertyList, a new property to add,
+  or a property inherited from ParentClass.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>uExpr<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Expression<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The value to assign to Property.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nFlags<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The set of attributes to give the property or method in
+  the type library. See Help for the values.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The property is read-write and visible, or the method is
+  visible.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cHelpString<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The help string for the property or method, appearing in
+  Object Browsers or IntelliSense, via the Type Library.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The property or method has no help string.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cPropertyCase<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of the property with the desired capitalization.
+  This version is placed in the Type Library. (Doesn't apply to methods;
+  specify capitalization in the PROCEDURE line.)<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The property name is put in the Type Library in all caps.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cPropertyType<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The property type to be stored in the Type Library. Uses
+  the same list of types as the AS clause. (Doesn't apply to methods; use the
+  AS clause.)<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The property is listed as a Variant.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nOptionalParams<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Positive number<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The number of parameters that are optional. The remaining
+  parameters (which begin with the first parameter) are required. This item
+  applies to methods only and is ignored for properties.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted or 0<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>All parameters are required.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cInterface<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of the interface to implement.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cTypeLib<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The full path to the Type Library containing the interface
+  definition.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>TypeLibGUID<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>GUID<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The unique ID for the Type Library containing the
+  interface definition, followed by a backslash and the major and minor version
+  numbers of the Type Library.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cProgID<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The registered ProgID for the Type Library containing the
+  interface definition.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ObjectName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name to give an object to be added to this class as a
+  member. Only container classes can contain object members.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ObjectClass<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Class Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The class on which the object ObjectName is based. It must
+  be derived from a base class that can be a member of this type of container
+  class.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>PropertyList<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>A list of initial assignments to properties of ObjectName
+  in the form: <br>
+  <span style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:
+  "Times New Roman";color:windowtext'>Property = uExpr</span><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>MethodName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>A valid procedure or function name. The method may be a
+  new one or one inherited from ParentClass. It can also be a property name
+  followed by _Access or _Assign or the name This_Access.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ParamName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of a parameter for the method.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ParamType<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Type Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The type for this parameter, to be stored in the Type
+  Library. If the AS clause is omitted, the parameter is a Variant.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>MethodReturnType<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Type Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The return type of the method, to be stored in the Type
+  Library. If the AS clause is omitted, the return type is Variant. Use a
+  return type of VOID to indicate that the method doesn't return anything.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Commands<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The code to execute for method MethodName. May include the
+  special NoDefault designator that indicates that the base system behavior for
+  this method should not be executed, and the DoDefault() function that calls
+  up the class hierarchy.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The property assignment, ADD OBJECT and method definition
+sections can be repeated. A single class definition can contain many of each.<o:p></o:p></p>
+
+<p class=MsoNormal>Let's look at each part of a class definition. Start with
+the DEFINE CLASS line. You can't create classes out of nothing. Every new class
+is derived from an existing class. Ultimately, all classes can trace their
+heritage back to one of the Visual FoxPro base classes. (See &quot;Base
+Clef&quot; in &quot;OOP is Not an Accident&quot; for a list.)<o:p></o:p></p>
+
+<p class=MsoNormal>When creating a class, you base it on the class that's
+closest in appearance and behavior to what you want to end up with. That way,
+you minimize the amount of work you have to do to get what you want. <o:p></o:p></p>
+
+<p class=MsoNormal>Basing one class on another means that the new class starts
+out with all the properties, events and methods of the ParentClass, and that
+changes to the ParentClass will usually be passed along to the new class. (That's
+inheritance.) This is a Good Thing, since it lowers your maintenance burden. In
+fact, it's one of the main points of OOP.<o:p></o:p></p>
+
+<p class=MsoNormal>Beginning in VFP 7, you can also specify the class library
+for the parent class, right in the DEFINE CLASS. This means that when you
+instantiate classes based on the new class, you don't have to be sure to SET
+PROCEDURE TO the right library first.<o:p></o:p></p>
+
+<p class=MsoNormal>Adding the OLEPUBLIC keyword defines this class as a custom
+Automation server (or COM server) that can be instantiated from other applications.
+You have to BUILD DLL or BUILD EXE to use such classes as servers. (You can
+also use these classes inside a single VFP session, but we're not sure why
+you'd want to. Maybe for testing.) Creating a COM server is one of the most
+common reasons for defining a class in code—in that case, you probably want to
+base it on the Session class, which was designed specifically for this purpose.
+Check out the entry for the Session class for more information.<span
+style='color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal>Protection, in the OOP sense, has nothing to do with paying
+off the local mobster. A protected property, member or method can't be seen
+outside the object itself (except that its subclasses can see it, too). This is
+how you keep other objects from messing around with this one. If outside
+objects need to know or change the value of a protected property, you can
+provide a method to allow this. That method can make sure that the change
+doesn't foul things up. (If you need to make a property visible to the outside
+world but protect it from bad data, use an assign method, instead.)<o:p></o:p></p>
+
+<p class=MsoNormal>Hidden properties and methods are even more protected than
+protected ones. Not only can't other objects see them, even subclasses can't
+see them. Unfortunately, hidden properties and methods can't even be used by
+methods that are themselves called via the double-colon (::) scope resolution
+operator or DoDefault(). This means that hidden is pretty much useless.<span
+style='color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal>The property assignments serve a couple of purposes. First,
+you can use them to assign values to properties that already belong to the
+class, including those you just defined as protected or hidden. Second, you
+create new properties this way. If you don't know what values you want for them
+yet (perhaps they'll be assigned in the class's Init method), just give them
+empty values of the appropriate type.<o:p></o:p></p>
+
+<p class=MsoNormal>Beginning in VFP 7, you can specify properties (better known
+as attributes) of your properties and methods. For classes used only within
+VFP, this isn't terribly useful or important. But for COM objects, this ability
+lets you determine how other applications see your objects. <o:p></o:p></p>
+
+<p class=MsoNormal>There are two ways to specify the attributes of a property.
+If the only thing you want to change is the visibility or read-write status of
+the property, you can use the simpler form:<o:p></o:p></p>
+
+<p class=Preformatted>PropertyName_COMATTRIB = nFlags<o:p></o:p></p>
+
+<p class=MsoNormal>nFlags is an additive flag that allows you to make a
+property read-only, write-only or read-write (the default). It also includes
+values that determine whether applications that read the Type Library (like
+Object Browsers) can see a property or method. The list of flag values is
+contained in the Help entry for Define Class and can be found in FoxPro.H.<o:p></o:p></p>
+
+<p class=MsoNormal>If you want to specify other attributes of a property (and
+you should), use the array form of COMATTRIB. In this case, declare an array of
+the form PropertyName_COMATTRIB and give it four elements. (You can give it
+five, but the last item is ignored for properties.) Then, assign values to the
+four items.<o:p></o:p></p>
+
+<p class=MsoNormal>The first element of the COMATTRIB array contains the nFlags
+value, the same as when using the scalar form. The second element specifies a
+help string for the property—this is the descriptive string that appears in
+tools like the VFP Object Browser and Office Object Browser. It's also used for
+the tip in IntelliSense's List Members display.<o:p></o:p></p>
+
+<p class=MsoNormal>The third array element specifies the way the property
+should appear. This overcomes VFP's tendency to convert property names to all
+caps in the Type Library. The fourth element indicates the type of the
+property.<o:p></o:p></p>
+
+<p class=MsoNormal>Specifying method attributes is a little different. You can
+use a COMATTRIB array, but it should have five elements. Only the first and
+fifth elements are used. As with properties, the first element specifies the
+flags. The fifth element indicates how many of the method's parameters are
+optional. This number is counted from the right-hand side of the list. So for a
+method, Actor, with four parameters, including this line:<o:p></o:p></p>
+
+<p class=Preformatted>Actor_COMATTRIB[5] = 1<o:p></o:p></p>
+
+<p class=MsoNormal>indicates that the first three parameters are required and
+the last is optional.<o:p></o:p></p>
+
+<p class=MsoNormal>The other attributes of a method are specified as part of
+the method definition. The capitalization used in the class definition is
+passed on to the Type Library. A help string can be provided by using the new
+HELPSTRING clause of PROCEDURE. Similarly, you can specify the return type of
+the method by adding AS TypeName after the parameter list.<o:p></o:p></p>
+
+<p class=MsoNormal>If all that weren't enough COM stuff, there's a whole
+'nother new COM-related capability, beginning in VFP 7. That's the ability to
+implement interfaces from other objects. For an explanation of interfaces and
+implementing them, see &quot;It was Automation, You Know&quot; in Section 1. <o:p></o:p></p>
+
+<p class=MsoNormal>The short version is that you can add methods to a VFP class
+that respond to events raised by other objects. For example, you can create a
+VFP class that responds to a user's actions in Word, or Excel, or Outlook. <o:p></o:p></p>
+
+<p class=MsoNormal>The key to responding to outside events is the IMPLEMENTS
+line of DEFINE CLASS. This line indicates that the class in question is going
+to provide code that executes when the events of a particular interface occur.
+Once you add that line to a class, it then must include a method definition for
+every event of the specified interface. How do you know what they are? Take the
+shortcut—open the appropriate Type Library in VFP's Object Browser (also new in
+VFP 7), drill down in the left pane until you find the interface you're
+interested in, and then drag that interface to an empty MODIFY COMMAND window.
+The structure you need is auto-magically created—all you have to do is fill the
+actual code to respond to the events. Well, that, and set things up right at
+runtime. See EventHandler() for more on that piece of the puzzle.<o:p></o:p></p>
+
+<p class=MsoNormal>When you implement an interface, you need some way to
+indicate whose interface it is. VFP accepts three forms of identification, but
+one of them is far inferior to the other two. Specifying the path and file name
+for the Type Library binds your class definition to a particular machine—why
+would you want to do that? We're puzzled as to why this is the form the Object
+Browser generates. <o:p></o:p></p>
+
+<p class=MsoNormal>Either of the other two forms is portable. On the whole, we
+think the ProgId version is better than the TypeLibGUID version—it's portable
+and readable.<o:p></o:p></p>
+
+<p class=MsoNormal>When the class you're defining is derived from a container
+class (like Form, Container and so forth), you can add member objects in the definition.
+In some cases, you're restricted to members of certain classes—see &quot;Not
+Quite All There&quot; in &quot;OOP is Not an Accident.&quot;<o:p></o:p></p>
+
+<p class=MsoNormal>When you add objects this way, you can set some of their
+properties up front by using the WITH clause. The OOP experts recommend that
+you don't do this because it's tantamount to subclassing the thing on the fly.
+It's better to either create a subclass that has the properties you need or to
+make the changes in the container's Init method.<o:p></o:p></p>
+
+<p class=MsoNormal>The NOINIT clause says that the object should be added to
+this class without running its Init method. We haven't yet run into a case
+where this is useful, but we're sure it's there for a reason.<o:p></o:p></p>
+
+<p class=MsoNormal>Finally, you can define methods. Again, these can be new
+definitions for existing methods inherited from ParentClass or its ancestors,
+or brand-new methods that belong only to this class. Just about any FoxPro
+command is valid inside method code. As we said before, when you're defining
+COM objects, the method definition is the place to specify the right capitalization
+of the method name, the method's return type and the help string. <o:p></o:p></p>
+
+<p class=MsoNormal>There are two ways to specify parameters for a method. You
+can have LPARAMETERS as the first executable line inside the method, or you can
+specify the parameters as part of the PROCEDURE or FUNCTION line. For a COM
+object, the latter is a better choice, so the parameters show up in the Type
+Library. Whichever way you do it, starting in VFP 7, you can specify parameter
+types using the AS clause.<o:p></o:p></p>
+
+<p class=MsoNormal>There are two special things you can do in method code. Each
+of them relates to dealing with inherited behavior. First, you can explicitly
+call methods belonging to the parent class (or even its ancestors) by using the
+:: operator or the DoDefault() function. Second, you can suppress the default
+system behavior of an event by including the NoDefault keyword. For more
+information on both of these, see &quot;OOP is Not an Accident.&quot; <o:p></o:p></p>
+
+<p class=MsoNormal>You can also define some special kinds of methods. Access
+and assign methods let you hook events to properties. To create an access
+method for a property, name the method with the name of the property followed
+by _Access; similarly, you create an assign method with the property name
+followed by _Assign. There's also a special global access method called
+This_Access. For details on when these methods fire and what they do, see the
+&quot;Access, Assign&quot; section.<o:p></o:p></p>
+
+<p class=MsoNormal>In earlier editions of this book, we said that we didn't
+think you should use DEFINE CLASS very often. In most cases, we still feel that
+way. There are great benefits to defining your classes visually using the Class
+Designer: drag and drop, builders, manipulation in the Class Browser and
+Component Gallery, and more. You get a lot more flexibility with visual design.
+<o:p></o:p></p>
+
+<p class=MsoNormal>However, the COM abilities added in VFP 7 (IMPLEMENTS and
+COMATTRIB) are available only in code classes. In addition, working in code
+classes isn't as hard as it used to be, thanks to an assortment of
+enhancements, from IntelliSense to Document View. The bottom line is that
+visual classes (forms, controls and the like) should be designed visually,
+while code is a better approach for many non-visual classes.<span
+style='color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal>So, today, if you ask us whether to define classes in code
+or in the Class Designer, we'll give you our favorite answer: &quot;It
+depends.&quot;<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>DEFINE CLASS EasyForm AS FORM<o:p></o:p></p>
+  <p class=Preformatted>* Here's a pretty basic form that auto-centers, has a
+  Close<o:p></o:p></p>
+  <p class=Preformatted>* button and lets you pass it a background color and a
+  window <o:p></o:p></p>
+  <p class=Preformatted>* caption.<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>AutoCenter =
+  .T.<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>ADD OBJECT
+  cmdClose AS CloseButton<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>PROCEDURE
+  Init(nBackColor, cCaption)<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">  </span><span
+  style="mso-spacerun: yes">    </span>IF TYPE(&quot;nBackColor&quot;) =
+  &quot;N&quot;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        
+  </span>This.BackColor = nBackColor<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">      </span>ENDIF<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">      </span>IF
+  TYPE(&quot;cCaption&quot;) = &quot;C&quot;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        
+  </span>This.Caption = cCaption<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">      </span>ENDIF<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">      </span><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">     
+  </span>This.cmdClose.Left = (This.Width - This.cmdClose.Width) /2<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">     
+  </span>This.cmdClose.Top = This.Height - This.cmdClose.Height ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun:
+  yes">                          </span>- 10<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>ENDPROC<o:p></o:p></p>
+  <p class=Preformatted>ENDDEFINE<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>DEFINE CLASS PassForm AS EasyForm<o:p></o:p></p>
+  <p class=Preformatted>* This is a subclass of our basic form above. It
+  insists on <o:p></o:p></p>
+  <p class=Preformatted>* being passed a built-in password or you can't create
+  it. Not <o:p></o:p></p>
+  <p class=Preformatted>* exactly user-friendly, is it?<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>PROTECTED
+  cPassWord<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>cPassWord =
+  &quot;Yowza!&quot;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>PROCEDURE
+  Init(nBackColor, cCaption, cPass)<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">      </span>IF
+  TYPE(&quot;cPass&quot;) = &quot;C&quot; AND cPass = This.cPassWord<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        
+  </span>DoDefault(nBackColor, cCaption)<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">      </span>ELSE<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>RETURN
+  .F.<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">      </span>ENDIF<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>ENDPROC<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span><o:p></o:p></p>
+  <p class=Preformatted>ENDDEFINE<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>DEFINE CLASS CloseButton AS CommandButton<o:p></o:p></p>
+  <p class=Preformatted>* Standard Close button. Caption is &quot;Close&quot;
+  and it releases the <o:p></o:p></p>
+  <p class=Preformatted>* form when clicked.<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>Name =
+  &quot;cmdClose&quot;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>Caption =
+  &quot;Close&quot;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>Height = 40<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>Width = 60<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>PROCEDURE Click<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">     
+  </span>ThisForm.Release()<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>ENDPROC<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span><o:p></o:p></p>
+  <p class=Preformatted>ENDDEFINE<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The example defines two form classes, one derived from the
+other, and a button class. The form classes have one member object, a Close
+button. The password property in PassForm is not an example of how to put a
+password on a form—just a demonstration of the kind of thing you might want to
+protect. To check out these classes, put all this code in a program file. Then,
+use code like the following:<o:p></o:p></p>
+
+<p class=Preformatted>SET PROCEDURE TO &lt;the program you created&gt;<o:p></o:p></p>
+
+<p class=Preformatted>oForm = CREATEOBJECT(&quot;PassForm&quot;,
+RGB(255,0,255), &quot;Showing Off&quot;, &quot;Yowza!&quot;)<o:p></o:p></p>
+
+<p class=Preformatted>oForm.Show()<o:p></o:p></p>
+
+<p class=MsoNormal>In VFP 6 and later, you can use NewObject() instead of
+CreateObject() and skip the SET PROCEDURE line. If you do so, be sure to
+include both the file name containing the definition and the empty string for
+the application parameter before the values to pass to the form's Init method.
+You need a line like this:<o:p></o:p></p>
+
+<p class=Preformatted>oForm =
+NewObject(&quot;PassForm&quot;,&quot;MyForm.prg&quot;,&quot;&quot;,RGB(255,128,128),;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">                 
+</span>&quot;Why not?&quot;,&quot;Yowza!&quot;)<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>DEFINE CLASS MyServer AS SESSION OLEPUBLIC<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>PROTECTED cMessage<o:p></o:p></p>
+  <p class=Preformatted>cMessage = &quot;Hello, World!&quot;<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>DIMENSION cMessage_COMATTRIB[4]<o:p></o:p></p>
+  <p class=Preformatted>cMessage_COMATTRIB[1] = 0<span style="mso-spacerun:
+  yes">  </span>&amp;&amp; Read-write<o:p></o:p></p>
+  <p class=Preformatted>cMessage_COMATTRIB[2] = &quot;This is the
+  message.&quot;<o:p></o:p></p>
+  <p class=Preformatted>cMessage_COMATTRIB[3] = &quot;cMessage&quot;<o:p></o:p></p>
+  <p class=Preformatted>cMessage_COMATTRIB[4] = &quot;String&quot;<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>PROCEDURE GetMessage AS String HelpString &quot;Returns
+  the message&quot;<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>RETURN This.cMessage<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>PROCEDURE ChangeMessage( cNewMessage AS String ) AS
+  VOID ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>HelpString
+  &quot;Change the message&quot;<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>This.cMessage = cNewMessage<o:p></o:p></p>
+  <p class=Preformatted>RETURN<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>DIMENSION ChangeMessage_COMATTRIB[5]<o:p></o:p></p>
+  <p class=Preformatted>ChangeMessage_COMATTRIB[1] = 0<o:p></o:p></p>
+  <p class=Preformatted>ChangeMessage_COMATTRIB[5] = 0 &amp;&amp; Parameter is
+  required<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>ENDDEFINE<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>This example creates a very simple COM server that has a
+message that it can return or change. Once you've compiled and registered the
+class, you can instantiate it from VFP or other environments. In VFP, you'd do
+it like this, assuming you built it into Message.EXE.<o:p></o:p></p>
+
+<p class=Preformatted>oServer = CreateObject(&quot;Message.MyServer&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal>Then, you can call on the server's methods, like this:<o:p></o:p></p>
+
+<p class=Preformatted>?oServer.GetMessage()<o:p></o:p></p>
+
+<p class=Preformatted>oServer.ChangeMessage(&quot;Goodbye, cruel world&quot;)<o:p></o:p></p>
+
+<p class=MsoNormal>You can also check out the server using any Object Browser
+to see the effect the COMATTRIB definitions have.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>::, Access, Assign, Create Class, CreateObject(),
+  CreateObjectEx(), DoDefault(), EventHandler(), LParameters, Modify Class,
+  NewObject(), Set ClassLib, Set Procedure<b style='mso-bidi-font-weight:normal'><span
+  style='color:red'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-list:none;mso-list-ins:"Tamar E\. Granor" 20020204T1707'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

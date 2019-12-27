@@ -1,0 +1,1110 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g161_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g161_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Set TextMerge, Set(&quot;TextMerge&quot;), \, \\, _PreText, _Text, Set
+TextMerge Delimiters, TextMerge()</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>hack7s4.dot</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2002-04-25T16:25:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:25:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1964</o:Words>
+  <o:Characters>11200</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>57856</o:Bytes>
+  <o:Lines>93</o:Lines>
+  <o:Paragraphs>22</o:Paragraphs>
+  <o:CharactersWithSpaces>13754</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:-1505184538;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:-1886997420;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:-403826364;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:199233580;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-1132540246;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:-1257584890;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-804984306;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-344698464;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-563164572;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-903049982;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>Set TextMerge, Set(&quot;TextMerge&quot;), \, \\, _PreText, _Text,
+Set TextMerge Delimiters, TextMerge()<o:p></o:p></p>
+
+<p class=MsoNormal>Textmerge is a combination of several of FoxPro's best
+features—it creates low-level file output, performs runtime evaluation and
+eases formatting of different types of data. \ and \\ are the textmerge
+equivalents of ? and ??, outputting to the destination specified by SET
+TEXTMERGE TO, rather than SET DEVICE TO. Starting in VFP 7, you have several
+new options for creating textmerge output, including the ability to send the
+results to a variable.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>SET TEXTMERGE [ ON | OFF ] | <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ TO
+  FileName | TO MEMVAR VarName [ ADDITIVE ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ WINDOW
+  WindowName ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">        </span>[ SHOW |
+  NOSHOW ]<o:p></o:p></p>
+  <p class=Preformatted>cOnOrOff = SET( &quot;TEXTMERGE&quot; )<o:p></o:p></p>
+  <p class=Preformatted>cMergeFile = SET( &quot;TEXTMERGE&quot;, 2)<o:p></o:p></p>
+  <p class=Preformatted>cShowOrNot = SET( &quot;TEXTMERGE&quot;, 3)<o:p></o:p></p>
+  <p class=Preformatted>nRecursionLevel = SET( &quot;TEXTMERGE&quot;, 4)<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Here's the deal. When you issue the command SET TEXTMERGE TO
+FileName, a low-level file channel is opened and the file FileName is opened or
+created. The low-level file handle is stored in the system memory variable
+_TEXT. When you use the TO MEMVAR clause (added in VFP 7), there's no file
+involved, but the named variable is created, if necessary. Output created with
+the single or double backslash (\ or \\) is echoed to the file or stored in the
+variable, with \ issuing a carriage return before outputting the remainder of
+the line, and \\ issuing its characters immediately following the text that had
+been output before. &quot;Big deal,&quot; you say. &quot;I can do the same
+thing with SET ALTERNATE or SET PRINTER.&quot; Yes, BUT! Textmerge really
+shines when TEXTMERGE is set ON.<o:p></o:p></p>
+
+<p class=MsoNormal>SET TEXTMERGE ON tells FoxPro to examine each line of output
+for expressions encased in textmerge delimiters. If these are found, the
+expression within delimiters is evaluated, and the result of that expression is
+output. Still not impressed? Here's the key: The result of the expressions is
+converted to text automatically—dates, numerics, datetimes, whatever. To output
+a line containing a number, date, datetime and page number, you would have to
+convert each one, as in:<o:p></o:p></p>
+
+<p class=Preformatted>?<span style="mso-spacerun: yes"> 
+</span>LTRIM(STR(nNumber,4)) + space(6) + ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   </span>DTOC(Date()) +
+SPACE(7) + ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">  
+</span>TTOC(DateTime()) + SPACE(4) + ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">   </span>&quot;Page
+#&quot; + ltrim(_PAGENO)<o:p></o:p></p>
+
+<p class=MsoNormal>In a textmerge document, you would just say:<o:p></o:p></p>
+
+<p class=Preformatted>\&lt;&lt;nNumber&gt;&gt;<span style="mso-spacerun:
+yes">      </span>&lt;&lt;Date()&gt;&gt;<span style="mso-spacerun: yes">      
+</span>&lt;&lt;Datetime()&gt;&gt;<span style="mso-spacerun: yes">   
+</span>Page # &lt;&lt;_PAGENO&gt;&gt;<o:p></o:p></p>
+
+<p class=MsoNormal>Now which would you prefer to have to decode and maintain
+six months after you wrote it?<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.4pt;border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><img width=87 height=88 id="_x0000_i1025"
+  src="..\..\..\..\HackGIFs\Design.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>SET TEXTMERGE is different from SET ALTERNATE or SET PRINT
+  in that you can both SET TEXTMERGE TO and ON in a single line. For ease of
+  maintenance, we advise you to splurge on the two lines of code to SET
+  TEXTMERGE TO and ON.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.4pt;border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><img width=95 height=78 id="_x0000_i1026"
+  src="..\..\..\..\HackGIFs\Bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Unlike the command to SET TEXTMERGE ON and SET TEXTMERGE
+  TO, you <i>must</i> write two separate lines of code to SET TEXTMERGE OFF and
+  SET TEXTMERGE TO, so that's an even a better reason to have two matching
+  pairs of commands.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>And textmerge is <i style='mso-bidi-font-style:normal'>fast!</i>
+Ted wrote some processing code a while back to read through 800 HTML documents,
+parse the contents, and generate an HTML Help index in SiteMap format.
+Processing all of the files took eight seconds! One key factor was to set
+NOSHOW. With the text scrolling past on the screen, it took eight <i
+style='mso-bidi-font-style:normal'>minutes</i> for the same process.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1027" src="..\..\..\..\..\HackGIFs\fixbug1.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The original release of VFP 7 sometimes crashes when you
+  mix TEXT TO processing with SET TEXTMERGE processing. It's fixed in SP1.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The remaining optional clauses are pretty straightforward.
+ADDITIVE specifies that output is appended to the end of an existing file or
+variable. WINDOW WindowName allows you to specify an output window where the
+echoed textmerge text should appear. We recommend you always specify a window
+if you want the output echoed, for two reasons. First, in Visual FoxPro 5 and
+later, it's possible to release the main FoxPro window and run your application
+as a top-level form. In that case, your output might be lost. Secondly, it's
+been our experience that Windows seems to slow down when outputting scrolling
+text to the screen or a window not on top. If you create a specific window for
+your textmerge, you can force it to be WONTOP() for the operation.<o:p></o:p></p>
+
+<p class=MsoNormal>SHOW | NOSHOW specifies whether text output to the merge
+file should also be echoed to the screen or optional window. <o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.4pt;border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><img width=95 height=77 id="_x0000_i1028"
+  src="..\..\..\..\HackGIFs\Bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The help file claims that SHOW is the default—that's true
+  the first time SET TEXTMERGE is issued. After that, the default appears to be
+  the last setting used—that is, if NOSHOW was issued with the previous
+  command, text will not be echoed unless SHOW is explicitly specified. So this
+  isn't really a &quot;default&quot; behavior, it's more like a global SET
+  behavior. Always specify SHOW or NOSHOW and you won't have a problem.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>If you choose to send output to a file, rather than using
+SET TEXTMERGE TO a particular file, we suggest you use FCREATE() or FOPEN() to
+access the file. Why? If SAFETY is ON, SET TEXTMERGE generates a confirmation
+dialog to overwrite the file. Any number of errors can prevent the file from
+being created—improper file names, bad drive designator, lack of rights—but
+FCREATE() and FOPEN() allow you to handle the errors using the simpler
+low-level error handler FERROR(), rather than the massive CASE statement needed
+to process all of FoxPro's possible file errors, or dropping though to your
+global error handler. If the low-level function was successful, you can set
+_TEXT to the file handle returned from these low-level file functions.<o:p></o:p></p>
+
+<p class=MsoNormal>Overall, though, we recommend sending textmerge output to a
+string, then if a file is needed, using StrToFile().<o:p></o:p></p>
+
+<p class=MsoNormal>There are other neat commands to use with text merging.
+TEXT...ENDTEXT allows you to include a block of text right in your program; it obeys
+the settings of _PRETEXT and evaluates any expressions within delimiters. It's
+also been enhanced in VFP 7 to include a lot of its settings right in the
+command. <o:p></o:p></p>
+
+<p class=MsoNormal>The various forms of SET(&quot;TEXTMERGE&quot;) let you see
+how you have things set up. Some of them work better than others and some of
+them make more sense than others.<o:p></o:p></p>
+
+<p class=MsoNormal>SET(&quot;TEXTMERGE&quot;), by itself, returns either
+&quot;ON&quot; or &quot;OFF&quot;. SET(&quot;TEXTMERGE&quot;,2) gives you the
+name of the file to which you've SET TEXTMERGE. SET(&quot;TEXTMERGE&quot;,3)
+tells you whether textmerge is currently SHOW or NOSHOW. Since textmerge can be
+recursive (when the string merged in contains the textmerge delimiters),
+SET(&quot;TEXTMERGE&quot;, 4) tells you how many levels of recursion are
+pending at the moment.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1029" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Unfortunately, SET(&quot;TEXTMERGE&quot;,4) uses a
+  ridiculously narrow definition of recursion. It adds a level to the count
+  only if the expanded string contains the same variable from which it was
+  expanded. That is, if you expand the variable ExpandMe and its text contains
+  the string &quot;&lt;&lt;ExpandMe&gt;&gt;&quot;, the count goes up (which it
+  should). However, when talking about textmerge, the term &quot;recusion&quot;
+  generally applies to any expanded string that contains the textmerge
+  delimiters, not just expanding the same string over and over.
+  SET(&quot;TEXTMERGE&quot;,4) doesn't go up if you expand the variable
+  ExpandMe and it contains the string &quot;&lt;&lt;MeToo&gt;&gt;&quot;.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=77
+  id="_x0000_i1030" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>There's no way to find out what variable you've SET TEXTMERGE
+  to. <o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* The *best* examples of textmerge are available in
+  your main <o:p></o:p></p>
+  <p class=Preformatted>* Visual FoxPro directory - check out GENMENU.PRG and
+  others.<o:p></o:p></p>
+  <p class=Preformatted>* But here's something for you to try:<o:p></o:p></p>
+  <p class=Preformatted>LOCAL lcOldPreText<o:p></o:p></p>
+  <p class=Preformatted>* SET TEXTMERGE ON TO textmerg.txt NOSHOW<span
+  style="mso-spacerun: yes">  </span>&amp;&amp; Don't do this!<o:p></o:p></p>
+  <p class=Preformatted>SET TEXTMERGE TO textmerg.txt<o:p></o:p></p>
+  <p class=Preformatted>SET TEXTMERGE ON NOSHOW<o:p></o:p></p>
+  <p class=Preformatted>\Generated at &lt;&lt;DATE()&gt;&gt;
+  &lt;&lt;TIME()&gt;&gt;<o:p></o:p></p>
+  <p class=Preformatted>\<o:p></o:p></p>
+  <p class=Preformatted>TEXT<o:p></o:p></p>
+  <p class=Preformatted>This is a block of text with<o:p></o:p></p>
+  <p class=Preformatted>no comments or anything before <o:p></o:p></p>
+  <p class=Preformatted>it<o:p></o:p></p>
+  <p class=Preformatted>ENDTEXT<o:p></o:p></p>
+  <p class=Preformatted>\<o:p></o:p></p>
+  <p class=Preformatted>\Now we add a pretext<o:p></o:p></p>
+  <p class=Preformatted>\<o:p></o:p></p>
+  <p class=Preformatted>lcOldPreText = _PRETEXT<o:p></o:p></p>
+  <p class=Preformatted>_PRETEXT = &quot;*&quot;+CHR(09)<o:p></o:p></p>
+  <p class=Preformatted>TEXT<o:p></o:p></p>
+  <p class=Preformatted>Four score and seven years ago,<o:p></o:p></p>
+  <p class=Preformatted>our forefathers (and mothers) brought<o:p></o:p></p>
+  <p class=Preformatted>forth upon this continent a new nation,<o:p></o:p></p>
+  <p class=Preformatted>ENDTEXT<o:p></o:p></p>
+  <p class=Preformatted>_PRETEXT = lcOldPreText<o:p></o:p></p>
+  <p class=Preformatted>\<o:p></o:p></p>
+  <p class=Preformatted>\ And delimiters are evaluated within TEXT...ENDTEXT<o:p></o:p></p>
+  <p class=Preformatted>\<o:p></o:p></p>
+  <p class=Preformatted>TEXT<o:p></o:p></p>
+  <p class=Preformatted>Today is &lt;&lt;DATE()&gt;&gt; and the time is
+  &lt;&lt;TIME()&gt;&gt;<o:p></o:p></p>
+  <p class=Preformatted>ENDTEXT<o:p></o:p></p>
+  <p class=Preformatted>SET TEXTMERGE OFF <o:p></o:p></p>
+  <p class=Preformatted>SET TEXTMERGE TO<o:p></o:p></p>
+  <p class=Preformatted>MODI FILE textmerg.txt <o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* Textmerge to a variable<o:p></o:p></p>
+  <p class=Preformatted>SET TEXTMERGE TO MEMVAR cHTML<o:p></o:p></p>
+  <p class=Preformatted>SET TEXTMERGE ON NOSHOW<o:p></o:p></p>
+  <p class=Preformatted>\&lt;HTML&gt;<o:p></o:p></p>
+  <p class=Preformatted>\&lt;HEAD&gt;<o:p></o:p></p>
+  <p class=Preformatted>\&lt;TITLE&gt;&lt;&lt;Customer.Company&gt;&gt;&lt;/TITLE&gt;<o:p></o:p></p>
+  <p class=Preformatted>\&lt;/HEAD&gt;<o:p></o:p></p>
+  <p class=Preformatted>\&lt;BODY&gt;<o:p></o:p></p>
+  <p class=Preformatted>\Address: &lt;&lt;Customer.Address&gt;&gt;<o:p></o:p></p>
+  <p class=Preformatted>\&lt;/BODY&gt;<o:p></o:p></p>
+  <p class=Preformatted>\&lt;/HTML&gt;<o:p></o:p></p>
+  <p class=Preformatted>* and so forth to build an HTML document<o:p></o:p></p>
+  <p class=Preformatted>SET TEXTMERGE OFF<o:p></o:p></p>
+  <p class=Preformatted>SET TEXTMERGE TO<o:p></o:p></p>
+  <p class=Preformatted>StrToFile( cHTML, &quot;MyHTMLDoc.HTM&quot; )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>_PRETEXT = cTextToPrecede<o:p></o:p></p>
+  <p class=Preformatted>cTextToPrecede = _PRETEXT<o:p></o:p></p>
+  <p class=Preformatted>_TEXT = nHandle<o:p></o:p></p>
+  <p class=Preformatted>nHandle = _TEXT<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>_PRETEXT is not a system-generated excuse like &quot;I just
+happened to be in the neighborhood,&quot; but a system memory variable that
+holds a character expression. This expression is inserted at the beginning of
+each line of text generated by the textmerge commands. Set _PRETEXT to &quot;*&quot;
+to comment a block of code, or to a set of tabs to indent a block.<o:p></o:p></p>
+
+<p class=MsoNormal>_TEXT is a built-in FoxPro system memory variable. It
+contains the low-level file handle of the destination of textmerged output. Set
+_TEXT to –1 (negative one) to temporarily shut off output to the designated
+file. Since _TEXT stores the number of a low-level file handle opened for
+output, switching _TEXT programmatically allows you to switch output back and
+forth between several destinations, a trick the FoxPro 2.x screen generator
+used to separate startup and cleanup code.<o:p></o:p></p>
+
+<p class=MsoNormal>_TEXT is set to –1 when you SET TEXTMERGE TO a variable.
+More importantly, the current textmerge output file is closed at that time, so
+you can't save the value of _TEXT and restore it after sending textmerge output
+to a variable.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>_PRETEXT = &quot;*&quot; + CHR(9)<span
+  style="mso-spacerun: yes">  </span>&amp;&amp; Comment and indent merged text.<o:p></o:p></p>
+  <p class=Preformatted>SET TEXTMERGE TO D:\TEXTMERG.TXT<o:p></o:p></p>
+  <p class=Preformatted>? _TEXT<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; Displays the opened file handle.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>SET TEXTMERGE DELIMITERS TO [ cLeftExp [, cRightExp ] ]<o:p></o:p></p>
+  <p class=Preformatted>cAllDelimiters = SET( &quot;TEXTMERGE&quot;, 1 )<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Delimiters specified with this command tell FoxPro what to
+look for when outputting a line with the textmerge commands \, \\, TEXT or
+TEXTMERGE(). Expressions contained within the delimiters are evaluated when
+TEXTMERGE is SET ON. If no delimiters are specified, they default to &lt;&lt;
+and &gt;&gt;, respectively. If a single character expression is specified, it's
+used for both the left and right delimiters. Avoid using those single
+characters already used by other FoxPro functions—%, &amp;, $, *, (, or ).
+Colons, used singly or doubly, are probably a safe bet, as long as you don't
+use the scope resolution operator in the code. It's best to leave the
+delimiters as is, unless you need to output the &lt;&lt; or &gt;&gt; characters
+themselves. Each delimiter expression can be either one or two characters in
+length.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.4pt;border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><img width=95 height=78 id="_x0000_i1031"
+  src="..\..\..\..\HackGIFs\Bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>This means that you can't really parse the return value of
+  the SET() function and be sure where the first delimiter ends and the second
+  begins—see the second example below. So a &quot;black box&quot; routine
+  cannot mess with these values. A return length for SET(&quot;TEXT&quot;,1) of
+  3 means you're doomed, since you don't know which one of the delimiters has
+  two characters. It would be better if this SET() function, like most of them,
+  returned the explicit string that we could use to SET TEXTMERGE DELIMITERS TO
+  &amp;OurString, and leave the parsing to us. Our advice: Don't do this. Leave
+  the delimiters as they are, or if you must change them, change them to
+  something simple like a matched pair of single or double curly braces or
+  something.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>SET TEXTMERGE DELIMITERS TO &quot;::&quot;,
+  &quot;::&quot;<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>SET TEXTMERGE DELIMITERS TO
+  &quot;@~&quot;,&quot;@&quot;<o:p></o:p></p>
+  <p class=Preformatted>? SET(&quot;TEXTMERGE&quot;,1)<span
+  style="mso-spacerun: yes">  </span>&amp;&amp; returns &quot;@~@&quot; - but
+  which is which?<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>cMergedOutput = TEXTMERGE( cString [, lRecursive<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">              </span><span
+  style="mso-spacerun: yes">             </span>[, cLeftDelim [, cRightDelim ]
+  ] ] )<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Value<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Meaning<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cString<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The string to be evaluated.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>lRecursive<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>.T.<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>If a merged expression contains the textmerge delimiters,
+  keep evaluating the contents of the delimiters again until no more delimiters
+  are found.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>.F. or omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Evaluate strings inside the textmerge delimiters only
+  once.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cLeftDelim<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>One or two characters<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The left delimiter for textmerge within the function.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Use the current left delimiter from the SET TEXTMERGE
+  DELIMITERS setting.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cRightDelim<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>One or two characters<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The right delimiter for textmerge within the function.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Use the current right delimiter from the SET TEXTMERGE
+  DELIMITERS setting.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>This function, added in VFP 7, makes textmerge easier than
+ever. No need to issue SET commands; no need to put text inside a TEXT …
+ENDTEXT block. Just build the string and call the function. <o:p></o:p></p>
+
+<p class=MsoNormal>If you don't specify delimiters in the function call, the
+current textmerge delimiters are used. However, specifying delimiters in the
+call doesn't change the current delimiters. Unlike SET TEXTMERGE DELIMITERS,
+with TEXTMERGE(), you can specify a left delimiter without specifying a right
+delimiter. In that case, the left delimiter in the function call is used, along
+with the current right delimiter.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>#DEFINE CRLF CHR(13) + CHR(10)<o:p></o:p></p>
+  <p class=Preformatted>cString = &quot;&lt;HTML&gt;&quot; + CRLF<o:p></o:p></p>
+  <p class=Preformatted>cString = cString + &quot;&lt;HEAD&gt;&quot; + CRLF<o:p></o:p></p>
+  <p class=Preformatted>cString = cString +
+  &quot;&lt;TITLE&gt;&lt;&lt;Customer.Company&gt;&gt;&quot; + ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   
+  </span>&quot;&lt;/TITLE&gt;&quot; + CRLF<o:p></o:p></p>
+  <p class=Preformatted>cString = cString + &quot;&lt;BODY&gt;&quot; + CRLF<o:p></o:p></p>
+  <p class=Preformatted>cString = cString + &quot;Address:
+  &lt;&lt;Customer.Address&gt;&gt;&quot; + CRLF<o:p></o:p></p>
+  <p class=Preformatted>cString = cString + &quot;&lt;/BODY&gt;&quot; + CRLF<o:p></o:p></p>
+  <p class=Preformatted>cString = cString + &quot;&lt;/HEAD&gt;&quot; + CRLF<o:p></o:p></p>
+  <p class=Preformatted>cString = cString + &quot;&lt;/HTML&gt;&quot;<o:p></o:p></p>
+  <p class=Preformatted>cHTML = TextMerge( cString )<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>FError(), Low-Level File Functions, Set Alternate, Set
+  Printer, Text ... EndText<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

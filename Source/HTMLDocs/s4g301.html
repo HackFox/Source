@@ -1,0 +1,853 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g301_files/filelist.xml">
+<title>INI Files</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:26:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:26:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1079</o:Words>
+  <o:Characters>6153</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>31744</o:Bytes>
+  <o:Lines>51</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>7556</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>INI Files<o:p></o:p></p>
+
+<p class=MsoNormal>INI files are nothing more than text files used to store
+settings. INI files come in two flavors: public and private. The public INI
+file is Win.INI; all applications are supposed to share this file politely.
+Private INI files are specific to an application. This section discusses how
+you can read and write to both.<o:p></o:p></p>
+
+<p class=H4>Doing it in Public: Win.INI<o:p></o:p></p>
+
+<p class=MsoNormal>Win.INI is a throwback to Windows 3.1 and is currently
+supported only for compatibility with 16-bit applications. I would not trust
+entries in Win.INI to be at all accurate (such as which files are associated
+with which extension, which printer is currently selected as the default, what
+other printers are available, international settings for currency, date and
+time, and other vital information like what wallpaper background is in use).<o:p></o:p></p>
+
+<p class=MsoNormal>However, in the current incarnations of Win32 (Windows 9x
+and NT 4.0), Microsoft has modified the Windows API so calls to read and write
+the Win.INI actually talk to the Windows Registry. Don't be surprised to find
+that your SetProfileString call doesn't seem to affect the Win.INI text, but
+works anyway. (For the hackers who just really have to know, the mappings are
+stored in HKEY_LOCAL_MACHINE\Software\Microsoft\Windows
+NT\CurrentVersion\IniFileMapping\win.ini under NT; we haven't figured out
+exactly how Win9x does it.) Since the Win.INI and its Registry equivalent are
+public information available to all applications, you may want to read the
+settings there. <o:p></o:p></p>
+
+<p class=MsoNormal>The Windows API GetProfileString() function returns the
+specified value, or a default string passed to it if it is unable to locate the
+entry. Following is a simple routine to use this function:<o:p></o:p></p>
+
+<p class=Preformatted>* ReadWini - read the WIN.INI file<o:p></o:p></p>
+
+<p class=Preformatted>* Returns a WIN.INI entry 'cEntry' from section
+'cSection' <o:p></o:p></p>
+
+<p class=Preformatted>* or blank if not found<o:p></o:p></p>
+
+<p class=Preformatted>PARAMETERS cSection, cEntry<o:p></o:p></p>
+
+<p class=Preformatted>LOCAL cDefault, cRetVal, nRetLen<o:p></o:p></p>
+
+<p class=Preformatted>cDefault = &quot;&quot;<o:p></o:p></p>
+
+<p class=Preformatted>cRetVal = SPACE(255)<o:p></o:p></p>
+
+<p class=Preformatted>nRetLen = LEN(cRetVal)<o:p></o:p></p>
+
+<p class=Preformatted>DECLARE INTEGER GetProfileString IN WIN32API ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>STRING cSection, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>STRING cEntry, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>STRING cDefault, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>STRING @cRetVal, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>INTEGER nRetLen <o:p></o:p></p>
+
+<p class=Preformatted>nRetLen = GetProfileString(cSection, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                           </span>cEntry, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                           </span>cDefault, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                           </span>@cRetVal, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                           </span>nRetLen)<o:p></o:p></p>
+
+<p class=Preformatted>RETURN LEFT(cRetVal,nRetLen)<o:p></o:p></p>
+
+<p class=MsoNormal>Some of our favorite parameters to send to READWINI:<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:5.25pt;
+ border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=255 valign=top style='width:153.0pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Section Parameter <o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Entry Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Returns:<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:153.0pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>.NULL. or 0<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>.NULL. or 0<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>List of all section names, each separated by CHR(0). This
+  seems to work reliably under Windows NT, but it returns empty strings under
+  Windows 95.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:153.0pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>{any section name}<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>.NULL. or 0<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>List of all entries in that section, each separated by
+  CHR(0).<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:153.0pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>&quot;Ports&quot;<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>.NULL. or 0<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Returns a CHR(0)-delimited list of all ports defined on
+  the machine.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=255 valign=top style='width:153.0pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>&quot;Ports&quot;<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Port name returned above<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Returns a string of settings for that port.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Microsoft has made it a little easier with the addition in
+Visual FoxPro 3.0b of two new functions to FoxTools.FLL, GetProStrg() and
+PutProStrg(), to read and write these &quot;public&quot; profile strings.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>SET LIBRARY TO HOME()+&quot;FOXTOOLS.FLL&quot; ADDITIVE<o:p></o:p></p>
+  <p class=Preformatted>LcBuffer = SPACE(1000)<o:p></o:p></p>
+  <p class=Preformatted>* The function fills lcBuffer with the WIN.INI section<o:p></o:p></p>
+  <p class=Preformatted>* names out of the Registry, each separated with CHR(0)<o:p></o:p></p>
+  <p class=Preformatted>lnLen = GetProStrg(0,0,&quot;Empty&quot;, @lcBuffer,
+  LEN(lcBuffer)<o:p></o:p></p>
+  <p class=Preformatted>? LEFT(lcBuffer, lnLen)<o:p></o:p></p>
+  <p class=Preformatted>* Typical sections include Ports, Devices, etc.<o:p></o:p></p>
+  <p class=Preformatted>* Let's look at one<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>lcBuffer = SPACE(1000)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; reset the buffer<o:p></o:p></p>
+  <p class=Preformatted>lnLen = GetProStrg(&quot;PrinterPorts&quot;, 0,
+  &quot;Empty&quot;, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            
+  </span>@lcBuffer, LEN(lcBuffer))<o:p></o:p></p>
+  <p class=Preformatted>? LEFT(lcBuffer, lnLen)<o:p></o:p></p>
+  <p class=Preformatted>* lcBuffer should now contain a list of printers<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>lcBuffer = SPACE(1000)<span style="mso-spacerun: yes"> 
+  </span>&amp;&amp; reset the buffer<o:p></o:p></p>
+  <p class=Preformatted>lnLen = GetProStrg(&quot;PrinterPorts&quot;,
+  &quot;Epson Stylus Color 500&quot;,;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                  
+  </span>&quot;Empty&quot;, @lcBuffer, LEN(lcBuffer))<o:p></o:p></p>
+  <p class=Preformatted>? LEFT(lcBuffer, lnLen)<o:p></o:p></p>
+  <p class=Preformatted>* lcBuffer should now have the settings for your
+  printer,<o:p></o:p></p>
+  <p class=Preformatted>* in this case, &quot;winspool, Ne00:, 15, 45&quot;<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H4>Private INI files<o:p></o:p></p>
+
+<p class=Blockquote>Private information is practically the source of every
+large modern fortune.<o:p></o:p></p>
+
+<p class=Blockquote>Oscar Wilde<o:p></o:p></p>
+
+<p class=MsoNormal>A private INI file is just a text file, and it is something
+that every Tom, Dick and Harry can open and mess with using Notepad. That's the
+bad news, but also the good news. If we have to dial into a client site and
+view a set of preferences, an INI file is easy. If we have to coach a client
+through rebuilding one over the phone (heaven forbid starting with the COPY CON
+command!), it is far easier to create a few lines of an INI file than it is to
+rebuild the Registry (see &quot;Registration Database&quot; for more
+information on the Registry). On the other hand, the Registry does include some
+nice features, like automatic system backup, that our poor little INI file will
+be without.<o:p></o:p></p>
+
+<p class=MsoNormal>The Win32 SDK documentation is pretty firm about these
+commands existing for &quot;backwards compatibility,&quot; and insisting that
+real 32-bit apps use the Registry instead. We sympathize with Microsoft wanting
+everyone to play with their new toy, and agree that the Registry does offer
+wonderful features of security, reliability, multi-user support, and remote
+administration, but the use of INI files is so darned easy, it will be a while
+until they disappear. Even Microsoft continues to use INI files, although not
+for as sweeping a purpose as in Windows 3.1. Check your Windows directory for
+*.INI—there are still a few there. <o:p></o:p></p>
+
+<p class=MsoNormal>The two routines that follow, to read and write private INI
+files, look an awful lot like the code above. Note that the API functions are
+not case sensitive—they locate the appropriate sections and settings regardless
+of the case. READPINI() reads a specified section and entry from a private INI
+file. Specify the full path of the INI file, unless you want the file stored in
+the Windows directory.<o:p></o:p></p>
+
+<p class=Preformatted>* ReadPini - read a private .INI file<o:p></o:p></p>
+
+<p class=Preformatted>* Returns the .INI entry 'cEntry' from section 'cSection'
+<o:p></o:p></p>
+
+<p class=Preformatted>* or blank if not found<o:p></o:p></p>
+
+<p class=Preformatted>PARAMETERS cSection, cEntry, cINIFile<o:p></o:p></p>
+
+<p class=Preformatted>LOCAL cDefault, cRetVal, nRetLen<o:p></o:p></p>
+
+<p class=Preformatted>cDefault = &quot;&quot;<o:p></o:p></p>
+
+<p class=Preformatted>cRetVal = space(255)<o:p></o:p></p>
+
+<p class=Preformatted>nRetLen = LEN(cRetVal)<o:p></o:p></p>
+
+<p class=Preformatted>DECLARE integer GetPrivateProfileString IN WIN32API ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>STRING cSection, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>String cEntry, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>STRING cDefault, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>STRING @cRetVal, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>INTEGER nRetLen, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>STRING cINIFile <o:p></o:p></p>
+
+<p class=Preformatted>nRetLen = GetPrivateProfileString(cSection,;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                                  </span>cEntry, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                                  </span>cDefault, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                                  </span>@cRetVal, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                                  </span>nRetLen, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                                  </span>cINIFile)<o:p></o:p></p>
+
+<p class=Preformatted>return left(cRetVal,nRetLen)<o:p></o:p></p>
+
+<p class=MsoNormal>RITEPINI() writes out a new value to an INI file, and
+returns a logical value for the success of the operation.<o:p></o:p></p>
+
+<p class=Preformatted>* RitePini - Write an entry in a private .INI file<o:p></o:p></p>
+
+<p class=Preformatted>* returns .T. if successful, .F. if not<o:p></o:p></p>
+
+<p class=Preformatted>PARAMETERS cSection, cEntry, cValue, cINIFile<o:p></o:p></p>
+
+<p class=Preformatted>LOCAL nRetVal<o:p></o:p></p>
+
+<p class=Preformatted>DECLARE Integer WritePrivateProfileString IN WIN32API ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>STRING cSection, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>STRING cEntry, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">     </span><span
+style="mso-spacerun: yes">           </span>STRING cValue, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun: yes">               
+</span>STRING cINIFile <o:p></o:p></p>
+
+<p class=Preformatted>nRetVal = WritePrivateProfileString(cSection, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                                  </span>cEntry, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                                  </span>cValue, ;<o:p></o:p></p>
+
+<p class=Preformatted><span style="mso-spacerun:
+yes">                                  </span>cINIFile)<o:p></o:p></p>
+
+<p class=Preformatted>RETURN nRetVal=1<o:p></o:p></p>
+
+<p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+  mso-bidi-font-family:"Times New Roman";color:windowtext'>* Determine whether
+  the VFP ODBC driver is installed:<o:p></o:p></span></p>
+  <p class=Preformatted>? ReadPini(&quot;ODBC 32 bit Drivers&quot;, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          
+  </span>&quot;Microsoft Visual FoxPro Driver (32 bit)&quot;, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          
+  </span>&quot;ODBCINST.INI&quot;)<span class=CODE><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>See Also<o:p></o:p></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Configuration files, Declare-DLL, Registration Database,
+  Set, Set Resource, Sys(2005), Sys(2019)<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

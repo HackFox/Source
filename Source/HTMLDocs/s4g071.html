@@ -1,0 +1,1204 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./s4g071_files/filelist.xml">
+<link rel=Edit-Time-Data href="./s4g071_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Create Table</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Hacker's Guide for Visual FoxPro 98</o:Subject>
+  <o:Author>Tamar E. Granor</o:Author>
+  <o:Keywords>s4g reference</o:Keywords>
+  <o:Template>HACK7S4.DOT</o:Template>
+  <o:LastAuthor>Doug Hennig</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>1601-01-01T00:00:00Z</o:LastPrinted>
+  <o:Created>2002-04-25T16:24:00Z</o:Created>
+  <o:LastSaved>2002-04-25T16:24:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1926</o:Words>
+  <o:Characters>10982</o:Characters>
+  <o:Category>Reference Section</o:Category>
+  <o:Manager>Whil Hentzen (ha!)</o:Manager>
+  <o:Company>T &amp; T</o:Company>
+  <o:Bytes>51200</o:Bytes>
+  <o:Lines>91</o:Lines>
+  <o:Paragraphs>21</o:Paragraphs>
+  <o:CharactersWithSpaces>13486</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:Generator dt:dt="string">Microsoft Word 97</o:Generator>
+  <o:Version dt:dt="string">8.0.3410</o:Version>
+  <o:Date dt:dt="string">10/11/96</o:Date>
+  <o:UnknownHead_0_1_0 dt:dt="string">&lt;LINK REL=stylesheet TYPE=&quot;text/css&quot; HREF=&quot;HackFox.css&quot;&gt;&#13;&#13;</o:UnknownHead_0_1_0>
+ </o:CustomDocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{mso-bidi-font-weight:normal;}
+em
+	{mso-bidi-font-style:normal;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	background:navy;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-next:"Definition List";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	mso-style-next:"Definition Term";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Definition
+	{mso-style-name:Definition;
+	mso-style-parent:"";
+	font-style:italic;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H3, li.H3, div.H3
+	{mso-style-name:H3;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H4, li.H4, div.H4
+	{mso-style-name:H4;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H5, li.H5, div.H5
+	{mso-style-name:H5;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.H6, li.H6, div.H6
+	{mso-style-name:H6;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Address, li.Address, div.Address
+	{mso-style-name:Address;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{mso-style-name:Blockquote;
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	mso-pagination:none;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.CITE
+	{mso-style-name:CITE;
+	mso-style-parent:"";
+	font-style:italic;}
+span.CODE
+	{mso-style-name:CODE;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Keyboard
+	{mso-style-name:Keyboard;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	font-weight:bold;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+span.Sample
+	{mso-style-name:Sample;
+	mso-style-parent:"";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Typewriter
+	{mso-style-name:Typewriter;
+	mso-style-parent:"";
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	mso-style-parent:"";
+	font-style:italic;}
+span.HTMLMarkup
+	{mso-style-name:"HTML Markup";
+	mso-style-parent:"";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Comment
+	{mso-style-name:Comment;
+	mso-style-parent:"";
+	display:none;
+	mso-hide:all;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:370050148;}
+@list l0:level1
+	{mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1926010502;}
+@list l1:level1
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:-130;
+	mso-list-type:simple;
+	mso-list-template-ids:238299232;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:293106064;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:-128;
+	mso-list-type:simple;
+	mso-list-template-ids:-2066472834;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1704226658;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:-126;
+	mso-list-type:simple;
+	mso-list-template-ids:-970583376;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-2068936872;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:-368676784;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-608800772;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=H2>Create Table<o:p></o:p></p>
+
+<p class=MsoNormal>This is a case of practically a whole language in a single
+command. This command, which lets you define tables programmatically, has been
+tremendously enhanced in Visual FoxPro. Since it was introduced in FoxPro 2.0,
+CREATE TABLE has made life a lot simpler for developers. Before that, creating
+a table meant you had to have something to start with—usually another table
+with the same or similar structure to the one you wanted to create. Then you
+could apply COPY STRUCTURE or the pair COPY STRUCTURE EXTENDED and CREATE TABLE
+FROM. CREATE TABLE freed us from that nonsense.<o:p></o:p></p>
+
+<p class=MsoNormal>In Visual FoxPro, CREATE TABLE has whole new aspects. Not
+only can it create the table itself, but it can also create index tags and
+persistent relations. In addition, it lets you set both field-level and
+row-level rules and establish default values.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Usage<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>CREATE TABLE | DBF TableName [ NAME LongTableName ] [
+  FREE ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">         </span>(
+  FieldName1 FieldType1 <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            </span>[ (
+  nFieldWidth1 [ , nDecimals1 ] ) ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            </span>[
+  NULL | NOT NULL ] <span style="mso-spacerun: yes"> </span><o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            </span>[
+  CHECK lFieldRule1 [ ERROR cFieldRuleMessage1 ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            </span>[
+  DEFAULT eDefaultExpression1 ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            </span>[
+  PRIMARY KEY | UNIQUE ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            </span>[
+  REFERENCES ReferencedTable1 <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                  
+  </span>[ TAG ReferencedTag1 ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            </span>[
+  NOCPTRANS ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[,
+  FieldName2 ... ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[,
+  PRIMARY KEY ePrimaryKeyExpression <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                  
+  </span>TAG PrimaryKeyTag ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[,
+  UNIQUE eUniqueKeyExpression1 TAG UniqueKeyTag1 <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            </span>[,
+  UNIQUE eUniqueKeyExpression2 ... ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[,
+  FOREIGN KEY eForeignKeyExpression1 <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                 
+  </span>TAG ForeignKeyTag1 [ NODUP ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">            
+  </span>REFERENCES ReferencedTable2 <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                 
+  </span>[ TAG ReferencedTag2 ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">              </span>[,
+  FOREIGN KEY eForeignKeyExpression2 ... ] ]<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>[,
+  CHECK lTableRule [ ERROR cTableRuleMessage] ] <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">           </span>)<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">          </span>| FROM
+  ARRAY ArrayName<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=H6><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Parameter<o:p></o:p></b></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Value<o:p></o:p></b></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border:solid windowtext .75pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Meaning<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>TableName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The filename for the new table.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>LongTableName<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The long name to give the table in the open database (128
+  characters max).<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>FieldName<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of the <i style='mso-bidi-font-style:normal'>x</i>th
+  field in the table. Long names can be used for fields of tables in databases.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>FieldType<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Single character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The type to use for the <i style='mso-bidi-font-style:
+  normal'>x</i>th field in the table. Valid types are:<br>
+  <span style="mso-spacerun: yes">   </span>C – Character<br>
+  <span style="mso-spacerun: yes">   </span>D – Date<br>
+  <span style="mso-spacerun: yes">   </span>T – DateTime<br>
+  <span style="mso-spacerun: yes">   </span>N – Numeric<br>
+  <span style="mso-spacerun: yes">   </span>F – Float (same as Numeric)<br>
+  <span style="mso-spacerun: yes">   </span>I – Integer<br>
+  <span style="mso-spacerun: yes">   </span>B – Double<br>
+  <span style="mso-spacerun: yes">   </span>Y – Currency<br>
+  <span style="mso-spacerun: yes">   </span>L – Logical<br>
+  <span style="mso-spacerun: yes">   </span>M – Memo<br>
+  <span style="mso-spacerun: yes">   </span>G – General<o:p></o:p></p>
+  <p class=MsoNormal>Designate the Character (Binary) and Memo (Binary) field
+  types seen in the Table Designer with the NOCPTRANS keyword, as shown above.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nFieldWidth<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The width of the <i style='mso-bidi-font-style:normal'>x</i>th
+  field in the table. For many types, the width is fixed and nFieldWidth<i>x</i>
+  should be omitted. Only Character, Numeric, and Float require field width.
+  Cannot be specified for Double.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>nDecimals<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Numeric<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The number of decimal places for the <i style='mso-bidi-font-style:
+  normal'>x</i>th field in the table. Relevant only for Numeric, Float, and
+  Double. Note that for Double fields, the syntax is different than all other
+  field types: you specify the number of decimal places in place of the field
+  width; see the code in the Example below.<span style='color:windowtext'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>lFieldRule<i style='mso-bidi-font-style:normal'>x </i><span
+  style='color:windowtext'><o:p></o:p></span></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Logical<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>A logical expression that provides the field-level rule
+  for the <i style='mso-bidi-font-style:normal'>x</i>th field in the table. Can
+  call a function. <o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cFieldRuleMessage<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The error message to display when the field rule for the <i
+  style='mso-bidi-font-style:normal'>x</i>th field is violated.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>eDefaultExpression<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Same type as specified by FieldType<i style='mso-bidi-font-style:
+  normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>An expression that provides a default value for the <i
+  style='mso-bidi-font-style:normal'>x</i>th field in the table.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ReferencedTable<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of the table for which the field or expression is
+  a foreign key. A regular index tag is created for this field or expression.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 rowspan=2 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ReferencedTag<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of the tag in ReferencedTable<i style='mso-bidi-font-style:
+  normal'>x</i> to which the field or expression refers.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Omitted<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The field or expression refers to the primary key in
+  ReferencedTable<i style='mso-bidi-font-style:normal'>x</i>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ePrimaryKeyExpression<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Any type<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>An expression that forms the primary key for this table.
+  Normally used when the primary key is a composite of several fields.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>PrimaryKeyTag<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name to assign the tag created for the primary key.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>eUniqueKeyExpression<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Any type<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>An expression that forms a candidate key for this table.
+  Normally used for composite keys.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>UniqueKeyTag<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name to assign the <i style='mso-bidi-font-style:normal'>x</i>th
+  candidate key tag created.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>eForeignKeyExpression<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Any type<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>An expression that is a foreign key into another table. A
+  regular index tag is created for this expression. Normally used for composite
+  keys.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>ForeignKeyTag<i style='mso-bidi-font-style:normal'>x</i><o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Name<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The name of the tag to be created for
+  eForeignKeyExpression<i style='mso-bidi-font-style:normal'>x</i>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>lTableRule<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Logical<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>A logical expression that provides the table-level rule.
+  Functions can be called.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=256 valign=top style='width:153.35pt;border:solid windowtext .75pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>cTableRuleMessage<o:p></o:p></p>
+  </td>
+  <td width=180 valign=top style='width:1.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>Character<o:p></o:p></p>
+  </td>
+  <td width=360 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>The error message to display when the table-level rule is
+  violated.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>There's so much going on in this one command that you could
+(and we did!) spend days testing all the combinations. Let's try to break it
+down into logical components.<o:p></o:p></p>
+
+<p class=MsoNormal>The first thing is to note that there's information at two
+levels: table and field. The initial part of the command until the opening
+parenthesis applies to the table, as does everything following the field list.
+(In the syntax diagram, that's everything from the second PRIMARY KEY to the
+end.)<o:p></o:p></p>
+
+<p class=MsoNormal>Many of the clauses appear to be repeated. That's because
+you can specify a number of things at both levels. Within the field list, for
+example, CHECK indicates a field-level rule. After the field list, it indicates
+a table-level rule.<o:p></o:p></p>
+
+<p class=MsoNormal>In addition, some items can appear more than once. Of
+course, the whole field listing is available for each field. In addition, at
+the table level, you can specify multiple candidate keys (with the UNIQUE
+clause) and multiple foreign keys.<o:p></o:p></p>
+
+<p class=H4>Types of Tables<o:p></o:p></p>
+
+<p class=MsoNormal>You can create two different types of tables: free tables
+and tables that belong to a database. Many clauses apply only when you're
+adding a table to a database. They are NAME, CHECK (and ERROR), DEFAULT,
+PRIMARY KEY, FOREIGN KEY, and REFERENCES (and TAG), at all levels where they
+appear. The attributes created by these clauses apply only to tables in a
+database. If the table is created in a database that has database events turned
+on, the BeforeCreateTable and AfterCreateTable events fire.<o:p></o:p></p>
+
+<p class=MsoNormal>The FREE keyword is needed only if there's a database set
+and you don't want the new table to belong to it. With no database set, free
+tables are created automatically.<o:p></o:p></p>
+
+<p class=MsoNormal>In VFP 3, to add tables to a database, the database had to
+be open exclusively. In VFP 5 and VFP 6, you can add tables to a shared
+database. Regardless, the new table is opened exclusively in an available work
+area.<o:p></o:p></p>
+
+<p class=H4>Field Information<o:p></o:p></p>
+
+<p class=MsoNormal>For each field, we start out with the same information we've
+always had—a field name, type and size. But there's so much more here now.
+CREATE TABLE rightfully rejects certain VFP reserved words as field
+names—things like PRIMARY and FOREIGN that are just too confusing for it to
+deal with. Unfortunately, the Table Designer isn't as discriminating and lets
+you use these keywords as field names. If you're stuck with such a table and
+need to re-create it with code, the solution is to surround the offending field
+names with quotes. Of course, it would be even better if the Table Designer
+wouldn't let you shoot yourself in the foot this way.<o:p></o:p></p>
+
+<p class=MsoNormal>Fields can accept or reject nulls (poor nulls, being
+rejected all the time). Generally, we recommend you allow nulls only where
+they're meaningful—dealing with them is a pain, so don't have more than you
+need. SET NULL determines whether any field accepts null, unless you specify
+NULL or NOT NULL. Like every good rule, there's one exception: If you omit both
+NULL and NOT NULL, but include PRIMARY KEY or UNIQUE, the field doesn't accept
+nulls.<o:p></o:p></p>
+
+<p class=MsoNormal>NOCPTRANS determines whether codepage translation affects
+the field. Some kinds of data (for example, binary keys) are damaged when
+translated to another codepage—you can indicate which fields are badly
+affected. When the table is opened under another codepage, those fields are
+unchanged.<o:p></o:p></p>
+
+<p class=H4>Indexes<o:p></o:p></p>
+
+<p class=MsoNormal>Several kinds of indexes can be created right along with the
+table. As expected, the PRIMARY KEY clause establishes a primary key for the
+table—one to a customer, please. <o:p></o:p></p>
+
+<p class=MsoNormal>The UNIQUE clause that appears at both the field and table
+levels has nothing to do with Xbase's traditional (and not really) unique
+indexes—the ones you create by SETting UNIQUE ON or adding the UNIQUE keyword
+to INDEX. UNIQUE in CREATE TABLE produces what's called a &quot;candidate
+key&quot;—like a primary key, no duplicates are allowed. The main difference
+between a primary key and a candidate key is that we've indicated that the
+primary key is primary. The other difference is that free tables can have
+candidate keys, but not primary keys.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><img width=95 height=78
+  id="_x0000_i1025" src="..\..\..\..\HackGIFs\bug.gif"><o:p></o:p></p>
+  </td>
+  <td width=660 style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>You can't specify primary or candidate keys at the field
+  level for fields using long names. When you try, you get the error message
+  &quot;Tag name is too long.&quot; That actually makes sense because the field
+  name is used as the tag name, and tag names are still limited to 10
+  characters. In fact, maybe that limit is the real bug here.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The REFERENCES clause at the field level and the FOREIGN KEY
+clause at the table level let you create regular indexes that are related to
+other tables in the database. (Include NODUP to make it a candidate rather than
+a regular index.) You specify an expression in this table (at the field level,
+it's the field itself) that relates to an existing tag in another table. The
+REFERENCES portion mentions the other table and the tag you're relating to
+there.<o:p></o:p></p>
+
+<p class=MsoNormal>You can, of course, create additional indexes with the INDEX
+command.<o:p></o:p></p>
+
+<p class=H4>Rules<o:p></o:p></p>
+
+<p class=MsoNormal>Tables in a database can have rules at both the field and
+table levels—that's the CHECK clause. Rules are your opportunity to make sure
+newly entered data is good enough for the field or table. In VFP 3, rules were
+not permitted to change the record. In versions starting with VFP 5, you can
+change the values of fields of the current record in rule code. Be careful—it's
+your responsibility to make sure that the changes don't result in an infinite
+sequence of calls to the rule code.<o:p></o:p></p>
+
+<p class=H4>Hip, Hip, Array!<o:p></o:p></p>
+
+<p class=MsoNormal>There's an alternative to listing out all the fields with
+all their information. Put the data into an array (with the same structure as
+the ones created by AFIELDS()) and just base the table on the array. This is a
+great choice when you want a table that's similar, but not identical, to an
+existing table. Use AFIELDS() on the first table, modify the array, then CREATE
+TABLE from it. One caveat: Remember to change the long table name in the array
+(column 12 in the first row) or you may get an error message telling you that
+the name has already been used (for example, if you use AFIELDS() on one table
+in a database and use the array to create another table in the same database).<o:p></o:p></p>
+
+<p class=MsoNormal>Index information doesn't come along this way. When you
+CREATE TABLE from an array, all you get is the field structure (including
+rules, defaults, and so forth) and the table-level rules and triggers.<o:p></o:p></p>
+
+<p class=H4>Triggers<o:p></o:p></p>
+
+<p class=MsoNormal>If you want to create triggers at the same time you create
+the table, you must create the table using an array. Otherwise, you can add
+triggers later with the CREATE TRIGGER command.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'>Example<span class=CODE><span
+  style='font-size:10.0pt;font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=Preformatted>* Create a near duplicate of an existing table<o:p></o:p></p>
+  <p class=Preformatted>USE Original<o:p></o:p></p>
+  <p class=Preformatted>nFldCount=AFIELDS(aStruc)<o:p></o:p></p>
+  <p class=Preformatted>aStruc[1,12]=&quot;NewOne&quot;<o:p></o:p></p>
+  <p class=Preformatted>DIMENSION aStruc(nFldCount+1,ALEN(aStruc,2))<o:p></o:p></p>
+  <p class=Preformatted>aStruc[nFldCount+1,1]=&quot;cMyNewField&quot;<span
+  style="mso-spacerun: yes">  </span>&amp;&amp; Name<o:p></o:p></p>
+  <p class=Preformatted>aStruc[nFldCount+1,2]=&quot;C&quot;<span
+  style="mso-spacerun: yes">            </span>&amp;&amp; Type<o:p></o:p></p>
+  <p class=Preformatted>aStruc[nFldCount+1,3]=5<span style="mso-spacerun:
+  yes">              </span>&amp;&amp; Size<o:p></o:p></p>
+  <p class=Preformatted>aStruc[nFldCount+1,4]=0<span style="mso-spacerun:
+  yes">              </span>&amp;&amp; Decimals<o:p></o:p></p>
+  <p class=Preformatted>aStruc[nFldCount+1,5]=.F.<span style="mso-spacerun:
+  yes">            </span>&amp;&amp; Nulls<o:p></o:p></p>
+  <p class=Preformatted>aStruc[nFldCount+1,6]=.F.<span style="mso-spacerun:
+  yes">            </span>&amp;&amp; No CP<o:p></o:p></p>
+  <p class=Preformatted>aStruc[nFldCount+1,7]=&quot;JUNK&quot;<span
+  style="mso-spacerun: yes">         </span>&amp;&amp; Default<o:p></o:p></p>
+  <p class=Preformatted>aStruc[nFldCount+1,8]=&quot;&quot;<span
+  style="mso-spacerun: yes">             </span>&amp;&amp; Rule<o:p></o:p></p>
+  <p class=Preformatted>aStruc[nFldCount+1,9]=&quot;&quot;<span
+  style="mso-spacerun: yes">             </span>&amp;&amp; Error<o:p></o:p></p>
+  <p class=Preformatted>CREATE TABLE NewOne FROM ARRAY aStruc<o:p></o:p></p>
+  <p class=Preformatted><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=Preformatted>* Create a database from scratch<o:p></o:p></p>
+  <p class=Preformatted>CREATE DATABASE Clients<o:p></o:p></p>
+  <p class=Preformatted>CREATE TABLE Client ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>(cClientId
+  C(6) DEFAULT GetId(&quot;Client&quot;) ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                  
+  </span>PRIMARY KEY NOCPTRANS, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>cLastName
+  C(20) CHECK NOT EMPTY(cLastName) ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                   
+  </span>ERROR &quot;Must provide last name&quot;, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>cFirstName
+  C(15), ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   
+  </span>mStreetAddress M, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>cCity C(20),
+  ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>cState C(2)
+  CHECK EMPTY(cState) OR ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                     
+  </span>LookUpState(cState) ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">               
+  </span>ERROR &quot;Unknown State&quot;, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>cZip C(9), ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>bCredit
+  B(2), ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>CHECK NOT
+  (EMPTY(cState) AND NOT EMPTY(cCity)) ; <o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>)<o:p></o:p></p>
+  <p class=Preformatted>CREATE TABLE Meetings ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>(cMeetingId
+  C(6) DEFAULT GetId(&quot;Meetings&quot;) ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">                   
+  </span>PRIMARY KEY NOCPTRANS, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>dMeetingDate
+  D, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">    </span>cClientId
+  C(6) REFERENCES Client, ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   
+  </span>nMeetingLength N(3) ;<o:p></o:p></p>
+  <p class=Preformatted><span style="mso-spacerun: yes">   </span>)<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>In the first example, we add a field to the list from an
+existing table and create a new table. In the second example, we create a
+database with two tables. Each has a primary key (as all good tables should)
+and each has a default value that calls a routine that generates a new key.
+There's a persistent relation between the cClientId fields of the two tables.
+Several fields have rules. The rule for cState lets you leave it empty, but if
+it's not empty, you had better be able to find it by looking it up. Clients has
+a table-level rule, too, which says that if you fill in the city, you have to
+fill in the state.<o:p></o:p></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=796 style='width:477.35pt;
+ margin-left:5.25pt;border-collapse:collapse;mso-padding-alt:0in 5.25pt 0in 5.25pt'>
+ <tr>
+  <td width=136 valign=top style='width:81.35pt;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=H3 style='page-break-after:auto'><span style='color:black'>See Also<o:p></o:p></span></p>
+  </td>
+  <td width=660 valign=top style='width:5.5in;padding:0in 5.25pt 0in 5.25pt'>
+  <p class=MsoNormal>AFields(), Alter Table, AfterCreateTable,
+  BeforeCreateTable, Copy Structure, Create Cursor, Create From, Create
+  Trigger, Index, Set NoCPTrans, Set Null<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>
