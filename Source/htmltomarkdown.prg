@@ -74,12 +74,35 @@ if lnTables > 0
 	next lnI
 endif lnTables > 0
 
+* Replace blockquotes with placeholders so we don't strip <BR> in them.
+
+lnBlocks = occurs('<p class=blockquote', lower(lcHTML))
+if lnBlocks > 0
+	dimension laBlocks[lnBlocks]
+	for lnI = lnBlocks to 1 step -1
+		lcBlock       = strextract(lcHTML, '<p class=blockquote', '</p>', ;
+			lnI, 1 + 4)
+		laBlocks[lnI] = lcBlock
+		lcHTML        = strtran(lcHTML, lcBlock, '%b' + transform(lnI) + '%')
+	next lnI
+endif lnBlocks > 0
+
 * Strip <P> and <BR>.
 
 lcHTML = strtran(lcHTML, '<p>', '', -1, -1, 1)
 lcHTML = strtran(lcHTML, '</p>', ccCRLF, -1, -1, 1)
 lcHTML = strtran(lcHTML, ccCRLF + '<br>' + ccCRLF, ccCRLF, -1, -1, 1)
 lcHTML = strtran(lcHTML, '<br>', '  ', -1, -1, 1)
+
+* Put the blockquotes back.
+
+for lnI = 1 to lnBlocks
+	lcBlock       = laBlocks[lnI]
+	lcBlock       = strtran(lcBlock, '<br>', '<br>' + ccCRLF, -1, -1, 1)
+	lcBlock       = strtran(lcBlock, '</p>', ccCRLF, -1, -1, 1)
+	lcPlaceholder = '%b' + transform(lnI) + '%'
+	lcHTML        = strtran(lcHTML, lcPlaceholder, lcBlock)
+next lnI
 
 * Convert headings. We have some empty <H6> tags so this'll take care of that.
 
@@ -173,10 +196,15 @@ for lnI = 1 to lnTables
 			endtext
 			lcHTML = strtran(lcHTML, lcPlaceholder, lcReplacement)
 
-* Put all other tables back.
+* Put all other tables back but fix bad attributes.
 
 		otherwise
-			lcHTML = strtran(lcHTML, lcPlaceholder, lcTable)
+			lcTag   = strextract(lcTable, '<table ', '>', 1, 1 + 4)
+			lcTable = strtran(lcTable, lcTag, '<table>', -1, -1, 1)
+			lcTable = FixAttributes(lcTable, 'td')
+			lcTable = FixAttributes(lcTable, 'img')
+			lcTable = RemoveTrailingPAfterImage(lcTable)
+			lcHTML  = strtran(lcHTML, lcPlaceholder, lcTable)
 	endcase
 next lnI
 
@@ -205,6 +233,13 @@ lcHTML = strtran(lcHTML, '<b>_</b>', '_', -1, -1, 1)
 lcHTML = strtran(lcHTML, '"*X*"', '"\*X\*"', -1, -1, 1)
 lcHTML = strtran(lcHTML, '®')
 lcHTML = strtran(lcHTML, '¯')
+
+* Correct the case of images.
+
+lcHTML = strtran(lcHTML, 'design.gif',  'design.gif',  -1, -1, 1)
+lcHTML = strtran(lcHTML, 'cool.gif',    'cool.gif',    -1, -1, 1)
+lcHTML = strtran(lcHTML, 'bug.gif',     'bug.gif',     -1, -1, 1)
+lcHTML = strtran(lcHTML, 'fixbug1.gif', 'fixbug1.gif', -1, -1, 1)
 
 * Strip out consecutive blank lines, leading and trailing blank lines, and
 * leading spaces before headings.
@@ -236,14 +271,10 @@ lcClosingTag = evl(tcClosingMarkdownTag, '')
 
 * Convert the tag.
 
-*do while '<' + upper(tcHTMLTag) $ upper(lcHTML)
-	lcHTML = strtran(lcHTML, '<' + tcHTMLTag + '>', tcMarkdownTag, -1, -1, 1)
-	lcHTML = strtran(lcHTML, '</' + tcHTMLTag + '>', lcClosingTag, -1, -1, 1)
-*enddo while '<' + upper(tcHTMLTag) $ upper(lcHTML)
-*do while atc('<p class=' + tcHTMLTag, lcHTML) > 0
-	lcHTML = strtran(lcHTML, '<p class=' + tcHTMLTag + '>', tcMarkdownTag, ;
-		-1, -1, 1)
-*enddo while atc('<p class=' + tcHTMLTag, lcHTML) > 0
+lcHTML = strtran(lcHTML, '<' + tcHTMLTag + '>', tcMarkdownTag, -1, -1, 1)
+lcHTML = strtran(lcHTML, '</' + tcHTMLTag + '>', lcClosingTag, -1, -1, 1)
+lcHTML = strtran(lcHTML, '<p class=' + tcHTMLTag + '>', tcMarkdownTag, ;
+	-1, -1, 1)
 return lcHTML
 
 *==============================================================================
@@ -286,4 +317,53 @@ for lnI = 1 to occurs('<pre>', lower(lcHTML))
 next lnI
 lcHTML = strtran(lcHTML, '<pre>',  '```foxpro' + ccCRLF, -1, -1, 1)
 lcHTML = strtran(lcHTML, '</pre>', ccCRLF + '```', -1, -1, 1)
+return lcHTML
+
+*==============================================================================
+function FixAttributes(tcHTML, tcTag)
+*==============================================================================
+
+* Adds missing quotes around attributes values e.g. width=83 becomes width="83"
+
+local lcHTML, ;
+	lcFindTag, ;
+	lnTag, ;
+	lcTag, ;
+	lcNewTag, ;
+	lnAttr, ;
+	lcAttr
+lcHTML    = tcHTML
+lcFindTag = '<' + tcTag + ' '
+for lnTag = 1 to occurs(lcFindTag, lcHTML)
+	lcTag    = strextract(lcHTML, lcFindTag, '>', lnTag, 1 + 4)
+	lcNewTag = lcTag
+	for lnAttr = 1 to occurs('=', lcTag)
+		lcAttr = strextract(lcTag, '=', ' ', lnAttr)
+		if empty(lcAttr)
+			lcAttr = strextract(lcTag, '=', '>', lnAttr)
+		endif empty(lcAttr)
+		if left(lcAttr, 1) <> '"'
+			lcNewTag = strtran(lcNewTag, '=' + lcAttr, '="' + lcAttr + '"')
+		endif left(lcAttr, 1) <> '"'
+	next lnAttr
+	lcHTML = strtran(lcHTML, lcTag, lcNewTag, -1, -1, 1)
+next lnTag
+return lcHTML
+
+*==============================================================================
+function RemoveTrailingPAfterImage(tcHTML)
+*==============================================================================
+
+local lcHTML, ;
+	lnI, ;
+	lcTag
+lcHTML = tcHTML
+for lnI = 1 to occurs('<img', lcHTML)
+	lcTag  = strextract(lcHTML, '<img', '>', lnI, 1 + 4)
+	lcHTML = strtran(lcHTML, lcTag + '</p>', lcTag, -1, -1, 1)
+next lnI
+for lnI = 1 to occurs('<img', lcHTML)
+	lcTag  = strextract(lcHTML, '<img', '>', lnI, 1 + 4)
+	lcHTML = strtran(lcHTML, '<p>' + lcTag, lcTag, -1, -1, 1)
+next lnI
 return lcHTML
