@@ -58,7 +58,6 @@ WITH loProject.FILES
 	.ADD('makedemo.prg')		&& *< FileMetadata: Type="P" Cpid="1252" Timestamp="0" ID="0" ObjRev="0" User="" DevInfo="" />
 	.ADD('newallcandf.dbf')		&& *< FileMetadata: Type="D" Cpid="1252" Timestamp="0" ID="0" ObjRev="0" User="" DevInfo="" />
 	.ADD('process.prg')		&& *< FileMetadata: Type="P" Cpid="1252" Timestamp="0" ID="0" ObjRev="0" User="" DevInfo="" />
-	.ADD('readme.txt')		&& *< FileMetadata: Type="T" Cpid="1252" Timestamp="0" ID="0" ObjRev="0" User="" DevInfo="" />
 	.ADD('replstrs.dbf')		&& *< FileMetadata: Type="D" Cpid="1252" Timestamp="0" ID="0" ObjRev="0" User="" DevInfo="" />
 	.ADD('sfctrls.vcx')		&& *< FileMetadata: Type="V" Cpid="1252" Timestamp="0" ID="0" ObjRev="0" User="" DevInfo="" />
 	.ADD('sftherm.vcx')		&& *< FileMetadata: Type="V" Cpid="1252" Timestamp="0" ID="0" ObjRev="0" User="" DevInfo="" />
@@ -74,7 +73,6 @@ WITH loProject.FILES
 	*<ExcludedFiles>
 	.ITEM(lcCurdir + 'contents.dbf').Exclude = .T.
 	.ITEM(lcCurdir + 'newallcandf.dbf').Exclude = .T.
-	.ITEM(lcCurdir + 'readme.txt').Exclude = .T.
 	.ITEM(lcCurdir + 'replstrs.dbf').Exclude = .T.
 	.ITEM(lcCurdir + 'status.dbf').Exclude = .T.
 	*</ExcludedFiles>

@@ -241,7 +241,7 @@ ENDDEFINE
 DEFINE CLASS fixbullets AS processbaseclass OF "assemble.vcx" 
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "..\..\sessions\word to chm\source\process\assemble.h"
+	#INCLUDE "assemble.h"
 	Name = "fixbullets"
 	
 	PROCEDURE processfile

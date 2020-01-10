@@ -2,7 +2,8 @@
 #define ccLF	chr(10)
 #define ccCRLF	chr(13) + chr(10)
 
-lparameters tcHTML
+lparameters tcHTML, ;
+	tcFile
 local lcHTML, ;
 	lnI, ;
 	lcTable, ;
@@ -127,10 +128,37 @@ lcHTML = strtran(lcHTML, '&quot;', '"')
 * Handle special Markdown characters (these have to be done after &quot;).
 
 lcHTML = strtran(lcHTML, '"\"',  '"\\"')
+lcHTML = strtran(lcHTML, '|',    '\|')
 lcHTML = strtran(lcHTML, '"*"',  '"\*"')
 lcHTML = strtran(lcHTML, '"_"',  '"\_"')
 lcHTML = strtran(lcHTML, '"=="', '"\=="')
 lcHTML = strtran(lcHTML, '{',    '\{')
+
+* Tag keywords. Note we only handle functions and keywords with two or more
+* words because lots of keywords like REPLACE and USE may be used as English
+* words rather than keywords.
+
+select NEWALLCANDF
+scan for '(' $ TOPIC or ' ' $ trim(TOPIC)
+	lcKeyword = trim(TOPIC)
+	for lnI = 1 to occurs(upper(lcKeyword), upper(lcHTML))
+		lnPos   = atc(lcKeyword, lcHTML, lnI)
+		lcChar1 = substr(lcHTML, lnPos - 1, 1)
+		lcChar2 = substr(lcHTML, lnPos + len(lcKeyword), 1)
+		if not isalpha(lcChar1) and not isalpha(lcChar2)
+			lcHTML = strtran(lcHTML, lcChar1 + lcKeyword + lcChar2, ;
+				lcChar1 + '`' + lcKeyword + '`' + lcChar2, 1, 1, 1)
+		endif not isalpha(lcChar1) ...
+	next lnI
+endscan for '(' $ TOPIC ...
+
+* Handle images.
+
+for lnI = 1 to occurs('<img', lower(lcHTML))
+	lcImage = strextract(lcHTML, '<img', '>', 1, 1 + 4)
+	lcSrc   = strextract(lcImage, 'src="', '"')
+	lcHTML  = strtran(lcHTML, lcImage, '![](' + lcSrc + ')')
+next lnI
 
 * Put the <PRE> sections back.
 
@@ -203,6 +231,7 @@ for lnI = 1 to lnTables
 			lcTable = strtran(lcTable, lcTag, '<table>', -1, -1, 1)
 			lcTable = FixAttributes(lcTable, 'td')
 			lcTable = FixAttributes(lcTable, 'img')
+			lcTable = FixAttributes(lcTable, 'p')
 			lcTable = RemoveTrailingPAfterImage(lcTable)
 			lcHTML  = strtran(lcHTML, lcPlaceholder, lcTable)
 	endcase

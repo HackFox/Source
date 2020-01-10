@@ -164,39 +164,7 @@
 		<INDEX>
 			<TagName>FIXTOPIC</TagName>
 			<TagType>REGULAR</TagType>
-			<Key>UPPER(IIF(LEFT(TOPIC,1)="_",SUBSTR(TOPIC,2),IIF(UPPER(LEFT(TOPIC,4))="SYS(",LEFT(TOPIC,4)+PADL(SUBSTR(TOPIC,5,AT(")",TOPIC)-5),4,"0")+")",IIF(TOPIC="\","???"+TOPIC,TOPIC))))</Key>
-			<Filter></Filter>
-			<Order>ASCENDING</Order>
-			<Collate>MACHINE</Collate>
-		</INDEX>
-		<INDEX>
-			<TagName>NGROUP</TagName>
-			<TagType>REGULAR</TagType>
-			<Key>NGROUP</Key>
-			<Filter></Filter>
-			<Order>ASCENDING</Order>
-			<Collate>MACHINE</Collate>
-		</INDEX>
-		<INDEX>
-			<TagName>REPORDER</TagName>
-			<TagType>REGULAR</TagType>
-			<Key>STR(NGROUP,3)+UPPER(TOPIC)</Key>
-			<Filter></Filter>
-			<Order>ASCENDING</Order>
-			<Collate>MACHINE</Collate>
-		</INDEX>
-		<INDEX>
-			<TagName>TOPIC</TagName>
-			<TagType>REGULAR</TagType>
-			<Key>UPPER(TOPIC)</Key>
-			<Filter></Filter>
-			<Order>ASCENDING</Order>
-			<Collate>MACHINE</Collate>
-		</INDEX>
-		<INDEX>
-			<TagName>VERSION</TagName>
-			<TagType>REGULAR</TagType>
-			<Key>VERSION</Key>
+			<Key>PADR(UPPER(ICASE(LEFT(TOPIC,1)="_",SUBSTR(TOPIC,2),UPPER(LEFT(TOPIC,4))="SYS(",LEFT(TOPIC,4)+PADL(SUBSTR(TOPIC,5,AT(")",TOPIC)-5),4,"0")+")",TOPIC="\","???"+TOPIC,TOPIC)),LEN(TOPIC))</Key>
 			<Filter></Filter>
 			<Order>ASCENDING</Order>
 			<Collate>MACHINE</Collate>
