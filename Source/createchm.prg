@@ -81,6 +81,9 @@ endscan
 
 \
 set textmerge to
+if not directory('HTMLHelp')
+	md HTMLHelp
+endif not directory('HTMLHelp')
 strtofile(lcHHP, 'HTMLHelp\hackfox.hhp')
 
 * Generate the HHC (contents) file. First, header information.
@@ -300,10 +303,19 @@ endscan
 set textmerge to
 strtofile(lcHHK, 'HTMLHelp\hackfox.hhk')
 
+* Copy the HTML files to the folder.
+
+copy file HTMLDocs\*.* to HTMLHelp
+
 * Now compile it.
 
 erase log.txt
-run \progra~1\htmlhe~1\hhc.exe htmlhelp\hackfox.hhp > log.txt
+lcApp = '\progra~1\htmlhe~1\hhc.exe'
+if not file(lcApp)
+	lcApp = locfile('hhc.exe', 'exe', 'Locate HHC.EXE')
+endif not file(lcApp)
+lcApp = '"' + lcApp + '"'
+run &lcApp htmlhelp\hackfox.hhp > log.txt
 if file('log.txt')
 	modify file log.txt
 endif file('log.txt')
