@@ -100,6 +100,8 @@ set textmerge on to memvar lcHHC noshow
 \	<param name="FrameName" value="Right">
 \	<param name="SaveType" value="FoxPro 2.x or earlier">
 \	<param name="SaveTypeDesc" value="Commands and functions in the language prior to Visual FoxPro">
+\       <param name="SaveType" value="FoxPro 2.3b">
+\       <param name="SaveTypeDesc" value="Commands and functions introduced with Visual FoxPro 2.3b">
 \	<param name="SaveType" value="Visual FoxPro 3.0">
 \	<param name="SaveTypeDesc" value="Commands and functions introduced with Visual FoxPro 3.0">
 \	<param name="SaveType" value="Visual FoxPro 5.0">
@@ -116,6 +118,8 @@ set textmerge on to memvar lcHHC noshow
 \	<param name="CategoryDesc" value="The version of FoxPro where this command or function was introduced">
 \	<param name="Type" value="FoxPro 2.x or earlier">
 \	<param name="TypeDesc" value="Commands and functions in the language prior to Visual FoxPro">
+\       <param name="Type" value="FoxPro 2.3b or earlier">
+\       <param name="TypeDesc" value="Commands and functions introduced with Visual FoxPro 2.3b">
 \	<param name="Type" value="Visual FoxPro 3.0">
 \	<param name="TypeDesc" value="Commands and functions introduced with Visual FoxPro 3.0">
 \	<param name="Type" value="Visual FoxPro 5.0">
@@ -183,6 +187,8 @@ scan
 	do case
 		case VERSION = '2.x' or VERSION = 'FP2x'
 			lcVersion = 'FoxPro 2.x or earlier'
+                case VERSION = '2.3b' or VERSION = 'FP2x'
+                        lcVersion = 'FoxPro 2.3b'
 		case VERSION = '3.0'
 			lcVersion = 'Visual FoxPro 3.0'
 		case VERSION = '5.0'
@@ -191,7 +197,7 @@ scan
 			lcVersion = 'Visual FoxPro 6.0'
 		case VERSION = 'SP3'
 			lcVersion = 'Visual FoxPro 6.0, Service Pack 3'
-		case VERSION = '7'
+		case VERSION = '7.0'
 			lcVersion = 'Visual FoxPro 7.0'
 		case VERSION = 'DB'
 			lcVersion = 'dBASE Command'
